@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>Impressum – KlaroNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-card: #111111;
+      --bg-card-soft: #181818;
+      --accent: #f9ff00;
+      --text: #ffffff;
+      --muted: #a3a3a3;
+      --border: #2b2b2b;
+      --radius-lg: 18px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    body{
+      background:radial-gradient(circle at top,#151515 0,#050505 45%,#000 100%);
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      min-height:100vh;
+      line-height:1.5;
+    }
+    a{color:inherit;text-decoration:none}
+    .page{max-width:1120px;margin:0 auto;padding:20px 16px 48px}
+    header{
+      display:flex;align-items:center;justify-content:space-between;
+      gap:12px;margin-bottom:26px;
+    }
+    .logo-box{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:8px 14px;border-radius:999px;background:#000;
+      border:1px solid #202020;box-shadow:0 0 0 1px rgba(255,255,255,0.02);
+    }
+    .logo-text-main{
+      font-family:"Montserrat",system-ui,sans-serif;
+      font-weight:700;letter-spacing:0.08em;text-transform:uppercase;
+      font-size:0.86rem;
+    }
+    .logo-pill{width:20px;height:20px;background:var(--accent);border-radius:6px 6px 6px 0;margin-left:10px}
+    .logo-tagline{font-size:0.78rem;color:var(--muted);margin-top:4px}
+    nav{display:flex;align-items:center;gap:16px;font-size:0.9rem}
+    .nav-link{padding:6px 10px;border-radius:999px;color:var(--muted);transition:.18s ease}
+    .nav-link:hover{color:var(--text);background:rgba(249,255,0,0.06)}
+    .nav-link.active{color:#000;background:var(--accent);font-weight:600}
+    main{
+      background:var(--bg-card-soft);
+      border-radius:var(--radius-lg);
+      padding:20px 20px 24px;
+      border:1px solid var(--border);
+      box-shadow:var(--shadow-soft);
+    }
+    h1{
+      font-family:"Montserrat",system-ui,sans-serif;
+      font-size:1.6rem;margin-bottom:10px;
+    }
+    h2{font-size:1rem;margin-top:18px;margin-bottom:6px}
+    p,li{font-size:0.9rem;color:var(--muted)}
+    ul{margin-left:18px;list-style:disc}
+    footer{
+      margin-top:32px;padding-top:18px;border-top:1px solid #181818;
+      font-size:0.76rem;color:var(--muted);
+      display:flex;flex-wrap:wrap;gap:6px 18px;justify-content:space-between;align-items:center;
+    }
+    .footer-links{display:flex;gap:12px;flex-wrap:wrap}
+    .footer-links a{color:var(--muted)}
+    .footer-links a:hover{color:var(--text)}
+    @media(max-width:700px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{flex-wrap:wrap;gap:8px}
+      main{padding:16px 14px 20px}
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div>
+      <div class="logo-box">
+        <span class="logo-text-main">KLARONEWS</span>
+        <span class="logo-pill"></span>
+      </div>
+      <div class="logo-tagline">News, kurz & klar – ohne Bullshit.</div>
+    </div>
+    <nav>
+      <a class="nav-link" href="index.html">Startseite</a>
+      <a class="nav-link active" href="impressum.html">Impressum</a>
+      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Impressum</h1>
+
+
+    <h2>Angaben gemäß § 5 TMG</h2>
+    <p>
+      KlaroNews<br>
+      Mahmoud Bankousli<br>
+      Manager<br>
+    </p>
+
+    <h2>Kontakt</h2>
+    <p>
+      E-Mail: KlaroNews@gmail.com
+    </p>
+
+    <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
+    <p>
+      Max Mustermann<br>
+      Anschrift wie oben.
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Die Inhalte unserer Seiten wurden mit größter Sorgfalt erstellt.
+      Für die Richtigkeit, Vollständigkeit und Aktualität der Inhalte
+      können wir jedoch keine Gewähr übernehmen.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Unser Angebot enthält Links zu externen Websites Dritter, auf deren
+      Inhalte wir keinen Einfluss haben. Deshalb können wir für diese
+      fremden Inhalte auch keine Gewähr übernehmen.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen
+      Seiten unterliegen dem deutschen Urheberrecht. Downloads und Kopien
+      dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch
+      gestattet.
+    </p>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>KlaroNews – Kontakt</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Kontakt zum KlaroNews-Team: Feedback, Themenwünsche, Fragen." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-card: #111111;
+      --bg-card-soft: #181818;
+      --accent: #f9ff00;
+      --accent-danger: #ff4b4b;
+      --text: #ffffff;
+      --muted: #a3a3a3;
+      --border: #2b2b2b;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .logo-wrap { display: inline-flex; align-items: center; gap: 10px; }
+
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid #202020;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .logo-text-main {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .logo-pill {
+      width: 20px; height: 20px;
+      background: var(--accent);
+      border-radius: 6px 6px 6px 0;
+      margin-left: 10px;
+    }
+
+    .logo-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    nav { display: flex; align-items: center; gap: 16px; font-size: 0.9rem; }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 0.18s ease;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(249,255,0,0.06); }
+    .nav-link.active { color: #000; background: var(--accent); font-weight: 600; }
+
+    @media (max-width: 840px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { width: 100%; flex-wrap: wrap; gap: 8px; }
+    }
+
+    main { margin-top: 10px; }
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(260px, 1.1fr);
+      gap: 20px;
+      background: var(--bg-card-soft);
+      border-radius: var(--radius-lg);
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow-soft);
+      padding: 20px 18px 18px;
+    }
+
+    @media (max-width: 840px) {
+      .contact-layout {
+        grid-template-columns: 1fr;
+        padding: 16px 14px 16px;
+      }
+    }
+
+    .contact-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .contact-intro {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .field-group { margin-bottom: 14px; }
+
+    label {
+      display: block;
+      font-size: 0.82rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .input, .textarea {
+      width: 100%;
+      padding: 9px 11px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #050505;
+      color: var(--text);
+      font-size: 0.9rem;
+      outline: none;
+      transition: border-color 0.18s ease, box-shadow 0.18s ease;
+    }
+
+    .textarea {
+      min-height: 160px;
+      border-radius: 14px;
+      resize: vertical;
+      line-height: 1.5;
+    }
+
+    .input:focus, .textarea:focus {
+      border-color: rgba(249,255,0,0.7);
+      box-shadow: 0 0 0 1px rgba(249,255,0,0.3);
+    }
+
+    .btn-send {
+      padding: 9px 18px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.9rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .btn-send:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+    .btn-send.disabled {
+      opacity: 0.6;
+      cursor: default;
+      transform: none;
+    }
+
+    .status-msg {
+      font-size: 0.8rem;
+      margin-top: 6px;
+      color: var(--muted);
+      min-height: 1.2em;
+    }
+
+    .status-success { color: #9be15d; }
+    .status-error   { color: var(--accent-danger); }
+
+    .contact-sidebar {
+      background: #0b0b0b;
+      border-radius: var(--radius-md);
+      border: 1px solid var(--border);
+      padding: 14px 14px 12px;
+      font-size: 0.86rem;
+    }
+
+    .contact-sidebar h3 {
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+    }
+
+    .contact-sidebar p { color: var(--muted); margin-bottom: 6px; }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid #181818;
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--text); }
+  </style>
+</head>
+<body>
+<div class="page">
+  <header>
+    <div class="logo-wrap">
+      <div>
+        <div class="logo-box">
+          <span class="logo-text-main">KLARONEWS</span>
+          <span class="logo-pill"></span>
+        </div>
+        <div class="logo-tagline">News, kurz & klar</div>
+      </div>
+    </div>
+
+    <nav>
+      <a class="nav-link" href="index.html">Startseite</a>
+      <a class="nav-link" href="impressum.html">Impressum</a>
+      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+      <a class="nav-link active" href="kontakt.html">Kontakt</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-layout">
+      <div>
+        <h1 class="contact-title">Kontakt</h1>
+        <p class="contact-intro">
+          Schreib uns, wenn du Feedback, Themenwünsche oder Fragen zu KlaroNews hast.
+        </p>
+
+        <form id="contact-form">
+          <div class="field-group">
+            <label for="name">Name (optional)</label>
+            <input id="name" name="name" type="text" class="input" placeholder="Dein Name">
+          </div>
+
+          <div class="field-group">
+            <label for="email">E-Mail</label>
+            <input id="email" name="email" type="email" class="input" placeholder="deine@mail.de" required>
+          </div>
+
+          <div class="field-group">
+            <label for="message">Nachricht</label>
+            <textarea id="message" name="message" class="textarea" placeholder="Worum geht's?" required></textarea>
+          </div>
+
+          <button type="submit" class="btn-send" id="send-btn">Nachricht senden</button>
+          <p id="form-status" class="status-msg"></p>
+        </form>
+      </div>
+
+      <aside class="contact-sidebar">
+        <h3>Direkter Kontakt</h3>
+        <p><strong>KlaroNews Team</strong></p>
+        <p>E-Mail: KlaroNews@gmail.com</p>
+        <p>Discord: z.B. #klaronews-contact</p>
+      </aside>
+    </section>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+    <div class="footer-links">
+      <a href="impressum.html">Impressum</a>
+      <a href="datenschutz.html">Datenschutz</a>
+      <a href="kontakt.html">Kontakt</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Jahr setzen
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // 🔴 DEIN DISCORD-WEBHOOK HIER
+  const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1448387720077381695/aOs-7r8MAFqbph7YInO-NHv4jB8pHpzc9EqkqQu2ZY0cTa-uDMn3LXJOP22pKttAGbT8";
+
+  const form    = document.getElementById("contact-form");
+  const status  = document.getElementById("form-status");
+  const sendBtn = document.getElementById("send-btn");
+
+  // 🛡 5-Minuten-Limit in Millisekunden
+  const COOLDOWN = 5 * 60 * 1000;
+
+  // IP holen
+  async function getIP() {
+    try {
+      const res = await fetch("https://api.ipify.org?format=json");
+      const data = await res.json();
+      return data.ip || "Unbekannt";
+    } catch {
+      return "IP konnte nicht geladen werden";
+    }
+  }
+
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const name    = document.getElementById("name").value.trim();
+    const email   = document.getElementById("email").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    // 📝 Mindestlänge: mind. 3 Wörter
+    if (message.split(" ").filter(w => w.length > 0).length < 3) {
+      status.textContent = "Deine Nachricht muss mindestens 3 Wörter enthalten.";
+      status.className = "status-msg status-error";
+      return;
+    }
+
+    // 🛡 Spam-Schutz: 1 Nachricht pro 5 Minuten pro Browser
+    const lastSent = localStorage.getItem("klaronews_last_sent");
+    const now = Date.now();
+
+    if (lastSent && now - Number(lastSent) < COOLDOWN) {
+      const waitSeconds = Math.ceil((COOLDOWN - (now - Number(lastSent))) / 1000);
+      const minutes = Math.floor(waitSeconds / 60);
+      const seconds = waitSeconds % 60;
+
+      const readable = minutes > 0
+        ? `${minutes} Min ${seconds} Sek`
+        : `${seconds} Sekunden`;
+
+      status.textContent = `Bitte warte noch ${readable}, bevor du erneut sendest.`;
+      status.className = "status-msg status-error";
+      return;
+    }
+
+    // Button + Status setzen
+    sendBtn.classList.add("disabled");
+    sendBtn.textContent = "Nachricht wird gesendet …";
+    status.textContent = "";
+    status.className = "status-msg";
+
+    const ip         = await getIP();
+    const userAgent  = navigator.userAgent;
+    const timestamp  = new Date().toISOString();
+
+    const embed = {
+      title: "📨 Neue Nachricht über das KlaroNews-Kontaktformular",
+      color: 0xf9ff00,
+      fields: [
+        { name: "Name", value: name || "Nicht angegeben", inline: true },
+        { name: "E-Mail", value: email, inline: true },
+        {
+          name: "Nachricht",
+          value: message.length > 1024 ? message.slice(0, 1021) + "…" : message
+        },
+        { name: "IP-Adresse", value: "`" + ip + "`", inline: false },
+        { name: "Browser / Gerät", value: userAgent, inline: false },
+        { name: "Zeitpunkt", value: timestamp, inline: false }
+      ],
+      timestamp
+    };
+
+    try {
+      const res = await fetch(DISCORD_WEBHOOK_URL, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          username: "KlaroNews Kontakt",
+          embeds: [embed]
+        })
+      });
+
+      if (res.ok) {
+        status.textContent = "Nachricht wurde gesendet.";
+        status.className = "status-msg status-success";
+
+        // ⏳ Cooldown aktivieren
+        localStorage.setItem("klaronews_last_sent", Date.now());
+
+        form.reset();
+      } else {
+        status.textContent = "Fehler beim Senden. Bitte Webhook prüfen.";
+        status.className = "status-msg status-error";
+      }
+
+    } catch (err) {
+      console.error(err);
+      status.textContent = "Netzwerkfehler. Bist du online?";
+      status.className = "status-msg status-error";
+
+    } finally {
+      sendBtn.classList.remove("disabled");
+      sendBtn.textContent = "Nachricht senden";
+    }
+  });
+</script>
+
+</body>
+</html>
