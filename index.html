@@ -10,27 +10,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="icon" type="image/png" href="/https://klaronews.com/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/https://klaronews.com/favicon.svg" />
-<link rel="shortcut icon" href="/https://klaronews.com/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/https://klaronews.com/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="KlaroNews" />
-<link rel="manifest" href="/https://klaronews.com/site.webmanifest" />
-<link rel="icon" type="image/x-icon" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/https://klaronews.com/favicon.ico">
-<div id="ds-overlay">
-  <div id="ds-box">
-    <h2>Datenschutzerklärung</h2>
 
-    <div id="ds-content">
-      <!-- HIER WIRD AUTOMATISCH datenschutz.html GELADEN -->
-      <p>Wird geladen...</p>
-    </div>
-
-    <button id="ds-accept" disabled>Bis zum Ende scrollen…</button>
-  </div>
-</div>
+  <!-- Favicon / PWA -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="KlaroNews" />
+  <link rel="manifest" href="/site.webmanifest" />
 
   <style>
     :root {
@@ -270,6 +257,11 @@
       box-shadow: 0 12px 24px rgba(249,255,0,0.25);
     }
 
+    .btn-primary.btn-error {
+      background: #ff3b3b;
+      color: #ffffff;
+    }
+
     .btn-ghost {
       padding: 8px 12px;
       border-radius: 999px;
@@ -313,12 +305,6 @@
       background: radial-gradient(circle, rgba(249,255,0,0.22) 0, transparent 65%);
       opacity: 0.9;
       pointer-events: none;
-    }
-
-    /* Fehlerzustand für Summary-Button */
-    .btn-primary.btn-error {
-      background: #ff3b3b;
-      color: #ffffff;
     }
 
     /* Article Grid */
@@ -631,71 +617,107 @@
       color: var(--text);
     }
 
+    /* Datenschutz-Overlay */
+    #ds-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      padding: 20px;
+    }
 
+    #ds-box {
+      background: #111;
+      color: white;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      border-radius: 16px;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid #2b2b2b;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
 
-#ds-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(0,0,0,0.65);
-  backdrop-filter: blur(4px);
-  display: none;
-  justify-content: center;
-  align-items: center;
-  z-index: 99999;
-  padding: 20px;
-}
+    #ds-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
 
-#ds-box {
-  background: #111;
-  color: white;
-  width: 90%;
-  max-width: 900px;
-  max-height: 90vh;
-  border-radius: 16px;
-  padding: 20px;
-  overflow: hidden;
-  border: 1px solid #2b2b2b;
-  box-shadow: 0 18px 40px rgba(0,0,0,0.5);
-}
+    #ds-content {
+      background: #181818;
+      border-radius: 12px;
+      border: 1px solid #2b2b2b;
+      padding: 14px;
+      height: 60vh;
+      overflow-y: auto;
+    }
 
-#ds-box h2 {
-  font-size: 1.4rem;
-  margin-bottom: 12px;
-}
+    .ds-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
 
-#ds-content {
-  background: #181818;
-  border-radius: 12px;
-  border: 1px solid #2b2b2b;
-  padding: 14px;
-  height: 60vh;
-  overflow-y: auto;
-}
+    #ds-accept {
+      width: 100%;
+      padding: 12px;
+      background: #555;
+      color: #aaa;
+      border-radius: 999px;
+      font-size: 1rem;
+      border: none;
+      cursor: not-allowed;
+      transition: 0.25s;
+    }
 
-#ds-accept {
-  width: 100%;
-  padding: 12px;
-  margin-top: 16px;
-  background: #555;
-  color: #aaa;
-  border-radius: 999px;
-  font-size: 1rem;
-  border: none;
-  cursor: not-allowed;
-  transition: 0.25s;
-}
+    #ds-accept.active {
+      background: #f9ff00;
+      color: #000;
+      cursor: pointer;
+    }
 
-#ds-accept.active {
-  background: #f9ff00;
-  color: #000;
-  cursor: pointer;
-}
-</style>
+    #ds-skip {
+      width: 100%;
+      padding: 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid #2b2b2b;
+      background: transparent;
+      color: #ddd;
+      cursor: pointer;
+      transition: 0.25s;
+    }
 
-
+    #ds-skip:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.4);
+    }
   </style>
 </head>
 <body id="top">
+
+<!-- Datenschutz-Overlay -->
+<div id="ds-overlay">
+  <div id="ds-box">
+    <h2>Datenschutzerklärung</h2>
+
+    <div id="ds-content">
+      <!-- HIER WIRD AUTOMATISCH datenschutz.html GELADEN -->
+      <p>Wird geladen...</p>
+    </div>
+
+    <div class="ds-buttons">
+      <button id="ds-accept" disabled>Bis zum Ende scrollen…</button>
+      <button id="ds-skip" type="button">Weiter ohne Auswahl</button>
+    </div>
+  </div>
+</div>
 
 <div class="page">
   <header>
@@ -775,6 +797,147 @@
             Wir brechen die wichtigsten Punkte runter: Was wurde beschlossen? Ab wann gilt es? Und was bedeutet es konkret für deinen Alltag?
           </p>
         </a>
+      <a href="artikel-ki-gesetz-eu.html"
+   class="article-card"
+   data-time="2025-12-11T22:25:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Politik</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert.
+  </h3>
+  <p class="article-desc">
+    Ein klarer Überblick: Welche Regeln kommen, was verboten wird – und warum das Thema alle betrifft.
+  </p>
+</a>
+<a href="artikel-bahn-streik.html"
+   class="article-card"
+   data-time="2025-12-11T21:40:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Deutschland</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Bahn kündigt neuen Streik an – das musst du morgen wissen.
+  </h3>
+  <p class="article-desc">
+    Welche Linien ausfallen, wie du planen kannst und warum die Verhandlungen wieder feststecken.
+  </p>
+</a>
+<a href="artikel-miete-ansteigt.html"
+   class="article-card"
+   data-time="2025-12-11T20:10:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Wirtschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Mieten steigen weiter – Experten erklären die Gründe.
+  </h3>
+  <p class="article-desc">
+    Warum Städte immer teurer werden und welche Maßnahmen jetzt im Gespräch sind.
+  </p>
+</a>
+<a href="artikel-schule-digital.html"
+   class="article-card"
+   data-time="2025-12-11T18:55:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Bildung</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Digitalunterricht 2.0: Neuer Plan der Kultusminister vorgestellt.
+  </h3>
+  <p class="article-desc">
+    Was Schulen erwartet: KI-Hilfen, neue Tablets, weniger Chaos – in klaren Punkten erklärt.
+  </p>
+</a>
+<a href="artikel-gesundheit-kinderarzt.html"
+   class="article-card"
+   data-time="2025-12-11T17:20:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Gesundheit</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Kinderärzte warnen: So viele Infekte wie seit Jahren nicht.
+  </h3>
+  <p class="article-desc">
+    Warum die Welle kommt, wer betroffen ist und wie man sich wirklich schützen kann.
+  </p>
+</a>
+<a href="artikel-internet-sicherheit.html"
+   class="article-card"
+   data-time="2025-12-11T15:45:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Tech</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Große Sicherheitslücke entdeckt – Millionen Accounts betroffen.
+  </h3>
+  <p class="article-desc">
+    Welche Plattformen Probleme haben und wie du sofort checken kannst, ob du betroffen bist.
+  </p>
+</a>
+<a href="artikel-klima-proteste.html"
+   class="article-card"
+   data-time="2025-12-11T13:30:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Welt</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neue Klima-Proteste weltweit – das steckt dahinter.
+  </h3>
+  <p class="article-desc">
+    Länderüberblick: Warum der Druck wieder steigt und welche Forderungen im Zentrum stehen.
+  </p>
+</a>
+<a href="artikel-socialmedia-study.html"
+   class="article-card"
+   data-time="2025-12-11T11:05:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Gesellschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Studie: Social Media beeinflusst Schlaf stärker als gedacht.
+  </h3>
+  <p class="article-desc">
+    Forscher erklären den Zusammenhang und was wirklich gegen schlechte Nächte hilft.
+  </p>
+</a>
+<a href="artikel-energie-preise.html"
+   class="article-card"
+   data-time="2025-12-11T09:15:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Wirtschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Energiepreise sinken leicht – was Verbraucher jetzt sparen können.
+  </h3>
+  <p class="article-desc">
+    Zahlen, Trends und warum die Entlastung trotzdem noch nicht überall spürbar ist.
+  </p>
+</a>
+<a href="artikel-fruehstueck-studie.html"
+   class="article-card"
+   data-time="2025-12-11T06:45:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Lifestyle</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neue Studie: Frühstück beeinflusst Konzentration stärker als gedacht.
+  </h3>
+  <p class="article-desc">
+    Was Forscher empfehlen und welche Lebensmittel tatsächlich einen Unterschied machen.
+  </p>
+</a>
+
 
         <!-- Artikel 2 -->
         <a href="artikel-inflation.html"
@@ -940,7 +1103,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
   // 4. "Heutige Zusammenfassung ansehen" -> wenn keine vorhanden, rot flashen
   const summaryBtn = document.getElementById("btn-summary");
-  // später kannst du das auf true setzen und eine URL angeben
   let hasSummary = false;
   let summaryUrl = ""; // z.B. "artikel-heutige-zusammenfassung.html"
 
@@ -976,6 +1138,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+// Datenschutz-Overlay-Logik
 if (!localStorage.getItem("dsAccepted")) {
   document.getElementById("ds-overlay").style.display = "flex";
 
@@ -987,8 +1150,26 @@ if (!localStorage.getItem("dsAccepted")) {
     });
 }
 
+const overlay = document.getElementById("ds-overlay");
 const content = document.getElementById("ds-content");
 const acceptBtn = document.getElementById("ds-accept");
+const skipBtn = document.getElementById("ds-skip");
+
+// Helper zum Overlay ausblenden (für beide Buttons)
+function hideOverlay() {
+  if (!overlay) return;
+
+  overlay.style.opacity = 1;
+
+  setTimeout(() => {
+    overlay.style.transition = "0.4s";
+    overlay.style.opacity = 0;
+
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 400);
+  }, 50);
+}
 
 // Scroll-Check, Button erst aktiv wenn unten
 content.addEventListener("scroll", () => {
@@ -999,29 +1180,21 @@ content.addEventListener("scroll", () => {
   }
 });
 
-// Button klick → Cookie setzen → ausblenden
+// Akzeptieren → merkt sich Zustimmung in localStorage
 acceptBtn.addEventListener("click", () => {
   localStorage.setItem("dsAccepted", "true");
-  document.getElementById("ds-overlay").style.opacity = 1;
-
-  setTimeout(() => {
-    document.getElementById("ds-overlay").style.transition = "0.4s";
-    document.getElementById("ds-overlay").style.opacity = 0;
-
-    setTimeout(() => {
-      document.getElementById("ds-overlay").style.display = "none";
-    }, 400);
-
-  }, 50);
+  hideOverlay();
 });
 
+// Weiter ohne Auswahl → auch merken, damit es nicht mehr erscheint
+skipBtn.addEventListener("click", () => {
+  localStorage.setItem("dsAccepted", "true");
+  hideOverlay();
+});
 </script>
+
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
      crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
