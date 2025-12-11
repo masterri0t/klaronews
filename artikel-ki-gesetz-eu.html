@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <title>Neues KI-Gesetz in der EU – KlaroNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Die EU beschließt ein neues KI-Gesetz. Kurz erklärt, was das für dich bedeutet.">
+
+  <!-- Fonts optional, kannst du rauslöschen wenn du willst -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --card: #111111;
+      --accent: #f9ff00;
+      --text: #ffffff;
+      --muted: #b3b3b3;
+      --border: #262626;
+      --radius-lg: 26px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 24px 16px 40px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 26px;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid #202020;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.04);
+    }
+
+    .logo-text-main {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .logo-pill {
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 6px 6px 6px 0;
+      margin-left: 10px;
+    }
+
+    .logo-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      padding: 6px 12px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 0.18s ease;
+    }
+
+    .nav-link:hover {
+      background: rgba(249,255,0,0.07);
+      color: var(--text);
+    }
+
+    .nav-link.active {
+      background: var(--accent);
+      color: #000;
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      font-size: 0.8rem;
+      background: rgba(0,0,0,0.4);
+    }
+
+    main {
+      margin-top: 10px;
+    }
+
+    .article-card {
+      background: var(--card);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px 26px;
+      border: 1px solid var(--border);
+      box-shadow: 0 18px 40px rgba(0,0,0,0.55);
+    }
+
+    .article-meta-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 20px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .badge-category {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 12px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid var(--accent);
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      font-size: 0.75rem;
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+    }
+
+    .article-stand {
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    h1 {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    .article-subtitle {
+      font-size: 1rem;
+      color: var(--muted);
+      margin-bottom: 22px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      font-size: 0.98rem;
+    }
+
+    h2 {
+      margin-top: 18px;
+      margin-bottom: 8px;
+      font-size: 1.1rem;
+    }
+
+    ul {
+      margin-left: 18px;
+      margin-bottom: 16px;
+      font-size: 0.98rem;
+    }
+
+    li {
+      margin-bottom: 6px;
+    }
+
+    .btn-back {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      margin-top: 24px;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid #ffffff33;
+      background: transparent;
+      color: #ffffff;
+      font-size: 0.9rem;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .btn-back:hover {
+      background: #ffffff10;
+      border-color: #ffffff66;
+    }
+
+    footer {
+      margin-top: 40px;
+      padding-top: 16px;
+      border-top: 1px solid #181818;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    @media (max-width: 720px) {
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        flex-wrap: wrap;
+      }
+      .article-card {
+        padding: 24px 18px 22px;
+      }
+      h1 {
+        font-size: 1.6rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-wrap">
+        <div>
+          <div class="logo-box">
+            <span class="logo-text-main">KLARONEWS</span>
+            <span class="logo-pill"></span>
+          </div>
+          <div class="logo-tagline">News, kurz & klar – ohne Bullshit.</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="index.html" class="nav-link">Heute</a>
+        <a href="index.html#politik" class="nav-link active">Politik</a>
+        <a href="index.html#welt" class="nav-link">Welt</a>
+        <a href="index.html#gesellschaft" class="nav-link">Gesellschaft</a>
+        <a href="index.html#newsletter" class="nav-link nav-cta">Newsletter</a>
+      </nav>
+    </header>
+
+    <main>
+      <article class="article-card">
+        <div class="article-meta-row">
+          <span class="badge-category">
+            <span class="badge-dot"></span>
+            Politik
+          </span>
+          <span class="article-stand">Stand: 11.12.2025</span>
+        </div>
+
+        <h1>Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert</h1>
+        <p class="article-subtitle">
+          Regeln für KI werden konkreter – zwischen Innovation und Kontrolle.
+        </p>
+
+        <p>
+          Die EU hat ein neues Gesetz verabschiedet, das den Umgang mit künstlicher Intelligenz
+          im Alltag regeln soll. Anwendungen, die Menschen stark überwachen, manipulieren oder
+          diskriminieren könnten, sollen deutlich strenger kontrolliert werden.
+        </p>
+        <p>
+          Unternehmen, die KI einsetzen, müssen transparenter machen, wie ihre Systeme funktionieren
+          und welche Daten sie nutzen. Für besonders riskante KI werden extra Prüfungen und Auflagen
+          eingeführt.
+        </p>
+
+        <h2>Die wichtigsten Punkte</h2>
+        <ul>
+          <li>Verbot bestimmter manipulativer KI-Systeme</li>
+          <li>Transparenzpflicht: Nutzer sollen erkennen können, wann KI im Einsatz ist</li>
+          <li>Strenge Regeln für biometrische Überwachung und Gesichtserkennung</li>
+        </ul>
+
+        <h2>Was bedeutet das für dich?</h2>
+        <p>
+          Im Alltag sollst du besser geschützt sein – etwa vor Deepfakes oder versteckter
+          Profilbildung. Gleichzeitig könnten manche KI-Features langsamer ausgerollt werden,
+          weil Firmen mehr Dokumentation und Sicherheitschecks liefern müssen.
+        </p>
+
+        <a href="index.html" class="btn-back">← Zurück</a>
+      </article>
+    </main>
+
+    <footer>
+      <span>© 2025 KlaroNews</span>
+      <span>Kurz & klar – für deinen Alltag.</span>
+    </footer>
+  </div>
+</body>
+</html>
