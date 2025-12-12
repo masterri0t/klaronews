@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="icon" href="klaronews.png" type="image/png"> 
+
+  <link rel="icon" href="klaronews.png" type="image/png">
   <!-- Favicon / PWA -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -33,15 +34,8 @@
       --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
@@ -51,10 +45,7 @@
       min-height: 100vh;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       max-width: 1120px;
@@ -62,7 +53,6 @@
       padding: 20px 16px 48px;
     }
 
-    /* Header / Nav */
     header {
       display: flex;
       align-items: center;
@@ -71,11 +61,7 @@
       margin-bottom: 26px;
     }
 
-    .logo-wrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .logo-wrap { display: inline-flex; align-items: center; gap: 10px; }
 
     .logo-box {
       display: inline-flex;
@@ -104,17 +90,9 @@
       margin-left: 10px;
     }
 
-    .logo-tagline {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
+    .logo-tagline { font-size: 0.78rem; color: var(--muted); }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.9rem;
-    }
+    nav { display: flex; align-items: center; gap: 16px; font-size: 0.9rem; }
 
     .nav-link {
       padding: 6px 10px;
@@ -123,16 +101,8 @@
       transition: 0.18s ease;
     }
 
-    .nav-link:hover {
-      color: var(--text);
-      background: rgba(249,255,0,0.06);
-    }
-
-    .nav-link.active {
-      color: #000;
-      background: var(--accent);
-      font-weight: 600;
-    }
+    .nav-link:hover { color: var(--text); background: rgba(249,255,0,0.06); }
+    .nav-link.active { color: #000; background: var(--accent); font-weight: 600; }
 
     .nav-cta {
       padding: 7px 12px;
@@ -144,13 +114,11 @@
       background: rgba(0,0,0,0.35);
       transition: 0.18s ease;
     }
-
     .nav-cta:hover {
       background: rgba(249,255,0,0.1);
       border-color: rgba(249,255,0,0.6);
     }
 
-    /* Layout: Hero + Sidebar */
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.1fr);
@@ -158,21 +126,11 @@
     }
 
     @media (max-width: 840px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+      .layout { grid-template-columns: minmax(0, 1fr); }
+      header { flex-direction: column; align-items: flex-start; }
+      nav { width: 100%; justify-content: space-between; flex-wrap: wrap; }
     }
 
-    /* Hero Card */
     .hero-card {
       position: relative;
       padding: 20px 20px 18px;
@@ -213,10 +171,7 @@
       box-shadow: 0 0 0 3px rgba(249,255,0,0.35);
     }
 
-    .hero-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    .hero-meta { font-size: 0.75rem; color: var(--muted); }
 
     .hero-title {
       font-family: "Montserrat", system-ui, sans-serif;
@@ -225,11 +180,7 @@
       margin-bottom: 10px;
     }
 
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
+    .hero-subtitle { font-size: 0.95rem; color: var(--muted); margin-bottom: 18px; }
 
     .hero-actions {
       display: flex;
@@ -257,10 +208,7 @@
       box-shadow: 0 12px 24px rgba(249,255,0,0.25);
     }
 
-    .btn-primary.btn-error {
-      background: #ff3b3b;
-      color: #ffffff;
-    }
+    .btn-primary.btn-error { background: #ff3b3b; color: #ffffff; }
 
     .btn-ghost {
       padding: 8px 12px;
@@ -282,12 +230,7 @@
       background: rgba(255,255,255,0.02);
     }
 
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
-    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
 
     .tag {
       padding: 4px 9px;
@@ -307,7 +250,6 @@
       pointer-events: none;
     }
 
-    /* Article Grid */
     .section-title {
       font-size: 0.92rem;
       text-transform: uppercase;
@@ -340,6 +282,10 @@
       box-shadow: 0 12px 24px rgba(0,0,0,0.55);
     }
 
+    /* Backend cards: NICHT klickbar */
+    .backend-card { cursor: default; }
+    .backend-card:hover { transform: none; }
+
     .article-chip-row {
       display: flex;
       justify-content: space-between;
@@ -354,22 +300,24 @@
       letter-spacing: 0.11em;
     }
 
-    .article-time {
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
+    .article-time { font-size: 0.7rem; color: var(--muted); }
+    .article-title { font-size: 0.98rem; font-weight: 600; }
+    .article-desc { font-size: 0.83rem; color: var(--muted); }
 
-    .article-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
+#backend-status.hidden {
+  position: absolute;
+  width: 1px; height: 1px;
+  padding: 0; margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
 
-    .article-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
+    #backend-status { border-style: dashed; opacity: .95; }
+    #backend-status.ok { border-color: rgba(249,255,0,0.6); }
+    #backend-status.err { border-color: rgba(255,59,59,0.7); }
 
-    /* Sidebar */
     .sidebar-card {
       background: var(--bg-card-soft);
       border-radius: var(--radius-lg);
@@ -386,54 +334,18 @@
       margin-bottom: 10px;
     }
 
-    .sidebar-list {
-      list-style: none;
-    }
+    .sidebar-list { list-style: none; }
+    .sidebar-item { padding: 9px 0; border-bottom: 1px dashed #292929; }
+    .sidebar-item:last-child { border-bottom: none; }
+    .sidebar-link { display: block; }
+    .sidebar-link-title { font-size: 0.86rem; }
+    .sidebar-link-sub { font-size: 0.74rem; color: var(--muted); }
+    .sidebar-item:hover .sidebar-link-title { text-decoration: underline; }
 
-    .sidebar-item {
-      padding: 9px 0;
-      border-bottom: 1px dashed #292929;
-    }
+    .newsletter { margin-top: 18px; padding-top: 12px; border-top: 1px solid #292929; }
+    .newsletter p { font-size: 0.84rem; color: var(--muted); margin-bottom: 10px; }
 
-    .sidebar-item:last-child {
-      border-bottom: none;
-    }
-
-    .sidebar-link {
-      display: block;
-    }
-
-    .sidebar-link-title {
-      font-size: 0.86rem;
-    }
-
-    .sidebar-link-sub {
-      font-size: 0.74rem;
-      color: var(--muted);
-    }
-
-    .sidebar-item:hover .sidebar-link-title {
-      text-decoration: underline;
-    }
-
-    .newsletter {
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid #292929;
-    }
-
-    .newsletter p {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
+    .newsletter-form { display: flex; flex-wrap: wrap; gap: 8px; }
     .newsletter-input {
       flex: 1 1 140px;
       padding: 8px 10px;
@@ -444,11 +356,7 @@
       font-size: 0.82rem;
       outline: none;
     }
-
-    .newsletter-input::placeholder {
-      color: #555;
-    }
-
+    .newsletter-input::placeholder { color: #555; }
     .newsletter-button {
       padding: 8px 13px;
       border-radius: 999px;
@@ -461,135 +369,39 @@
       white-space: nowrap;
       transition: 0.18s ease;
     }
+    .newsletter-button:hover { filter: brightness(1.05); }
 
-    .newsletter-button:hover {
-      filter: brightness(1.05);
-    }
-
-    /* Tablet-Optimierung */
     @media (max-width: 900px) {
-      .page {
-        padding: 16px 12px 32px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .nav-link,
-      .nav-cta {
-        font-size: 0.82rem;
-        padding: 6px 10px;
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .hero-card {
-        padding: 16px 14px 16px;
-      }
-
-      .hero-title {
-        font-size: 1.35rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.9rem;
-      }
-
-      .articles-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .sidebar-card {
-        margin-top: 6px;
-      }
+      .page { padding: 16px 12px 32px; }
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+      nav { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 8px; }
+      .nav-link, .nav-cta { font-size: 0.82rem; padding: 6px 10px; }
+      .layout { grid-template-columns: 1fr; gap: 18px; }
+      .hero-card { padding: 16px 14px 16px; }
+      .hero-title { font-size: 1.35rem; }
+      .hero-subtitle { font-size: 0.9rem; }
+      .articles-grid { grid-template-columns: minmax(0, 1fr); }
+      .sidebar-card { margin-top: 6px; }
     }
 
-    /* Handy-Optimierung */
     @media (max-width: 600px) {
-      .logo-box {
-        padding: 7px 12px;
-      }
-
-      .logo-text-main {
-        font-size: 0.78rem;
-      }
-
-      .logo-tagline {
-        font-size: 0.7rem;
-      }
-
-      nav {
-        gap: 6px;
-      }
-
-      .nav-link,
-      .nav-cta {
-        padding: 5px 9px;
-        font-size: 0.78rem;
-      }
-
-      .hero-label-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
-      .hero-title {
-        font-size: 1.25rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.86rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-primary,
-      .btn-ghost {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .article-card {
-        padding: 12px 12px 10px;
-      }
-
-      .article-title {
-        font-size: 0.94rem;
-      }
-
-      .article-desc {
-        font-size: 0.8rem;
-      }
-
-      .sidebar-card {
-        padding: 14px 12px 12px;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
+      .logo-box { padding: 7px 12px; }
+      .logo-text-main { font-size: 0.78rem; }
+      .logo-tagline { font-size: 0.7rem; }
+      nav { gap: 6px; }
+      .nav-link, .nav-cta { padding: 5px 9px; font-size: 0.78rem; }
+      .hero-label-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .hero-title { font-size: 1.25rem; }
+      .hero-subtitle { font-size: 0.86rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .article-card { padding: 12px 12px 10px; }
+      .article-title { font-size: 0.94rem; }
+      .article-desc { font-size: 0.8rem; }
+      .sidebar-card { padding: 14px 12px 12px; }
+      footer { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
 
-    /* Footer */
     footer {
       margin-top: 32px;
       padding-top: 18px;
@@ -603,19 +415,9 @@
       align-items: center;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--text); }
 
     /* Datenschutz-Overlay */
     #ds-overlay {
@@ -643,10 +445,7 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.5);
     }
 
-    #ds-box h2 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
+    #ds-box h2 { font-size: 1.4rem; margin-bottom: 12px; }
 
     #ds-content {
       background: #181818;
@@ -657,12 +456,7 @@
       overflow-y: auto;
     }
 
-    .ds-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
-    }
+    .ds-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
 
     #ds-accept {
       width: 100%;
@@ -676,11 +470,7 @@
       transition: 0.25s;
     }
 
-    #ds-accept.active {
-      background: #f9ff00;
-      color: #000;
-      cursor: pointer;
-    }
+    #ds-accept.active { background: #f9ff00; color: #000; cursor: pointer; }
 
     #ds-skip {
       width: 100%;
@@ -700,18 +490,14 @@
     }
   </style>
 </head>
+
 <body id="top">
 
 <!-- Datenschutz-Overlay -->
 <div id="ds-overlay">
   <div id="ds-box">
     <h2>Datenschutzerklärung</h2>
-
-    <div id="ds-content">
-      <!-- HIER WIRD AUTOMATISCH datenschutz.html GELADEN -->
-      <p>Wird geladen...</p>
-    </div>
-
+    <div id="ds-content"><p>Wird geladen...</p></div>
     <div class="ds-buttons">
       <button id="ds-accept" disabled>Bis zum Ende scrollen…</button>
       <button id="ds-skip" type="button">Weiter ohne Auswahl</button>
@@ -727,7 +513,7 @@
           <span class="logo-text-main">KLARONEWS</span>
           <span class="logo-pill"></span>
         </div>
-        <div class="logo-tagline">News, kurz & klar</div>
+        <div class="logo-tagline">News, kurz &amp; klar</div>
       </div>
     </div>
 
@@ -741,9 +527,7 @@
   </header>
 
   <main class="layout">
-    <!-- Main Content -->
     <section>
-      <!-- Hero -->
       <article class="hero-card">
         <div class="hero-label-row">
           <div class="badge-live">
@@ -755,20 +539,14 @@
           </div>
         </div>
 
-        <h1 class="hero-title">
-          Was du heute wirklich wissen musst.
-        </h1>
+        <h1 class="hero-title">Was du heute wirklich wissen musst.</h1>
         <p class="hero-subtitle">
           KlaroNews fasst den Tag für dich zusammen. Nur das, was für dein Leben relevant ist.
         </p>
 
         <div class="hero-actions">
-          <button class="btn-primary" type="button" id="btn-summary">
-            Heutige Zusammenfassung ansehen
-          </button>
-          <button class="btn-ghost" type="button" id="btn-last-update">
-            ▶ Letztes 60-Sekunden-Update
-          </button>
+          <button class="btn-primary" type="button" id="btn-summary">Heutige Zusammenfassung ansehen</button>
+          <button class="btn-ghost" type="button" id="btn-last-update">▶ Letztes 60-Sekunden-Update</button>
         </div>
 
         <div class="hero-tags">
@@ -781,220 +559,41 @@
       </article>
 
       <h2 id="politik" class="section-title">Aktuelle Themen</h2>
-      <section class="articles-grid">
-        <!-- Artikel 1 -->
-        <a href="artikel-regierung.html"
-           class="article-card"
-           data-time="2025-12-10T14:00:00+01:00">
+
+      <section class="articles-grid" id="articles-grid">
+        <div id="backend-status" class="article-card">
+          <div class="article-chip-row">
+            <span class="article-chip">SYSTEM</span>
+            <span class="article-time">wartet…</span>
+          </div>
+          <h3 class="article-title">Backend Feed</h3>
+          <p class="article-desc">Backend wird gleich geladen…</p>
+        </div>
+
+        <!-- Statische Artikel (klickbar bleibt so) -->
+        <a href="artikel-regierung.html" class="article-card" data-time="2025-12-10T14:00:00+01:00">
           <div class="article-chip-row">
             <span class="article-chip">Politik</span>
             <span class="article-time">lädt...</span>
           </div>
-          <h3 class="article-title">
-            Neue Entscheidung der Regierung – was sich für Schüler &amp; Azubis ändert.
-          </h3>
-          <p class="article-desc">
-            Wir brechen die wichtigsten Punkte runter: Was wurde beschlossen? Ab wann gilt es? Und was bedeutet es konkret für deinen Alltag?
-          </p>
-        </a>
-      <a href="artikel-ki-gesetz-eu.html"
-   class="article-card"
-   data-time="2025-12-11T22:25:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Politik</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert.
-  </h3>
-  <p class="article-desc">
-    Ein klarer Überblick: Welche Regeln kommen, was verboten wird – und warum das Thema alle betrifft.
-  </p>
-</a>
-<a href="artikel-bahn-streik.html"
-   class="article-card"
-   data-time="2025-12-11T21:40:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Deutschland</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Bahn kündigt neuen Streik an – das musst du morgen wissen.
-  </h3>
-  <p class="article-desc">
-    Welche Linien ausfallen, wie du planen kannst und warum die Verhandlungen wieder feststecken.
-  </p>
-</a>
-<a href="artikel-miete-ansteigt.html"
-   class="article-card"
-   data-time="2025-12-11T20:10:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Wirtschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Mieten steigen weiter – Experten erklären die Gründe.
-  </h3>
-  <p class="article-desc">
-    Warum Städte immer teurer werden und welche Maßnahmen jetzt im Gespräch sind.
-  </p>
-</a>
-<a href="artikel-schule-digital.html"
-   class="article-card"
-   data-time="2025-12-11T18:55:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Bildung</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Digitalunterricht 2.0: Neuer Plan der Kultusminister vorgestellt.
-  </h3>
-  <p class="article-desc">
-    Was Schulen erwartet: KI-Hilfen, neue Tablets, weniger Chaos – in klaren Punkten erklärt.
-  </p>
-</a>
-<a href="artikel-gesundheit-kinderarzt.html"
-   class="article-card"
-   data-time="2025-12-11T17:20:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Gesundheit</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Kinderärzte warnen: So viele Infekte wie seit Jahren nicht.
-  </h3>
-  <p class="article-desc">
-    Warum die Welle kommt, wer betroffen ist und wie man sich wirklich schützen kann.
-  </p>
-</a>
-<a href="artikel-internet-sicherheit.html"
-   class="article-card"
-   data-time="2025-12-11T15:45:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Tech</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Große Sicherheitslücke entdeckt – Millionen Accounts betroffen.
-  </h3>
-  <p class="article-desc">
-    Welche Plattformen Probleme haben und wie du sofort checken kannst, ob du betroffen bist.
-  </p>
-</a>
-<a href="artikel-klima-proteste.html"
-   class="article-card"
-   data-time="2025-12-11T13:30:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Welt</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neue Klima-Proteste weltweit – das steckt dahinter.
-  </h3>
-  <p class="article-desc">
-    Länderüberblick: Warum der Druck wieder steigt und welche Forderungen im Zentrum stehen.
-  </p>
-</a>
-<a href="artikel-socialmedia-study.html"
-   class="article-card"
-   data-time="2025-12-11T11:05:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Gesellschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Studie: Social Media beeinflusst Schlaf stärker als gedacht.
-  </h3>
-  <p class="article-desc">
-    Forscher erklären den Zusammenhang und was wirklich gegen schlechte Nächte hilft.
-  </p>
-</a>
-<a href="artikel-energie-preise.html"
-   class="article-card"
-   data-time="2025-12-11T09:15:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Wirtschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Energiepreise sinken leicht – was Verbraucher jetzt sparen können.
-  </h3>
-  <p class="article-desc">
-    Zahlen, Trends und warum die Entlastung trotzdem noch nicht überall spürbar ist.
-  </p>
-</a>
-<a href="artikel-fruehstueck-studie.html"
-   class="article-card"
-   data-time="2025-12-11T06:45:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Lifestyle</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neue Studie: Frühstück beeinflusst Konzentration stärker als gedacht.
-  </h3>
-  <p class="article-desc">
-    Was Forscher empfehlen und welche Lebensmittel tatsächlich einen Unterschied machen.
-  </p>
-</a>
-
-
-        <!-- Artikel 2 -->
-        <a href="artikel-inflation.html"
-           class="article-card"
-           data-time="2025-12-10T11:30:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Wirtschaft</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Preise, Inflation, Löhne: Die Lage in einfachen Worten erklärt.
-          </h3>
-          <p class="article-desc">
-            Kein Finanz-Deutsch, sondern Klartext: Warum alles teurer wird – und welche Entscheidungen jetzt wirklich einen Unterschied machen.
-          </p>
+          <h3 class="article-title">Neue Entscheidung der Regierung – was sich für Schüler &amp; Azubis ändert.</h3>
+          <p class="article-desc">Wir brechen die wichtigsten Punkte runter: Was wurde beschlossen? Ab wann gilt es? Und was bedeutet es konkret für deinen Alltag?</p>
         </a>
 
-        <!-- Artikel 3 -->
-        <a href="artikel-tiktoktrend.html"
-           class="article-card"
-           data-time="2025-12-10T08:00:00+01:00">
+        <a href="artikel-ki-gesetz-eu.html" class="article-card" data-time="2025-12-11T22:25:00+01:00">
           <div class="article-chip-row">
-            <span class="article-chip">Gesellschaft</span>
+            <span class="article-chip">Politik</span>
             <span class="article-time">lädt...</span>
           </div>
-          <h3 class="article-title">
-            Warum dieses Thema gerade auf TikTok explodiert – und was dahinter steckt.
-          </h3>
-          <p class="article-desc">
-            Trend erklärt in 3 Punkten: Ursprung, Problem, Auswirkungen. Ohne Drama, mit Kontext.
-          </p>
-        </a>
-
-        <!-- Artikel 4 -->
-        <a href="artikel-krise.html"
-           id="welt"
-           class="article-card"
-           data-time="2025-12-09T18:30:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Welt</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Internationale Krise in 60 Sekunden: Timeline, Fakten, Folgen.
-          </h3>
-          <p class="article-desc">
-            Wir sortieren die Lage: Was ist wirklich passiert, wer ist beteiligt und welche Szenarien sind jetzt realistisch?
-          </p>
+          <h3 class="article-title">Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert.</h3>
+          <p class="article-desc">Ein klarer Überblick: Welche Regeln kommen, was verboten wird – und warum das Thema alle betrifft.</p>
         </a>
       </section>
-
     </section>
 
-    <!-- Sidebar -->
     <aside>
       <section class="sidebar-card">
-        <h2 class="sidebar-title">Kurz & wichtig</h2>
+        <h2 class="sidebar-title">Kurz &amp; wichtig</h2>
         <ul class="sidebar-list">
           <li class="sidebar-item">
             <a href="artikel-3-dinge.html" class="sidebar-link">
@@ -1002,42 +601,16 @@
               <div class="sidebar-link-sub">Daily Klaro Briefing</div>
             </a>
           </li>
-          <li class="sidebar-item">
-            <a href="artikel-faq-news.html" class="sidebar-link">
-              <div class="sidebar-link-title">FAQ: Wie wir News auswählen &amp; prüfen.</div>
-              <div class="sidebar-link-sub">Transparenz &amp; Quellen</div>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="artikel-finanzierung.html" class="sidebar-link">
-              <div class="sidebar-link-title">So finanzieren wir uns – ohne dich vollzuspammen.</div>
-              <div class="sidebar-link-sub">Ads, Partner &amp; Pläne</div>
-            </a>
-          </li>
-          <li class="sidebar-item">
-            <a href="artikel-community.html" class="sidebar-link">
-              <div class="sidebar-link-title">Werde Teil der ersten KlaroNews-Community.</div>
-              <div class="sidebar-link-sub">Feedback, Themenwünsche, Ideen</div>
-            </a>
-          </li>
         </ul>
 
         <div class="newsletter" id="newsletter">
           <h3 class="sidebar-title">Newsletter (bald)</h3>
-          <p>
-            Bald kannst du hier das tägliche <strong>„Klaro Briefing“</strong> per Mail abonnieren. Feature ist noch im Aufbau.
-          </p>
+          <p>Bald kannst du hier das tägliche <strong>„Klaro Briefing“</strong> per Mail abonnieren. Feature ist noch im Aufbau.</p>
 
-          <!-- Platzhalter-Form – macht noch nichts -->
           <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter kommt später. Aktuell noch nicht aktiv.');">
-            <input
-              class="newsletter-input"
-              type="email"
-              placeholder="Deine E-Mail-Adresse (noch nicht aktiv)"
-            />
+            <input class="newsletter-input" type="email" placeholder="Deine E-Mail-Adresse (noch nicht aktiv)" />
             <button class="newsletter-button" type="submit">Noch nicht verfügbar</button>
           </form>
-
         </div>
       </section>
     </aside>
@@ -1054,80 +627,216 @@
 </div>
 
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".articles-grid");
-  let cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
+/* =========================
+   KlaroNews – Dynamic Feed
+   ========================= */
+const BACKEND_API = "https://backendklaronews.onrender.com/api/articles";
 
-  // 1. Artikel nach Datum sortieren (neueste zuerst)
-  cards.sort((a, b) => {
-    const timeA = new Date(a.getAttribute("data-time"));
-    const timeB = new Date(b.getAttribute("data-time"));
-    return timeB - timeA;
-  });
+function escapeHtml(s="") {
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
 
+function safeISO(iso) {
+  const d = new Date(iso);
+  if (!iso || Number.isNaN(d.getTime())) return new Date().toISOString();
+  return iso;
+}
+
+function relativeTimeFromISO(iso) {
+  const published = new Date(iso);
+  if (Number.isNaN(published.getTime())) return "unbekannt";
+
+  const now = new Date();
+  const diffMs = now - published;
+  const diffMin = Math.floor(diffMs / 1000 / 60);
+  const diffHours = Math.floor(diffMin / 60);
+  const diffDays = Math.floor(diffHours / 24);
+
+  if (diffMin < 1) return "gerade eben";
+  if (diffMin < 60) return `vor ${diffMin} Min`;
+  if (diffHours < 24) return `vor ${diffHours} Std`;
+  if (diffDays === 1) return "gestern";
+  return `vor ${diffDays} Tagen`;
+}
+
+function guessCategory(a) {
+  if (a?.category) return String(a.category);
+
+  const t = ((a?.title || "") + " " + (a?.description || "") + " " + (a?.snippet || "")).toLowerCase();
+
+  if (t.includes("miete") || t.includes("inflation") || t.includes("wirtschaft") || t.includes("börse") || t.includes("zins")) return "Wirtschaft";
+  if (t.includes("schule") || t.includes("bildung") || t.includes("unterricht") || t.includes("kultus")) return "Bildung";
+  if (t.includes("gesund") || t.includes("arzt") || t.includes("virus") || t.includes("infekt") || t.includes("impf")) return "Gesundheit";
+  if (t.includes("hack") || t.includes("lücke") || t.includes("daten") || t.includes("ki") || t.includes("openai") || t.includes("cyber")) return "Tech";
+  if (t.includes("bahn") || t.includes("streik") || t.includes("deutschland")) return "Deutschland";
+  if (t.includes("krieg") || t.includes("nahost") || t.includes("ukraine") || t.includes("un") || t.includes("welt")) return "Welt";
+  return "Politik";
+}
+
+function makeTitle(a) {
+  const t = (a?.title || "").trim();
+  if (t) return t;
+  if (a?.source) return `Update von ${a.source}`;
+  return "Neues Update";
+}
+
+function makeShortDesc(a) {
+  const raw =
+    (a?.description || "").trim() ||
+    (a?.snippet || "").trim() ||
+    "Kurz erklärt: Die wichtigsten Punkte in 3 Sätzen.";
+
+  const cleaned = raw.replace(/\s*\[\+\d+\s+chars\]\s*$/i, "").trim();
+  if (cleaned.length <= 140) return cleaned;
+  return cleaned.slice(0, 137).trimEnd() + "…";
+}
+
+/* ✅ Backend-Karte: NICHT klickbar => <article> */
+function buildBackendLinkCard(a) {
+  const chip = guessCategory(a);
+  const publishedAt = safeISO(a?.publishedAt);
+  const time = relativeTimeFromISO(publishedAt);
+
+  const id = a?.id ? String(a.id) : "";
+  const href = `artikel.html?id=${encodeURIComponent(id)}`;
+
+  return `
+    <a href="${href}"
+       class="article-card backend-card"
+       data-time="${escapeHtml(publishedAt)}">
+      <div class="article-chip-row">
+        <span class="article-chip">${escapeHtml(chip)}</span>
+        <span class="article-time">${escapeHtml(time)}</span>
+      </div>
+      <h3 class="article-title">${escapeHtml(makeTitle(a))}</h3>
+      <p class="article-desc">${escapeHtml(makeShortDesc(a))}</p>
+    </a>
+  `;
+}
+
+
+async function injectBackendArticles() {
+  const container = document.getElementById("articles-grid");
+  const status = document.getElementById("backend-status");
+  if (!container || !status) return;
+
+  const t = status.querySelector(".article-time");
+  const d = status.querySelector(".article-desc");
+
+  const setStatus = (state, timeText, descText) => {
+    status.classList.remove("ok", "err");
+    if (state) status.classList.add(state);
+    if (t) t.textContent = timeText;
+    if (d) d.textContent = descText;
+  };
+
+  try {
+    setStatus("", "lädt…", "Backend wird geladen…");
+
+    const res = await fetch(`${BACKEND_API}?_=${Date.now()}`, { cache: "no-store" });
+
+    if (!res.ok) {
+      const text = await res.text();
+      console.error("API ERROR", res.status, text.slice(0, 600));
+      setStatus("err", "FEHLER", `Backend Fehler: ${res.status}`);
+      status.classList.remove("hidden");
+      return;
+    }
+
+    const contentType = (res.headers.get("content-type") || "").toLowerCase();
+    if (!contentType.includes("application/json")) {
+      const text = await res.text();
+      console.error("NOT JSON:", contentType, text.slice(0, 600));
+      setStatus("err", "FEHLER", "Backend liefert kein JSON");
+      status.classList.remove("hidden");
+      return;
+    }
+
+    const articles = await res.json();
+    if (!Array.isArray(articles)) {
+      console.error("BAD FORMAT:", articles);
+      setStatus("err", "FEHLER", "Backend Format falsch (kein Array).");
+      status.classList.remove("hidden");
+      return;
+    }
+
+    setStatus("ok", "geladen", `Backend liefert: ${articles.length} Artikel.`);
+
+    // ✅ Backend cards clean re-render
+    container.querySelectorAll(".backend-card").forEach(el => el.remove());
+
+    // ✅ Backend cards einfügen (klickbar => <a>)
+    const html = articles.map(buildBackendLinkCard).join("");
+    status.insertAdjacentHTML("afterend", html);
+
+    // ✅ Status-Karte unsichtbar machen (nur als Anchor behalten)
+    status.classList.add("hidden");
+
+  } catch (e) {
+    console.warn("Backend feed konnte nicht geladen werden:", e);
+    setStatus("err", "FEHLER", "Fetch failed (CORS/Backend down).");
+    status.classList.remove("hidden");
+  }
+}
+
+function sortCardsByTime() {
+  const container = document.getElementById("articles-grid");
+  const status = document.getElementById("backend-status");
+  if (!container || !status) return;
+
+  const cards = Array.from(container.querySelectorAll(".article-card[data-time]"))
+    .filter(el => el !== status);
+
+  cards.sort((a, b) => new Date(b.getAttribute("data-time")) - new Date(a.getAttribute("data-time")));
+
+  // alles neu setzen
+  container.innerHTML = "";
+  container.appendChild(status); // anchor bleibt oben (hidden)
   cards.forEach(card => container.appendChild(card));
+}
 
-  // 2. Relative Zeit berechnen
+
+function updateTimes() {
+  const cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
   cards.forEach(card => {
-    const timeAttr = card.getAttribute("data-time");
     const timeEl = card.querySelector(".article-time");
-    const published = new Date(timeAttr);
-    const now = new Date();
-
-    const diffMs = now - published;
-    const diffMin = Math.floor(diffMs / 1000 / 60);
-    const diffHours = Math.floor(diffMin / 60);
-    const diffDays = Math.floor(diffHours / 24);
-
-    let text = "";
-
-    if (diffMin < 1) text = "gerade eben";
-    else if (diffMin < 60) text = `vor ${diffMin} Min`;
-    else if (diffHours < 24) text = `vor ${diffHours} Std`;
-    else if (diffDays === 1) text = "gestern";
-    else text = `${diffDays} Tage alt`;
-
-    if (timeEl) timeEl.textContent = text;
+    const iso = card.getAttribute("data-time");
+    if (timeEl && iso) timeEl.textContent = relativeTimeFromISO(iso);
   });
+}
 
-  // 3. "Letztes 60-Sekunden-Update" -> öffnet neuesten Artikel
+function setupButtons() {
   const lastUpdateBtn = document.getElementById("btn-last-update");
   if (lastUpdateBtn) {
     lastUpdateBtn.addEventListener("click", () => {
-      const firstCard = document.querySelector(".articles-grid .article-card");
-      if (firstCard && firstCard.href) {
-        window.location.href = firstCard.href;
-      }
+      const firstClickable = document.querySelector("#articles-grid a.article-card[data-time]");
+      if (firstClickable?.href) window.location.href = firstClickable.href;
     });
   }
 
-  // 4. "Heutige Zusammenfassung ansehen" -> wenn keine vorhanden, rot flashen
   const summaryBtn = document.getElementById("btn-summary");
-  let hasSummary = false;
-  let summaryUrl = ""; // z.B. "artikel-heutige-zusammenfassung.html"
-
   if (summaryBtn) {
     summaryBtn.addEventListener("click", () => {
-      if (hasSummary && summaryUrl) {
-        window.location.href = summaryUrl;
-      } else {
-        const originalText = summaryBtn.textContent;
-        summaryBtn.classList.add("btn-error");
-        summaryBtn.textContent = "Noch keine Zusammenfassung verfügbar";
-
-        setTimeout(() => {
-          summaryBtn.classList.remove("btn-error");
-          summaryBtn.textContent = originalText;
-        }, 1200);
-      }
+      const originalText = summaryBtn.textContent;
+      summaryBtn.classList.add("btn-error");
+      summaryBtn.textContent = "Noch keine Zusammenfassung verfügbar";
+      setTimeout(() => {
+        summaryBtn.classList.remove("btn-error");
+        summaryBtn.textContent = originalText;
+      }, 1200);
     });
   }
+}
 
-  // 5. Jahr im Footer setzen
+function setFooterAndToday() {
   const yearEl = document.getElementById("year");
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  // 6. Datum "Stand: heute" setzen (TT.MM.JJJJ)
   const todayEl = document.getElementById("today-label");
   if (todayEl) {
     const d = new Date();
@@ -1136,66 +845,66 @@ document.addEventListener("DOMContentLoaded", () => {
     const year = d.getFullYear();
     todayEl.textContent = `${day}.${month}.${year}`;
   }
-});
-
-// Datenschutz-Overlay-Logik
-if (!localStorage.getItem("dsAccepted")) {
-  document.getElementById("ds-overlay").style.display = "flex";
-
-  // datenschutz.html in das Popup laden
-  fetch("datenschutz.html")
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector("#ds-content").innerHTML = html;
-    });
 }
 
-const overlay = document.getElementById("ds-overlay");
-const content = document.getElementById("ds-content");
-const acceptBtn = document.getElementById("ds-accept");
-const skipBtn = document.getElementById("ds-skip");
+/* Datenschutz */
+function setupDatenschutzOverlay() {
+  const overlay = document.getElementById("ds-overlay");
+  const content = document.getElementById("ds-content");
+  const acceptBtn = document.getElementById("ds-accept");
+  const skipBtn = document.getElementById("ds-skip");
+  if (!overlay || !content || !acceptBtn || !skipBtn) return;
 
-// Helper zum Overlay ausblenden (für beide Buttons)
-function hideOverlay() {
-  if (!overlay) return;
-
-  overlay.style.opacity = 1;
-
-  setTimeout(() => {
-    overlay.style.transition = "0.4s";
-    overlay.style.opacity = 0;
-
+  function hideOverlay() {
+    overlay.style.opacity = 1;
     setTimeout(() => {
-      overlay.style.display = "none";
-    }, 400);
-  }, 50);
+      overlay.style.transition = "0.4s";
+      overlay.style.opacity = 0;
+      setTimeout(() => { overlay.style.display = "none"; }, 400);
+    }, 50);
+  }
+
+  if (!localStorage.getItem("dsAccepted")) {
+    overlay.style.display = "flex";
+    fetch("datenschutz.html")
+      .then(res => res.text())
+      .then(html => { content.innerHTML = html; })
+      .catch(() => { content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>"; });
+  }
+
+  content.addEventListener("scroll", () => {
+    if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
+      acceptBtn.classList.add("active");
+      acceptBtn.textContent = "Akzeptieren";
+      acceptBtn.disabled = false;
+    }
+  });
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+
+  skipBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
 }
 
-// Scroll-Check, Button erst aktiv wenn unten
-content.addEventListener("scroll", () => {
-  if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
-    acceptBtn.classList.add("active");
-    acceptBtn.textContent = "Akzeptieren";
-    acceptBtn.disabled = false;
-  }
-});
-
-// Akzeptieren → merkt sich Zustimmung in localStorage
-acceptBtn.addEventListener("click", () => {
-  localStorage.setItem("dsAccepted", "true");
-  hideOverlay();
-});
-
-// Weiter ohne Auswahl → auch merken, damit es nicht mehr erscheint
-skipBtn.addEventListener("click", () => {
-  localStorage.setItem("dsAccepted", "true");
-  hideOverlay();
+/* Boot */
+document.addEventListener("DOMContentLoaded", async () => {
+  await injectBackendArticles();
+  sortCardsByTime();
+  updateTimes();
+  setupButtons();
+  setFooterAndToday();
+  setupDatenschutzOverlay();
+  setInterval(updateTimes, 60 * 1000);
 });
 </script>
 
-
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
-     crossorigin="anonymous"></script>
+        crossorigin="anonymous"></script>
+
 </body>
 </html>
-
