@@ -687,14 +687,16 @@ function makeTitle(a) {
 
 function makeShortDesc(a) {
   const raw =
+    (a?.summary || "").trim() ||
     (a?.description || "").trim() ||
     (a?.snippet || "").trim() ||
-    "Kurz erklärt: Die wichtigsten Punkte in 3 Sätzen.";
+    "Kurz erklärt: Details folgen.";
 
   const cleaned = raw.replace(/\s*\[\+\d+\s+chars\]\s*$/i, "").trim();
   if (cleaned.length <= 140) return cleaned;
   return cleaned.slice(0, 137).trimEnd() + "…";
 }
+
 
 /* ✅ Backend-Karte: NICHT klickbar => <article> */
 function buildBackendLinkCard(a) {
@@ -908,3 +910,4 @@ document.addEventListener("DOMContentLoaded", async () => {
 
 </body>
 </html>
+
