@@ -6,237 +6,116 @@
   <title>KlaroNews – Artikel</title>
   <meta name="description" content="KlaroNews – kurz & klar." />
 
-  <!-- Fonts wie bei dir -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="icon" href="klaronews.png" type="image/png">
 
   <style>
-    :root {
-      --bg: #050505;
-      --bg-card: #111111;
-      --bg-card-soft: #181818;
-      --accent: #f9ff00;
-      --text: #ffffff;
-      --muted: #a3a3a3;
-      --border: #2b2b2b;
-      --radius-lg: 18px;
-      --radius-md: 12px;
-      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    :root{
+      --bg:#050505;--bg-card:#111111;--bg-card-soft:#181818;--accent:#f9ff00;
+      --text:#ffffff;--muted:#a3a3a3;--border:#2b2b2b;
+      --radius-lg:18px;--radius-md:12px;--shadow-soft:0 18px 40px rgba(0,0,0,0.45);
+    }
+    *{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{
+      background:radial-gradient(circle at top,#151515 0,#050505 45%,#000 100%);
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
+      line-height:1.55;min-height:100vh;
+    }
+    a{color:inherit;text-decoration:none}
+
+    .page{max-width:1120px;margin:0 auto;padding:20px 16px 48px}
+
+    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+    .logo-wrap{display:inline-flex;align-items:center;gap:10px}
+    .logo-box{
+      display:inline-flex;align-items:center;justify-content:center;
+      padding:8px 14px;border-radius:999px;background:#000;border:1px solid #202020;
+      box-shadow:0 0 0 1px rgba(255,255,255,0.02);
+    }
+    .logo-text-main{
+      font-family:"Montserrat",system-ui,sans-serif;font-weight:700;letter-spacing:.08em;
+      text-transform:uppercase;font-size:.86rem;
+    }
+    .logo-pill{width:20px;height:20px;background:var(--accent);border-radius:6px 6px 6px 0;margin-left:10px}
+    .logo-tagline{font-size:.78rem;color:var(--muted);margin-top:4px}
+
+    nav{display:flex;align-items:center;gap:10px;font-size:.9rem;flex-wrap:wrap;justify-content:flex-end}
+    .nav-link{padding:6px 10px;border-radius:999px;color:var(--muted);transition:.18s ease}
+    .nav-link:hover{color:var(--text);background:rgba(249,255,0,0.06)}
+    .nav-link.active{color:#000;background:var(--accent);font-weight:600}
+
+    .article-shell{
+      background:linear-gradient(145deg,#151515 0%,#060606 60%,#181818 100%);
+      border:1px solid rgba(255,255,255,0.03);
+      border-radius:var(--radius-lg);
+      box-shadow:var(--shadow-soft);
+      padding:22px;
+      position:relative;
+      overflow:hidden;
     }
 
-    * { box-sizing: border-box; margin: 0; padding: 0; }
-    html { scroll-behavior: smooth; }
-    body {
-      background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
-      color: var(--text);
-      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
-      line-height: 1.55;
-      min-height: 100vh;
+    .article-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
+    .chip{
+      display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
+      border:1px solid rgba(249,255,0,0.6);background:rgba(0,0,0,0.5);color:var(--accent);
+      font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;
     }
-    a { color: inherit; text-decoration: none; }
+    .chip-dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 3px rgba(249,255,0,0.25)}
+    .stand{font-size:.85rem;color:var(--muted);white-space:nowrap}
 
-    .page {
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 20px 16px 48px;
+    h1{
+      font-family:"Montserrat",system-ui,sans-serif;
+      font-size:2rem;line-height:1.15;margin-bottom:10px;
     }
+    .subline{color:var(--muted);font-size:1rem;margin-bottom:12px}
+    .lead{margin-bottom:16px;font-size:1rem}
 
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 22px;
-    }
-
-    .logo-wrap { display: inline-flex; align-items: center; gap: 10px; }
-    .logo-box {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: #000;
-      border: 1px solid #202020;
-      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
-    }
-    .logo-text-main {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      font-size: 0.86rem;
-    }
-    .logo-pill {
-      width: 20px; height: 20px;
-      background: var(--accent);
-      border-radius: 6px 6px 6px 0;
-      margin-left: 10px;
-    }
-    .logo-tagline { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-      font-size: 0.9rem;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-    }
-    .nav-link {
-      padding: 6px 10px;
-      border-radius: 999px;
+    .hint{
+      margin: 10px 0 16px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px dashed rgba(249,255,0,0.35);
+      background: rgba(0,0,0,0.25);
       color: var(--muted);
-      transition: 0.18s ease;
-    }
-    .nav-link:hover { color: var(--text); background: rgba(249,255,0,0.06); }
-    .nav-link.active { color: #000; background: var(--accent); font-weight: 600; }
-
-    /* Artikel-Box */
-    .article-shell {
-      background: linear-gradient(145deg, #151515 0%, #060606 60%, #181818 100%);
-      border: 1px solid rgba(255,255,255,0.03);
-      border-radius: var(--radius-lg);
-      box-shadow: var(--shadow-soft);
-      padding: 22px;
-      overflow: hidden;
-      position: relative;
+      font-size: .9rem;
     }
 
-    .article-top {
-      display: flex;
-      align-items: flex-start;
-      justify-content: space-between;
-      gap: 12px;
-      margin-bottom: 16px;
+    .block-title{margin-top:18px;margin-bottom:10px;font-weight:700;font-size:1.05rem}
+    ul.points{padding-left:18px;margin-bottom:8px}
+    ul.points li{margin:7px 0}
+
+    .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
+    .btn{
+      padding:9px 14px;border-radius:999px;border:1px solid var(--border);
+      background:transparent;color:var(--text);cursor:pointer;transition:.18s ease;font-size:.9rem;
+    }
+    .btn:hover{border-color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.03)}
+
+    .glow{
+      position:absolute;inset:auto -120px -130px auto;width:260px;height:260px;
+      background:radial-gradient(circle,rgba(249,255,0,0.22) 0,transparent 65%);
+      opacity:.9;pointer-events:none;
     }
 
-    .chip {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 7px 12px;
-      border-radius: 999px;
-      border: 1px solid rgba(249,255,0,0.6);
-      background: rgba(0,0,0,0.5);
-      color: var(--accent);
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      white-space: nowrap;
-    }
-    .chip-dot {
-      width: 8px; height: 8px;
-      border-radius: 999px;
-      background: var(--accent);
-      box-shadow: 0 0 0 3px rgba(249,255,0,0.25);
-    }
+    /* ✅ langes Zeug bricht sauber um */
+    .article-shell, h1, .subline, .lead, ul.points li { overflow-wrap:anywhere; word-break:break-word; }
 
-    .stand {
-      font-size: 0.85rem;
-      color: var(--muted);
-      white-space: nowrap;
+    footer{
+      margin-top:32px;padding-top:18px;border-top:1px solid #181818;
+      font-size:.76rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;
+      justify-content:space-between;align-items:center;
     }
-
-    h1 {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-size: 2.0rem;
-      line-height: 1.15;
-      margin-bottom: 10px;
-    }
-
-    .subline {
-      color: var(--muted);
-      font-size: 1.0rem;
-      margin-bottom: 18px;
-    }
-
-    .lead {
-      margin-bottom: 16px;
-      font-size: 1.0rem;
-    }
-
-    .block-title {
-      margin-top: 18px;
-      margin-bottom: 10px;
-      font-weight: 700;
-      font-size: 1.05rem;
-    }
-
-    ul.points {
-      padding-left: 18px;
-      color: var(--text);
-      margin-bottom: 8px;
-    }
-    ul.points li { margin: 6px 0; color: var(--text); }
-
-    .muted { color: var(--muted); }
-
-    .actions {
-      margin-top: 18px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .btn {
-      padding: 9px 14px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      background: transparent;
-      color: var(--text);
-      cursor: pointer;
-      transition: 0.18s ease;
-      font-size: 0.9rem;
-    }
-    .btn:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.03); }
-    .btn-primary {
-      background: var(--accent);
-      color: #000;
-      border: none;
-      font-weight: 700;
-    }
-    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
-
-    .glow {
-      position: absolute;
-      inset: auto -120px -130px auto;
-      width: 260px;
-      height: 260px;
-      background: radial-gradient(circle, rgba(249,255,0,0.22) 0, transparent 65%);
-      opacity: 0.9;
-      pointer-events: none;
-    }
-
-    /* ✅ WICHTIG: nix bricht mehr “komisch” ab */
-    .article-shell, .lead, .subline, ul.points li, h1 {
-      overflow-wrap: anywhere;
-      word-break: break-word;
-    }
-
-    footer {
-      margin-top: 32px;
-      padding-top: 18px;
-      border-top: 1px solid #181818;
-      font-size: 0.76rem;
-      color: var(--muted);
-      display: flex;
-      flex-wrap: wrap;
-      gap: 6px 18px;
-      justify-content: space-between;
-      align-items: center;
-    }
-
-    @media (max-width: 840px) {
-      header { flex-direction: column; align-items: flex-start; }
-      nav { justify-content: flex-start; }
-      h1 { font-size: 1.55rem; }
-      .article-shell { padding: 16px; }
-      .article-top { flex-direction: column; align-items: flex-start; }
-      .stand { white-space: normal; }
+    @media (max-width:840px){
+      header{flex-direction:column;align-items:flex-start}
+      nav{justify-content:flex-start}
+      h1{font-size:1.55rem}
+      .article-shell{padding:16px}
+      .article-top{flex-direction:column;align-items:flex-start}
+      .stand{white-space:normal}
     }
   </style>
 </head>
@@ -283,10 +162,7 @@ function esc(s=""){
     .replaceAll('"',"&quot;")
     .replaceAll("'","&#039;");
 }
-
-function getId(){
-  return new URLSearchParams(location.search).get("id");
-}
+function getId(){ return new URLSearchParams(location.search).get("id"); }
 
 function guessCategory(a){
   const t = ((a.title||"") + " " + (a.description||"")).toLowerCase();
@@ -299,24 +175,82 @@ function guessCategory(a){
   return "POLITIK";
 }
 
-/* ✅ FIX: keine künstlichen "…" mehr */
+/* ✅ Clean: schmeiß RSS/SEO-Müll raus */
+function cleanDescription(raw=""){
+  let s = String(raw).trim();
+
+  // typische RSS-Endings entfernen
+  s = s.replace(/\s*\[\+\d+\s+chars\]\s*$/i, "").trim();
+
+  // “einsortiert unter ...” & ähnliche Kategorie-Blöcke killen
+  s = s.replace(/Dieser Artikel wurde einsortiert.*$/i, "").trim();
+  s = s.replace(/Mehr zum Thema.*$/i, "").trim();
+
+  // Mehrfachspaces
+  s = s.replace(/\s+/g, " ").trim();
+
+  return s;
+}
+
+/* ✅ Erkenne ob dein Backend/RSS den Text schon abgeschnitten hat */
+function looksTruncated(s=""){
+  const t = String(s).trim();
+  if (!t) return false;
+  // endet auf ... oder … oder "Int..." (typischer Cut mitten im Wort)
+  return /(\.\.\.|…)$/.test(t) || /\b[A-Za-zÄÖÜäöüß]{1,4}\.\.\.$/.test(t);
+}
+
+/* ✅ Satz-Splitting ohne “Mini-Fragmente” */
+function splitSentences(text=""){
+  const t = String(text).trim();
+  if (!t) return [];
+
+  // split bei Satzende + Leerzeichen (besser als nur "." split)
+  const parts = t.split(/(?<=[\.\!\?])\s+/g).map(x => x.trim()).filter(Boolean);
+
+  // kurze Fragmente zusammenkleben
+  const merged = [];
+  for (const p of parts) {
+    if (!merged.length) { merged.push(p); continue; }
+    const last = merged[merged.length - 1];
+    if (p.length < 18) {
+      merged[merged.length - 1] = (last + " " + p).trim();
+    } else {
+      merged.push(p);
+    }
+  }
+
+  // filter: keine ultra kurzen bullets wie “Am 6”
+  return merged.filter(s => s.replace(/[^\p{L}\p{N}]/gu, "").length >= 18);
+}
+
+/* ✅ Sinnvolle Bullets: aus Sätzen, notfalls aus Titel */
 function makePoints(a){
-  const desc = (a.description || "").trim();
-  if (!desc) return [
-    "Worum es geht: Titel + Quelle checken.",
-    "Was neu ist: Was hat sich geändert?",
-    "Was jetzt wichtig ist: Timing & Auswirkungen."
-  ];
+  const title = String(a.title || "").trim();
+  const descClean = cleanDescription(a.description || "");
+  const sents = splitSentences(descClean);
 
-  const parts = desc
-    .split(/[\.\!\?]/)
-    .map(s => s.trim())
-    .filter(Boolean);
+  let bullets = [];
 
-  const picked = parts.slice(0, 5); // mehr Punkte möglich
-  while (picked.length < 3) picked.push("Mehr Kontext bekommst du über die Quelle/den Kontext.");
+  if (sents.length) {
+    bullets = sents.slice(0, 4);
+  }
 
-  return picked;
+  // fallback: aus Titel ein Bullet bauen, wenn Description mies/leer ist
+  if (bullets.length < 3 && title) {
+    const t = title.replace(/\s+/g, " ").trim();
+    bullets.push(`Worum es geht: ${t}`);
+  }
+
+  // immer mind. 3
+  while (bullets.length < 3) {
+    bullets.push("Kurzfazit: Details folgen, sobald mehr Kontext verfügbar ist.");
+  }
+
+  // doppelte raus
+  bullets = [...new Set(bullets)];
+
+  return bullets.slice(0, 4);
 }
 
 async function load(){
@@ -331,18 +265,18 @@ async function load(){
   }
 
   let articles = [];
-  try {
+  try{
     const res = await fetch(`${BACKEND}?_=${Date.now()}`, { cache:"no-store" });
     if (!res.ok) throw new Error(`Backend Fehler: ${res.status}`);
     const ct = (res.headers.get("content-type") || "").toLowerCase();
     if (!ct.includes("application/json")) throw new Error("Backend liefert kein JSON");
     articles = await res.json();
-  } catch (e) {
+  }catch(e){
     app.innerHTML = `
       <p class="muted">Fehler beim Laden: ${esc(e.message || "Backend down / CORS")}</p>
       <div class="actions">
         <button class="btn" onclick="location.href='index.html'">← Zurück</button>
-        <button class="btn btn-primary" onclick="location.reload()">Neu laden</button>
+        <button class="btn" onclick="location.reload()">Neu laden</button>
       </div>
       <div class="glow"></div>
     `;
@@ -350,7 +284,6 @@ async function load(){
   }
 
   const a = (Array.isArray(articles) ? articles : []).find(x => String(x.id) === String(id));
-
   if (!a){
     app.innerHTML = `<p class="muted">Artikel nicht gefunden. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p><div class="glow"></div>`;
     return;
@@ -358,7 +291,17 @@ async function load(){
 
   const chip = guessCategory(a);
   const stand = a.publishedAt ? new Date(a.publishedAt).toLocaleDateString("de-DE") : "—";
+  const descClean = cleanDescription(a.description || "");
+  const truncated = looksTruncated(descClean);
   const points = makePoints(a);
+
+  const leadHtml = descClean
+    ? `<p class="lead">${esc(descClean)}</p>`
+    : `<p class="lead muted">Keine Beschreibung verfügbar.</p>`;
+
+  const hintHtml = truncated
+    ? `<div class="hint">Hinweis: Die Beschreibung ist von der Quelle/Backend schon gekürzt. Für vollen Text musst du im Backend die komplette Beschreibung/Content speichern.</div>`
+    : ``;
 
   app.innerHTML = `
     <div class="article-top">
@@ -369,7 +312,8 @@ async function load(){
     <h1>${esc(a.title || "Ohne Titel")}</h1>
     <p class="subline">${esc(a.source ? `Quelle: ${a.source}` : "Quelle: —")}</p>
 
-    <p class="lead">${esc(a.description || "Keine Beschreibung verfügbar.")}</p>
+    ${leadHtml}
+    ${hintHtml}
 
     <div>
       <div class="block-title">Die wichtigsten Punkte</div>
