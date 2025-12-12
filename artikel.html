@@ -6,6 +6,7 @@
   <title>KlaroNews – Artikel</title>
   <meta name="description" content="KlaroNews – kurz & klar." />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
@@ -13,256 +14,290 @@
 
   <style>
     :root{
-      --bg:#050505;--bg-card:#111111;--bg-card-soft:#181818;--accent:#f9ff00;
-      --text:#ffffff;--muted:#a3a3a3;--border:#2b2b2b;
-      --radius-lg:18px;--shadow-soft:0 18px 40px rgba(0,0,0,0.45);
+      --bg:#050505;
+      --bg-card:#111111;
+      --accent:#f9ff00;
+      --text:#ffffff;
+      --muted:#a3a3a3;
+      --border:#2b2b2b;
+      --radius:18px;
+      --shadow:0 18px 40px rgba(0,0,0,0.45);
     }
+
     *{box-sizing:border-box;margin:0;padding:0}
+
     body{
       background:radial-gradient(circle at top,#151515 0,#050505 45%,#000 100%);
       color:var(--text);
       font-family:"Inter",system-ui,-apple-system,"Segoe UI",sans-serif;
-      line-height:1.55;min-height:100vh;
+      line-height:1.6;
+      min-height:100vh;
     }
+
     a{color:inherit;text-decoration:none}
 
-    .page{max-width:1120px;margin:0 auto;padding:20px 16px 48px}
+    .page{
+      max-width:1120px;
+      margin:0 auto;
+      padding:20px 16px 48px;
+    }
 
-    header{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:22px}
+    header{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      gap:12px;
+      margin-bottom:22px;
+    }
+
     .logo-box{
-      display:inline-flex;align-items:center;justify-content:center;
-      padding:8px 14px;border-radius:999px;background:#000;border:1px solid #202020;
-      box-shadow:0 0 0 1px rgba(255,255,255,0.02);
+      display:inline-flex;
+      align-items:center;
+      padding:8px 14px;
+      border-radius:999px;
+      background:#000;
+      border:1px solid #202020;
     }
-    .logo-text-main{
-      font-family:"Montserrat",system-ui,sans-serif;font-weight:700;letter-spacing:.08em;
-      text-transform:uppercase;font-size:.86rem;
+
+    .logo-text{
+      font-family:"Montserrat",sans-serif;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      font-size:.86rem;
     }
-    .logo-pill{width:20px;height:20px;background:var(--accent);border-radius:6px 6px 6px 0;margin-left:10px}
-    .logo-tagline{font-size:.78rem;color:var(--muted);margin-top:4px}
 
-    nav{display:flex;align-items:center;gap:10px;font-size:.9rem;flex-wrap:wrap;justify-content:flex-end}
-    .nav-link{padding:6px 10px;border-radius:999px;color:var(--muted);transition:.18s ease}
-    .nav-link:hover{color:var(--text);background:rgba(249,255,0,0.06)}
-    .nav-link.active{color:#000;background:var(--accent);font-weight:600}
+    .logo-pill{
+      width:20px;height:20px;
+      background:var(--accent);
+      border-radius:6px 6px 6px 0;
+      margin-left:10px;
+    }
 
-    .article-shell{
+    nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .nav-link{
+      padding:6px 10px;
+      border-radius:999px;
+      color:var(--muted);
+    }
+
+    .nav-link.active{
+      background:var(--accent);
+      color:#000;
+      font-weight:600;
+    }
+
+    /* Article */
+    .article{
       background:linear-gradient(145deg,#151515 0%,#060606 60%,#181818 100%);
       border:1px solid rgba(255,255,255,0.03);
-      border-radius:var(--radius-lg);
-      box-shadow:var(--shadow-soft);
+      border-radius:var(--radius);
+      box-shadow:var(--shadow);
       padding:22px;
       position:relative;
       overflow:hidden;
     }
 
-    .article-top{display:flex;align-items:flex-start;justify-content:space-between;gap:12px;margin-bottom:16px}
-    .chip{
-      display:inline-flex;align-items:center;gap:8px;padding:7px 12px;border-radius:999px;
-      border:1px solid rgba(249,255,0,0.6);background:rgba(0,0,0,0.5);color:var(--accent);
-      font-size:.78rem;text-transform:uppercase;letter-spacing:.1em;white-space:nowrap;
+    .article-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:14px;
+      flex-wrap:wrap;
     }
-    .chip-dot{width:8px;height:8px;border-radius:999px;background:var(--accent);box-shadow:0 0 0 3px rgba(249,255,0,0.25)}
-    .stand{font-size:.85rem;color:var(--muted);white-space:nowrap}
+
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:7px 12px;
+      border-radius:999px;
+      border:1px solid rgba(249,255,0,.6);
+      color:var(--accent);
+      font-size:.78rem;
+      letter-spacing:.1em;
+      text-transform:uppercase;
+    }
+
+    .chip-dot{
+      width:8px;height:8px;
+      border-radius:999px;
+      background:var(--accent);
+      box-shadow:0 0 0 3px rgba(249,255,0,.25);
+    }
+
+    .stand{
+      font-size:.85rem;
+      color:var(--muted);
+    }
 
     h1{
-      font-family:"Montserrat",system-ui,sans-serif;
-      font-size:2rem;line-height:1.15;margin-bottom:10px;
-      overflow-wrap:anywhere;word-break:break-word;
-    }
-    .subline{color:var(--muted);font-size:1rem;margin-bottom:14px}
-
-    .desc{
-      font-size:1.05rem;
-      color:var(--text);
-      opacity:.98;
-      max-width: 78ch;
-      overflow-wrap:anywhere;
+      font-family:"Montserrat",sans-serif;
+      font-size:2rem;
+      line-height:1.15;
+      margin-bottom:10px;
       word-break:break-word;
+      overflow-wrap:anywhere;
     }
-    .desc.muted{color:var(--muted);font-size:1rem}
 
-    .actions{margin-top:18px;display:flex;flex-wrap:wrap;gap:10px;align-items:center}
-    .btn{
-      padding:9px 14px;border-radius:999px;border:1px solid var(--border);
-      background:transparent;color:var(--text);cursor:pointer;transition:.18s ease;font-size:.9rem;
+    .source{
+      color:var(--muted);
+      font-size:1rem;
+      margin-bottom:14px;
     }
-    .btn:hover{border-color:rgba(255,255,255,0.35);background:rgba(255,255,255,0.03)}
+
+    .summary{
+      font-size:1.05rem;
+      max-width:75ch;
+      word-break:break-word;
+      overflow-wrap:anywhere;
+    }
+
+    .actions{
+      margin-top:20px;
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:9px 14px;
+      border-radius:999px;
+      border:1px solid var(--border);
+      background:transparent;
+      color:var(--text);
+      cursor:pointer;
+      font-size:.9rem;
+    }
+
+    .btn:hover{
+      border-color:rgba(255,255,255,.35);
+      background:rgba(255,255,255,.03);
+    }
 
     .glow{
-      position:absolute;inset:auto -120px -130px auto;width:260px;height:260px;
-      background:radial-gradient(circle,rgba(249,255,0,0.22) 0,transparent 65%);
-      opacity:.9;pointer-events:none;
+      position:absolute;
+      inset:auto -120px -130px auto;
+      width:260px;
+      height:260px;
+      background:radial-gradient(circle,rgba(249,255,0,.22) 0,transparent 65%);
+      opacity:.9;
+      pointer-events:none;
     }
 
     footer{
-      margin-top:32px;padding-top:18px;border-top:1px solid #181818;
-      font-size:.76rem;color:var(--muted);display:flex;flex-wrap:wrap;gap:6px 18px;
-      justify-content:space-between;align-items:center;
+      margin-top:32px;
+      padding-top:18px;
+      border-top:1px solid #181818;
+      font-size:.76rem;
+      color:var(--muted);
+      display:flex;
+      justify-content:space-between;
+      flex-wrap:wrap;
+      gap:8px;
     }
-    @media (max-width:840px){
+
+    @media(max-width:840px){
       header{flex-direction:column;align-items:flex-start}
-      nav{justify-content:flex-start}
       h1{font-size:1.55rem}
-      .article-shell{padding:16px}
-      .article-top{flex-direction:column;align-items:flex-start}
-      .stand{white-space:normal}
-      .desc{max-width: 100%}
+      .article{padding:16px}
+      .summary{max-width:100%}
     }
   </style>
 </head>
 
 <body>
-  <div class="page">
-    <header>
-      <div>
-        <div class="logo-box">
-          <span class="logo-text-main">KLARONEWS</span>
-          <span class="logo-pill"></span>
-        </div>
-        <div class="logo-tagline">News, kurz &amp; klar</div>
+<div class="page">
+
+  <header>
+    <div>
+      <div class="logo-box">
+        <span class="logo-text">KLARONEWS</span>
+        <span class="logo-pill"></span>
       </div>
+    </div>
 
-      <nav>
-        <a class="nav-link" href="index.html">Heute</a>
-        <a class="nav-link" href="index.html#politik">Themen</a>
-        <a class="nav-link active" href="#">Artikel</a>
-      </nav>
-    </header>
+    <nav>
+      <a class="nav-link" href="index.html">Heute</a>
+      <a class="nav-link" href="index.html#politik">Themen</a>
+      <a class="nav-link active" href="#">Artikel</a>
+    </nav>
+  </header>
 
-    <main class="article-shell" id="app">
-      <p class="desc muted">Lädt…</p>
-      <div class="glow"></div>
-    </main>
+  <main class="article" id="app">
+    <p class="summary" style="color:var(--muted)">Lädt…</p>
+    <div class="glow"></div>
+  </main>
 
-    <footer>
-      <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
-      <span>Kurz &amp; klar – für deinen Alltag.</span>
-    </footer>
-  </div>
+  <footer>
+    <span>© <span id="year"></span> KlaroNews</span>
+    <span>Kurz & klar – für deinen Alltag</span>
+  </footer>
+
+</div>
 
 <script>
 const BACKEND = "https://backendklaronews.onrender.com/api/articles";
 
-function esc(s=""){
-  return String(s)
-    .replaceAll("&","&amp;")
-    .replaceAll("<","&lt;")
-    .replaceAll(">","&gt;")
-    .replaceAll('"',"&quot;")
-    .replaceAll("'","&#039;");
-}
+const esc = s => String(s ?? "")
+  .replaceAll("&","&amp;")
+  .replaceAll("<","&lt;")
+  .replaceAll(">","&gt;")
+  .replaceAll('"',"&quot;")
+  .replaceAll("'","&#039;");
 
-function getId(){ return new URLSearchParams(location.search).get("id"); }
+const getId = () => new URLSearchParams(location.search).get("id");
 
 function guessCategory(a){
-  const t = ((a.title||"") + " " + (a.description||"")).toLowerCase();
-  if (t.includes("miete") || t.includes("inflation") || t.includes("wirtschaft") || t.includes("börse") || t.includes("zins")) return "WIRTSCHAFT";
-  if (t.includes("schule") || t.includes("bildung") || t.includes("unterricht") || t.includes("kultus")) return "BILDUNG";
-  if (t.includes("gesund") || t.includes("arzt") || t.includes("virus") || t.includes("infekt") || t.includes("impf")) return "GESUNDHEIT";
-  if (t.includes("hack") || t.includes("lücke") || t.includes("daten") || t.includes("ki") || t.includes("openai") || t.includes("cyber")) return "TECH";
-  if (t.includes("bahn") || t.includes("streik") || t.includes("deutschland")) return "DEUTSCHLAND";
-  if (t.includes("krieg") || t.includes("nahost") || t.includes("ukraine") || t.includes("un") || t.includes("welt")) return "WELT";
+  const t = ((a.title||"")+" "+(a.summary||"")).toLowerCase();
+  if (t.includes("wirtschaft")||t.includes("inflation")) return "WIRTSCHAFT";
+  if (t.includes("schule")||t.includes("bildung")) return "BILDUNG";
+  if (t.includes("gesund")||t.includes("virus")) return "GESUNDHEIT";
+  if (t.includes("ki")||t.includes("daten")) return "TECH";
+  if (t.includes("krieg")||t.includes("welt")) return "WELT";
   return "POLITIK";
-}
-
-/* ✅ Reinigung: RSS/SEO-Müll raus, schöne Sätze */
-function cleanText(raw=""){
-  let s = String(raw || "").trim();
-
-  // typisch RSS:
-  s = s.replace(/\s*\[\+\d+\s+chars\]\s*$/i, "").trim();
-
-  // “einsortiert unter ...” killen
-  s = s.replace(/Dieser Artikel wurde einsortiert.*$/i, "").trim();
-
-  // Mehrfachspaces
-  s = s.replace(/\s+/g, " ").trim();
-
-  return s;
-}
-
-/* ✅ Ultra-kurz: 1–2 Sätze, max Zeichen, aber ohne “komische” Cuts */
-function shortDescription(a){
-  const title = String(a?.title || "").trim();
-  const raw = cleanText(a?.description || a?.snippet || "");
-
-  // wenn gar nix da ist:
-  if (!raw) return "Noch keine Kurzbeschreibung verfügbar.";
-
-  // Satzweise splitten
-  const sentences = raw.split(/(?<=[\.\!\?])\s+/g).map(x => x.trim()).filter(Boolean);
-
-  // 1–2 Sätze
-  let s = sentences.slice(0, 2).join(" ").trim();
-
-  // harte Limits (damit es nie “endlos” wird)
-  const MAX = 220;
-
-  // Wenn Backend schon “.../…” hat, schneiden wir NICHT weiter – nur säubern
-  if (/(\.\.\.|…)$/.test(s)) return s;
-
-  if (s.length > MAX) {
-    s = s.slice(0, MAX);
-
-    // nicht mitten im Wort enden
-    s = s.replace(/\s+\S*$/, "").trim();
-
-    // Satz sauber beenden
-    if (!/[.!?]$/.test(s)) s += "…";
-  }
-
-  // Falls es leer/komisch kurz ist, fallback auf Titel
-  if (s.length < 20 && title) return `Kurz: ${title}`;
-
-  return s;
 }
 
 async function load(){
   document.getElementById("year").textContent = new Date().getFullYear();
-
   const id = getId();
   const app = document.getElementById("app");
 
-  if (!id){
-    app.innerHTML = `
-      <p class="desc muted">Kein Artikel gewählt. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p>
-      <div class="glow"></div>
-    `;
+  if(!id){
+    app.innerHTML = `<p class="summary" style="color:var(--muted)">Kein Artikel gewählt.</p>`;
     return;
   }
 
-  let articles = [];
+  let articles=[];
   try{
-    const res = await fetch(`${BACKEND}?_=${Date.now()}`, { cache:"no-store" });
-    if (!res.ok) throw new Error(`Backend Fehler: ${res.status}`);
-    const ct = (res.headers.get("content-type") || "").toLowerCase();
-    if (!ct.includes("application/json")) throw new Error("Backend liefert kein JSON");
+    const res = await fetch(`${BACKEND}?_=${Date.now()}`,{cache:"no-store"});
     articles = await res.json();
-  }catch(e){
-    app.innerHTML = `
-      <p class="desc muted">Fehler beim Laden: ${esc(e.message || "Backend down / CORS")}</p>
-      <div class="actions">
-        <button class="btn" onclick="location.href='index.html'">← Zurück</button>
-        <button class="btn" onclick="location.reload()">Neu laden</button>
-      </div>
-      <div class="glow"></div>
-    `;
+  }catch{
+    app.innerHTML = `<p class="summary" style="color:var(--muted)">Backend nicht erreichbar.</p>`;
     return;
   }
 
-  const a = (Array.isArray(articles) ? articles : []).find(x => String(x.id) === String(id));
-  if (!a){
-    app.innerHTML = `
-      <p class="desc muted">Artikel nicht gefunden. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p>
-      <div class="glow"></div>
-    `;
+  const a = articles.find(x=>String(x.id)===String(id));
+  if(!a){
+    app.innerHTML = `<p class="summary" style="color:var(--muted)">Artikel nicht gefunden.</p>`;
     return;
   }
 
   const chip = guessCategory(a);
-  const stand = a.publishedAt ? new Date(a.publishedAt).toLocaleDateString("de-DE") : "—";
-  const desc = shortDescription(a);
+  const stand = a.publishedAt
+    ? new Date(a.publishedAt).toLocaleDateString("de-DE")
+    : "—";
+
+  const text =
+    (a.summary && a.summary.trim())
+      ? a.summary.trim()
+      : "Kurzupdate: Weitere Details folgen.";
 
   app.innerHTML = `
     <div class="article-top">
@@ -271,12 +306,12 @@ async function load(){
     </div>
 
     <h1>${esc(a.title || "Ohne Titel")}</h1>
-    <p class="subline">${esc(a.source ? `Quelle: ${a.source}` : "Quelle: —")}</p>
+    <div class="source">${esc(a.source ? "Quelle: "+a.source : "Quelle: —")}</div>
 
-    <p class="desc">${esc(desc)}</p>
+    <p class="summary">${esc(text)}</p>
 
     <div class="actions">
-      <button class="btn" onclick="history.length > 1 ? history.back() : (location.href='index.html')">← Zurück</button>
+      <button class="btn" onclick="history.back()">← Zurück</button>
     </div>
 
     <div class="glow"></div>
