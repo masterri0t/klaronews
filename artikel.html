@@ -201,8 +201,6 @@
     }
     .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
 
-    .source a { color: var(--accent); text-decoration: underline; }
-
     .glow {
       position: absolute;
       inset: auto -120px -130px auto;
@@ -211,6 +209,12 @@
       background: radial-gradient(circle, rgba(249,255,0,0.22) 0, transparent 65%);
       opacity: 0.9;
       pointer-events: none;
+    }
+
+    /* ✅ WICHTIG: nix bricht mehr “komisch” ab */
+    .article-shell, .lead, .subline, ul.points li, h1 {
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     footer {
@@ -231,6 +235,8 @@
       nav { justify-content: flex-start; }
       h1 { font-size: 1.55rem; }
       .article-shell { padding: 16px; }
+      .article-top { flex-direction: column; align-items: flex-start; }
+      .stand { white-space: normal; }
     }
   </style>
 </head>
@@ -293,6 +299,7 @@ function guessCategory(a){
   return "POLITIK";
 }
 
+/* ✅ FIX: keine künstlichen "…" mehr */
 function makePoints(a){
   const desc = (a.description || "").trim();
   if (!desc) return [
@@ -304,12 +311,12 @@ function makePoints(a){
   const parts = desc
     .split(/[\.\!\?]/)
     .map(s => s.trim())
-    .filter(Boolean)
-    .slice(0, 3);
+    .filter(Boolean);
 
-  while (parts.length < 3) parts.push("Mehr Kontext bekommst du über die Originalquelle unten.");
+  const picked = parts.slice(0, 5); // mehr Punkte möglich
+  while (picked.length < 3) picked.push("Mehr Kontext bekommst du über die Quelle/den Kontext.");
 
-  return parts.map(p => p.length > 90 ? p.slice(0, 90) + "…" : p);
+  return picked;
 }
 
 async function load(){
@@ -323,11 +330,26 @@ async function load(){
     return;
   }
 
-  const res = await fetch(BACKEND, { cache:"no-store" });
-  const articles = await res.json();
+  let articles = [];
+  try {
+    const res = await fetch(`${BACKEND}?_=${Date.now()}`, { cache:"no-store" });
+    if (!res.ok) throw new Error(`Backend Fehler: ${res.status}`);
+    const ct = (res.headers.get("content-type") || "").toLowerCase();
+    if (!ct.includes("application/json")) throw new Error("Backend liefert kein JSON");
+    articles = await res.json();
+  } catch (e) {
+    app.innerHTML = `
+      <p class="muted">Fehler beim Laden: ${esc(e.message || "Backend down / CORS")}</p>
+      <div class="actions">
+        <button class="btn" onclick="location.href='index.html'">← Zurück</button>
+        <button class="btn btn-primary" onclick="location.reload()">Neu laden</button>
+      </div>
+      <div class="glow"></div>
+    `;
+    return;
+  }
 
-  // id ist in URL ein String -> sicher vergleichen
-  const a = articles.find(x => String(x.id) === String(id));
+  const a = (Array.isArray(articles) ? articles : []).find(x => String(x.id) === String(id));
 
   if (!a){
     app.innerHTML = `<p class="muted">Artikel nicht gefunden. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p><div class="glow"></div>`;
@@ -358,16 +380,13 @@ async function load(){
 
     <div class="actions">
       <button class="btn" onclick="history.length > 1 ? history.back() : (location.href='index.html')">← Zurück</button>
-     
     </div>
 
     <div class="glow"></div>
   `;
 }
 
-load().catch(() => {
-  document.getElementById("app").innerHTML = `<p class="muted">Fehler beim Laden. Bitte später nochmal.</p><div class="glow"></div>`;
-});
+load();
 </script>
 </body>
 </html>
