@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>KlaroNews – Artikel</title>
+  <meta name="description" content="KlaroNews – kurz & klar." />
+
+  <!-- Fonts wie bei dir -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" href="klaronews.png" type="image/png">
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-card: #111111;
+      --bg-card-soft: #181818;
+      --accent: #f9ff00;
+      --text: #ffffff;
+      --muted: #a3a3a3;
+      --border: #2b2b2b;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+      line-height: 1.55;
+      min-height: 100vh;
+    }
+    a { color: inherit; text-decoration: none; }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 22px;
+    }
+
+    .logo-wrap { display: inline-flex; align-items: center; gap: 10px; }
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid #202020;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+    }
+    .logo-text-main {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+    .logo-pill {
+      width: 20px; height: 20px;
+      background: var(--accent);
+      border-radius: 6px 6px 6px 0;
+      margin-left: 10px;
+    }
+    .logo-tagline { font-size: 0.78rem; color: var(--muted); margin-top: 4px; }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 0.9rem;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 0.18s ease;
+    }
+    .nav-link:hover { color: var(--text); background: rgba(249,255,0,0.06); }
+    .nav-link.active { color: #000; background: var(--accent); font-weight: 600; }
+
+    /* Artikel-Box */
+    .article-shell {
+      background: linear-gradient(145deg, #151515 0%, #060606 60%, #181818 100%);
+      border: 1px solid rgba(255,255,255,0.03);
+      border-radius: var(--radius-lg);
+      box-shadow: var(--shadow-soft);
+      padding: 22px;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .article-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(249,255,0,0.6);
+      background: rgba(0,0,0,0.5);
+      color: var(--accent);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      white-space: nowrap;
+    }
+    .chip-dot {
+      width: 8px; height: 8px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(249,255,0,0.25);
+    }
+
+    .stand {
+      font-size: 0.85rem;
+      color: var(--muted);
+      white-space: nowrap;
+    }
+
+    h1 {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 2.0rem;
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .subline {
+      color: var(--muted);
+      font-size: 1.0rem;
+      margin-bottom: 18px;
+    }
+
+    .lead {
+      margin-bottom: 16px;
+      font-size: 1.0rem;
+    }
+
+    .block-title {
+      margin-top: 18px;
+      margin-bottom: 10px;
+      font-weight: 700;
+      font-size: 1.05rem;
+    }
+
+    ul.points {
+      padding-left: 18px;
+      color: var(--text);
+      margin-bottom: 8px;
+    }
+    ul.points li { margin: 6px 0; color: var(--text); }
+
+    .muted { color: var(--muted); }
+
+    .actions {
+      margin-top: 18px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+    }
+
+    .btn {
+      padding: 9px 14px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--text);
+      cursor: pointer;
+      transition: 0.18s ease;
+      font-size: 0.9rem;
+    }
+    .btn:hover { border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.03); }
+    .btn-primary {
+      background: var(--accent);
+      color: #000;
+      border: none;
+      font-weight: 700;
+    }
+    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); }
+
+    .source a { color: var(--accent); text-decoration: underline; }
+
+    .glow {
+      position: absolute;
+      inset: auto -120px -130px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(249,255,0,0.22) 0, transparent 65%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid #181818;
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      header { flex-direction: column; align-items: flex-start; }
+      nav { justify-content: flex-start; }
+      h1 { font-size: 1.55rem; }
+      .article-shell { padding: 16px; }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="page">
+    <header>
+      <div class="logo-wrap">
+        <div>
+          <div class="logo-box">
+            <span class="logo-text-main">KLARONEWS</span>
+            <span class="logo-pill"></span>
+          </div>
+          <div class="logo-tagline">News, kurz &amp; klar</div>
+        </div>
+      </div>
+
+      <nav>
+        <a class="nav-link" href="index.html">Heute</a>
+        <a class="nav-link" href="index.html#politik">Themen</a>
+        <a class="nav-link active" href="#">Artikel</a>
+      </nav>
+    </header>
+
+    <main class="article-shell" id="app">
+      <p class="muted">Lädt…</p>
+      <div class="glow"></div>
+    </main>
+
+    <footer>
+      <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+      <span>Kurz &amp; klar – für deinen Alltag.</span>
+    </footer>
+  </div>
+
+<script>
+const BACKEND = "https://backendklaronews.onrender.com/api/articles";
+
+function esc(s=""){
+  return String(s)
+    .replaceAll("&","&amp;")
+    .replaceAll("<","&lt;")
+    .replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;")
+    .replaceAll("'","&#039;");
+}
+
+function getId(){
+  return new URLSearchParams(location.search).get("id");
+}
+
+function guessCategory(a){
+  const t = ((a.title||"") + " " + (a.description||"")).toLowerCase();
+  if (t.includes("miete") || t.includes("inflation") || t.includes("wirtschaft") || t.includes("börse") || t.includes("zins")) return "WIRTSCHAFT";
+  if (t.includes("schule") || t.includes("bildung") || t.includes("unterricht") || t.includes("kultus")) return "BILDUNG";
+  if (t.includes("gesund") || t.includes("arzt") || t.includes("virus") || t.includes("infekt") || t.includes("impf")) return "GESUNDHEIT";
+  if (t.includes("hack") || t.includes("lücke") || t.includes("daten") || t.includes("ki") || t.includes("openai") || t.includes("cyber")) return "TECH";
+  if (t.includes("bahn") || t.includes("streik") || t.includes("deutschland")) return "DEUTSCHLAND";
+  if (t.includes("krieg") || t.includes("nahost") || t.includes("ukraine") || t.includes("un") || t.includes("welt")) return "WELT";
+  return "POLITIK";
+}
+
+function makePoints(a){
+  const desc = (a.description || "").trim();
+  if (!desc) return [
+    "Worum es geht: Titel + Quelle checken.",
+    "Was neu ist: Was hat sich geändert?",
+    "Was jetzt wichtig ist: Timing & Auswirkungen."
+  ];
+
+  const parts = desc
+    .split(/[\.\!\?]/)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .slice(0, 3);
+
+  while (parts.length < 3) parts.push("Mehr Kontext bekommst du über die Originalquelle unten.");
+
+  return parts.map(p => p.length > 90 ? p.slice(0, 90) + "…" : p);
+}
+
+async function load(){
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const id = getId();
+  const app = document.getElementById("app");
+
+  if (!id){
+    app.innerHTML = `<p class="muted">Kein Artikel gewählt. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p><div class="glow"></div>`;
+    return;
+  }
+
+  const res = await fetch(BACKEND, { cache:"no-store" });
+  const articles = await res.json();
+
+  // id ist in URL ein String -> sicher vergleichen
+  const a = articles.find(x => String(x.id) === String(id));
+
+  if (!a){
+    app.innerHTML = `<p class="muted">Artikel nicht gefunden. <a href="index.html" style="text-decoration:underline;color:#f9ff00">Zurück</a></p><div class="glow"></div>`;
+    return;
+  }
+
+  const chip = guessCategory(a);
+  const stand = a.publishedAt ? new Date(a.publishedAt).toLocaleDateString("de-DE") : "—";
+  const points = makePoints(a);
+
+  app.innerHTML = `
+    <div class="article-top">
+      <div class="chip"><span class="chip-dot"></span><span>${esc(chip)}</span></div>
+      <div class="stand">Stand: ${esc(stand)}</div>
+    </div>
+
+    <h1>${esc(a.title || "Ohne Titel")}</h1>
+    <p class="subline">${esc(a.source ? `Quelle: ${a.source}` : "Quelle: —")}</p>
+
+    <p class="lead">${esc(a.description || "Keine Beschreibung verfügbar.")}</p>
+
+    <div>
+      <div class="block-title">Die wichtigsten Punkte</div>
+      <ul class="points">
+        ${points.map(p => `<li>${esc(p)}</li>`).join("")}
+      </ul>
+    </div>
+
+    <div class="actions">
+      <button class="btn" onclick="history.length > 1 ? history.back() : (location.href='index.html')">← Zurück</button>
+     
+    </div>
+
+    <div class="glow"></div>
+  `;
+}
+
+load().catch(() => {
+  document.getElementById("app").innerHTML = `<p class="muted">Fehler beim Laden. Bitte später nochmal.</p><div class="glow"></div>`;
+});
+</script>
+</body>
+</html>
