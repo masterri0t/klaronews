@@ -10,7 +10,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
- <link rel="icon" href="klaronews.png" type="image/png"> 
+  <link rel="icon" href="klaronews.png" type="image/png">
+
   <!-- Favicon / PWA -->
   <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
   <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -33,15 +34,8 @@
       --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
 
     body {
       background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
@@ -51,10 +45,7 @@
       min-height: 100vh;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
+    a { color: inherit; text-decoration: none; }
 
     .page {
       max-width: 1120px;
@@ -62,7 +53,6 @@
       padding: 20px 16px 48px;
     }
 
-    /* Header / Nav */
     header {
       display: flex;
       align-items: center;
@@ -71,11 +61,7 @@
       margin-bottom: 26px;
     }
 
-    .logo-wrap {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-    }
+    .logo-wrap { display: inline-flex; align-items: center; gap: 10px; }
 
     .logo-box {
       display: inline-flex;
@@ -104,17 +90,9 @@
       margin-left: 10px;
     }
 
-    .logo-tagline {
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
+    .logo-tagline { font-size: 0.78rem; color: var(--muted); }
 
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 16px;
-      font-size: 0.9rem;
-    }
+    nav { display: flex; align-items: center; gap: 16px; font-size: 0.9rem; }
 
     .nav-link {
       padding: 6px 10px;
@@ -122,17 +100,8 @@
       color: var(--muted);
       transition: 0.18s ease;
     }
-
-    .nav-link:hover {
-      color: var(--text);
-      background: rgba(249,255,0,0.06);
-    }
-
-    .nav-link.active {
-      color: #000;
-      background: var(--accent);
-      font-weight: 600;
-    }
+    .nav-link:hover { color: var(--text); background: rgba(249,255,0,0.06); }
+    .nav-link.active { color: #000; background: var(--accent); font-weight: 600; }
 
     .nav-cta {
       padding: 7px 12px;
@@ -144,13 +113,8 @@
       background: rgba(0,0,0,0.35);
       transition: 0.18s ease;
     }
+    .nav-cta:hover { background: rgba(249,255,0,0.1); border-color: rgba(249,255,0,0.6); }
 
-    .nav-cta:hover {
-      background: rgba(249,255,0,0.1);
-      border-color: rgba(249,255,0,0.6);
-    }
-
-    /* Layout: Hero + Sidebar */
     .layout {
       display: grid;
       grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.1fr);
@@ -158,21 +122,11 @@
     }
 
     @media (max-width: 840px) {
-      .layout {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      nav {
-        width: 100%;
-        justify-content: space-between;
-        flex-wrap: wrap;
-      }
+      .layout { grid-template-columns: minmax(0, 1fr); }
+      header { flex-direction: column; align-items: flex-start; }
+      nav { width: 100%; justify-content: space-between; flex-wrap: wrap; }
     }
 
-    /* Hero Card */
     .hero-card {
       position: relative;
       padding: 20px 20px 18px;
@@ -213,31 +167,11 @@
       box-shadow: 0 0 0 3px rgba(249,255,0,0.35);
     }
 
-    .hero-meta {
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
+    .hero-meta { font-size: 0.75rem; color: var(--muted); }
+    .hero-title { font-family: "Montserrat", system-ui, sans-serif; font-size: 1.6rem; line-height: 1.18; margin-bottom: 10px; }
+    .hero-subtitle { font-size: 0.95rem; color: var(--muted); margin-bottom: 18px; }
 
-    .hero-title {
-      font-family: "Montserrat", system-ui, sans-serif;
-      font-size: 1.6rem;
-      line-height: 1.18;
-      margin-bottom: 10px;
-    }
-
-    .hero-subtitle {
-      font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 18px;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      gap: 10px;
-      margin-bottom: 10px;
-    }
+    .hero-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 10px; }
 
     .btn-primary {
       padding: 8px 14px;
@@ -250,17 +184,8 @@
       cursor: pointer;
       transition: 0.18s ease;
     }
-
-    .btn-primary:hover {
-      filter: brightness(1.05);
-      transform: translateY(-1px);
-      box-shadow: 0 12px 24px rgba(249,255,0,0.25);
-    }
-
-    .btn-primary.btn-error {
-      background: #ff3b3b;
-      color: #ffffff;
-    }
+    .btn-primary:hover { filter: brightness(1.05); transform: translateY(-1px); box-shadow: 0 12px 24px rgba(249,255,0,0.25); }
+    .btn-primary.btn-error { background: #ff3b3b; color: #ffffff; }
 
     .btn-ghost {
       padding: 8px 12px;
@@ -275,27 +200,10 @@
       gap: 6px;
       transition: 0.18s ease;
     }
+    .btn-ghost:hover { border-color: rgba(255,255,255,0.3); color: var(--text); background: rgba(255,255,255,0.02); }
 
-    .btn-ghost:hover {
-      border-color: rgba(255,255,255,0.3);
-      color: var(--text);
-      background: rgba(255,255,255,0.02);
-    }
-
-    .hero-tags {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-top: 4px;
-    }
-
-    .tag {
-      padding: 4px 9px;
-      border-radius: 999px;
-      border: 1px solid var(--border);
-      font-size: 0.72rem;
-      color: var(--muted);
-    }
+    .hero-tags { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 4px; }
+    .tag { padding: 4px 9px; border-radius: 999px; border: 1px solid var(--border); font-size: 0.72rem; color: var(--muted); }
 
     .hero-highlight {
       position: absolute;
@@ -307,7 +215,6 @@
       pointer-events: none;
     }
 
-    /* Article Grid */
     .section-title {
       font-size: 0.92rem;
       text-transform: uppercase;
@@ -333,43 +240,18 @@
       flex-direction: column;
       gap: 6px;
     }
-
     .article-card:hover {
       transform: translateY(-2px);
       border-color: rgba(249,255,0,0.45);
       box-shadow: 0 12px 24px rgba(0,0,0,0.55);
     }
 
-    .article-chip-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 8px;
-    }
+    .article-chip-row { display: flex; justify-content: space-between; align-items: center; gap: 8px; }
+    .article-chip { font-size: 0.72rem; color: var(--muted); text-transform: uppercase; letter-spacing: 0.11em; }
+    .article-time { font-size: 0.7rem; color: var(--muted); }
+    .article-title { font-size: 0.98rem; font-weight: 600; }
+    .article-desc { font-size: 0.83rem; color: var(--muted); }
 
-    .article-chip {
-      font-size: 0.72rem;
-      color: var(--muted);
-      text-transform: uppercase;
-      letter-spacing: 0.11em;
-    }
-
-    .article-time {
-      font-size: 0.7rem;
-      color: var(--muted);
-    }
-
-    .article-title {
-      font-size: 0.98rem;
-      font-weight: 600;
-    }
-
-    .article-desc {
-      font-size: 0.83rem;
-      color: var(--muted);
-    }
-
-    /* Sidebar */
     .sidebar-card {
       background: var(--bg-card-soft);
       border-radius: var(--radius-lg);
@@ -386,53 +268,17 @@
       margin-bottom: 10px;
     }
 
-    .sidebar-list {
-      list-style: none;
-    }
+    .sidebar-list { list-style: none; }
+    .sidebar-item { padding: 9px 0; border-bottom: 1px dashed #292929; }
+    .sidebar-item:last-child { border-bottom: none; }
+    .sidebar-link { display: block; }
+    .sidebar-link-title { font-size: 0.86rem; }
+    .sidebar-link-sub { font-size: 0.74rem; color: var(--muted); }
+    .sidebar-item:hover .sidebar-link-title { text-decoration: underline; }
 
-    .sidebar-item {
-      padding: 9px 0;
-      border-bottom: 1px dashed #292929;
-    }
-
-    .sidebar-item:last-child {
-      border-bottom: none;
-    }
-
-    .sidebar-link {
-      display: block;
-    }
-
-    .sidebar-link-title {
-      font-size: 0.86rem;
-    }
-
-    .sidebar-link-sub {
-      font-size: 0.74rem;
-      color: var(--muted);
-    }
-
-    .sidebar-item:hover .sidebar-link-title {
-      text-decoration: underline;
-    }
-
-    .newsletter {
-      margin-top: 18px;
-      padding-top: 12px;
-      border-top: 1px solid #292929;
-    }
-
-    .newsletter p {
-      font-size: 0.84rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .newsletter-form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
+    .newsletter { margin-top: 18px; padding-top: 12px; border-top: 1px solid #292929; }
+    .newsletter p { font-size: 0.84rem; color: var(--muted); margin-bottom: 10px; }
+    .newsletter-form { display: flex; flex-wrap: wrap; gap: 8px; }
 
     .newsletter-input {
       flex: 1 1 140px;
@@ -444,10 +290,7 @@
       font-size: 0.82rem;
       outline: none;
     }
-
-    .newsletter-input::placeholder {
-      color: #555;
-    }
+    .newsletter-input::placeholder { color: #555; }
 
     .newsletter-button {
       padding: 8px 13px;
@@ -461,135 +304,39 @@
       white-space: nowrap;
       transition: 0.18s ease;
     }
+    .newsletter-button:hover { filter: brightness(1.05); }
 
-    .newsletter-button:hover {
-      filter: brightness(1.05);
-    }
-
-    /* Tablet-Optimierung */
     @media (max-width: 900px) {
-      .page {
-        padding: 16px 12px 32px;
-      }
-
-      header {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-      }
-
-      nav {
-        width: 100%;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-        gap: 8px;
-      }
-
-      .nav-link,
-      .nav-cta {
-        font-size: 0.82rem;
-        padding: 6px 10px;
-      }
-
-      .layout {
-        grid-template-columns: 1fr;
-        gap: 18px;
-      }
-
-      .hero-card {
-        padding: 16px 14px 16px;
-      }
-
-      .hero-title {
-        font-size: 1.35rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.9rem;
-      }
-
-      .articles-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .sidebar-card {
-        margin-top: 6px;
-      }
+      .page { padding: 16px 12px 32px; }
+      header { flex-direction: column; align-items: flex-start; gap: 10px; }
+      nav { width: 100%; justify-content: flex-start; flex-wrap: wrap; gap: 8px; }
+      .nav-link, .nav-cta { font-size: 0.82rem; padding: 6px 10px; }
+      .layout { grid-template-columns: 1fr; gap: 18px; }
+      .hero-card { padding: 16px 14px 16px; }
+      .hero-title { font-size: 1.35rem; }
+      .hero-subtitle { font-size: 0.9rem; }
+      .articles-grid { grid-template-columns: minmax(0, 1fr); }
+      .sidebar-card { margin-top: 6px; }
     }
 
-    /* Handy-Optimierung */
     @media (max-width: 600px) {
-      .logo-box {
-        padding: 7px 12px;
-      }
-
-      .logo-text-main {
-        font-size: 0.78rem;
-      }
-
-      .logo-tagline {
-        font-size: 0.7rem;
-      }
-
-      nav {
-        gap: 6px;
-      }
-
-      .nav-link,
-      .nav-cta {
-        padding: 5px 9px;
-        font-size: 0.78rem;
-      }
-
-      .hero-label-row {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 6px;
-      }
-
-      .hero-title {
-        font-size: 1.25rem;
-      }
-
-      .hero-subtitle {
-        font-size: 0.86rem;
-      }
-
-      .hero-actions {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .btn-primary,
-      .btn-ghost {
-        width: 100%;
-        justify-content: center;
-      }
-
-      .article-card {
-        padding: 12px 12px 10px;
-      }
-
-      .article-title {
-        font-size: 0.94rem;
-      }
-
-      .article-desc {
-        font-size: 0.8rem;
-      }
-
-      .sidebar-card {
-        padding: 14px 12px 12px;
-      }
-
-      footer {
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 8px;
-      }
+      .logo-box { padding: 7px 12px; }
+      .logo-text-main { font-size: 0.78rem; }
+      .logo-tagline { font-size: 0.7rem; }
+      nav { gap: 6px; }
+      .nav-link, .nav-cta { padding: 5px 9px; font-size: 0.78rem; }
+      .hero-label-row { flex-direction: column; align-items: flex-start; gap: 6px; }
+      .hero-title { font-size: 1.25rem; }
+      .hero-subtitle { font-size: 0.86rem; }
+      .hero-actions { flex-direction: column; align-items: stretch; }
+      .btn-primary, .btn-ghost { width: 100%; justify-content: center; }
+      .article-card { padding: 12px 12px 10px; }
+      .article-title { font-size: 0.94rem; }
+      .article-desc { font-size: 0.8rem; }
+      .sidebar-card { padding: 14px 12px 12px; }
+      footer { flex-direction: column; align-items: flex-start; gap: 8px; }
     }
 
-    /* Footer */
     footer {
       margin-top: 32px;
       padding-top: 18px;
@@ -603,19 +350,9 @@
       align-items: center;
     }
 
-    .footer-links {
-      display: flex;
-      gap: 12px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a {
-      color: var(--muted);
-    }
-
-    .footer-links a:hover {
-      color: var(--text);
-    }
+    .footer-links { display: flex; gap: 12px; flex-wrap: wrap; }
+    .footer-links a { color: var(--muted); }
+    .footer-links a:hover { color: var(--text); }
 
     /* Datenschutz-Overlay */
     #ds-overlay {
@@ -643,10 +380,7 @@
       box-shadow: 0 18px 40px rgba(0,0,0,0.5);
     }
 
-    #ds-box h2 {
-      font-size: 1.4rem;
-      margin-bottom: 12px;
-    }
+    #ds-box h2 { font-size: 1.4rem; margin-bottom: 12px; }
 
     #ds-content {
       background: #181818;
@@ -657,12 +391,7 @@
       overflow-y: auto;
     }
 
-    .ds-buttons {
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-      margin-top: 16px;
-    }
+    .ds-buttons { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
 
     #ds-accept {
       width: 100%;
@@ -675,12 +404,7 @@
       cursor: not-allowed;
       transition: 0.25s;
     }
-
-    #ds-accept.active {
-      background: #f9ff00;
-      color: #000;
-      cursor: pointer;
-    }
+    #ds-accept.active { background: #f9ff00; color: #000; cursor: pointer; }
 
     #ds-skip {
       width: 100%;
@@ -693,29 +417,128 @@
       cursor: pointer;
       transition: 0.25s;
     }
+    #ds-skip:hover { background: rgba(255,255,255,0.04); border-color: rgba(255,255,255,0.4); }
 
-    #ds-skip:hover {
-      background: rgba(255,255,255,0.04);
-      border-color: rgba(255,255,255,0.4);
+    /* Artikel-Modal */
+    #article-modal {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.7);
+      backdrop-filter: blur(6px);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      z-index: 99998;
+      padding: 20px;
+    }
+
+    #article-box {
+      width: 95%;
+      max-width: 900px;
+      max-height: 90vh;
+      overflow: hidden;
+      background: #0f0f0f;
+      border: 1px solid #2b2b2b;
+      border-radius: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,0.65);
+      display: flex;
+      flex-direction: column;
+    }
+
+    #article-head {
+      padding: 16px 16px 10px;
+      border-bottom: 1px solid #1e1e1e;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    #article-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.15rem;
+      line-height: 1.2;
+    }
+
+    #article-meta {
+      margin-top: 6px;
+      font-size: 0.78rem;
+      color: var(--muted);
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    #article-close {
+      border: 1px solid #2b2b2b;
+      background: transparent;
+      color: var(--muted);
+      border-radius: 999px;
+      padding: 8px 10px;
+      cursor: pointer;
+      transition: 0.18s ease;
+      white-space: nowrap;
+    }
+    #article-close:hover { color: var(--text); border-color: rgba(255,255,255,0.35); background: rgba(255,255,255,0.03); }
+
+    #article-body {
+      padding: 14px 16px 16px;
+      overflow-y: auto;
+      max-height: 75vh;
+      color: #eaeaea;
+    }
+
+    #article-body p {
+      margin-bottom: 12px;
+      color: #dedede;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+
+    .mini-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border: 1px solid #2b2b2b;
+      background: rgba(255,255,255,0.02);
+      font-size: 0.72rem;
+      color: var(--muted);
     }
   </style>
 </head>
+
 <body id="top">
 
 <!-- Datenschutz-Overlay -->
 <div id="ds-overlay">
   <div id="ds-box">
     <h2>Datenschutzerklärung</h2>
-
     <div id="ds-content">
-      <!-- HIER WIRD AUTOMATISCH datenschutz.html GELADEN -->
       <p>Wird geladen...</p>
     </div>
-
     <div class="ds-buttons">
       <button id="ds-accept" disabled>Bis zum Ende scrollen…</button>
       <button id="ds-skip" type="button">Weiter ohne Auswahl</button>
     </div>
+  </div>
+</div>
+
+<!-- Artikel-Modal -->
+<div id="article-modal" aria-hidden="true">
+  <div id="article-box" role="dialog" aria-modal="true" aria-labelledby="article-title">
+    <div id="article-head">
+      <div>
+        <div id="article-title">Artikel</div>
+        <div id="article-meta">
+          <span class="mini-pill" id="article-category">Kategorie</span>
+          <span class="mini-pill" id="article-time">Zeit</span>
+        </div>
+      </div>
+      <button id="article-close" type="button">Schließen ✕</button>
+    </div>
+    <div id="article-body"></div>
   </div>
 </div>
 
@@ -751,244 +574,40 @@
             <span>Daily Briefing</span>
           </div>
           <div class="hero-meta">
-            Stand: <span id="today-label">heute</span> · <span>in 60 Sekunden erklärt</span>
+            Stand: <span id="today-label">heute</span> · <span>3 Artikel pro Tag</span>
           </div>
         </div>
 
-        <h1 class="hero-title">
-          Was du heute wirklich wissen musst.
-        </h1>
+        <h1 class="hero-title">Was du heute wirklich wissen musst.</h1>
         <p class="hero-subtitle">
-          KlaroNews fasst den Tag für dich zusammen. Nur das, was für dein Leben relevant ist.
+          Ohne Backend, aber mit Brain: Jeden Tag drei neue Klaro-Artikel. Kurz, verständlich, relevant.
         </p>
 
         <div class="hero-actions">
-          <button class="btn-primary" type="button" id="btn-summary">
-            Heutige Zusammenfassung ansehen
-          </button>
-          <button class="btn-ghost" type="button" id="btn-last-update">
-            ▶ Letztes 60-Sekunden-Update
-          </button>
+          <button class="btn-primary" type="button" id="btn-summary">Heutige Zusammenfassung ansehen</button>
+          <button class="btn-ghost" type="button" id="btn-last-update">▶ Letztes 60-Sekunden-Update</button>
         </div>
 
         <div class="hero-tags">
-          <span class="tag">Politik &amp; Weltlage</span>
-          <span class="tag">Einfach erklärt</span>
+          <span class="tag">Kurz &amp; wichtig</span>
+          <span class="tag">Ohne Clickbait</span>
           <span class="tag">Für Gen&nbsp;Z &amp; junge Erwachsene</span>
         </div>
 
         <div class="hero-highlight"></div>
       </article>
 
-      <h2 id="politik" class="section-title">Aktuelle Themen</h2>
-      <section class="articles-grid">
-        <!-- Artikel 1 -->
-        <a href="artikel-regierung.html"
-           class="article-card"
-           data-time="2025-12-10T14:00:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Politik</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Neue Entscheidung der Regierung – was sich für Schüler &amp; Azubis ändert.
-          </h3>
-          <p class="article-desc">
-            Wir brechen die wichtigsten Punkte runter: Was wurde beschlossen? Ab wann gilt es? Und was bedeutet es konkret für deinen Alltag?
-          </p>
-        </a>
-      <a href="artikel-ki-gesetz-eu.html"
-   class="article-card"
-   data-time="2025-12-11T22:25:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Politik</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert.
-  </h3>
-  <p class="article-desc">
-    Ein klarer Überblick: Welche Regeln kommen, was verboten wird – und warum das Thema alle betrifft.
-  </p>
-</a>
-<a href="artikel-bahn-streik.html"
-   class="article-card"
-   data-time="2025-12-11T21:40:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Deutschland</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Bahn kündigt neuen Streik an – das musst du morgen wissen.
-  </h3>
-  <p class="article-desc">
-    Welche Linien ausfallen, wie du planen kannst und warum die Verhandlungen wieder feststecken.
-  </p>
-</a>
-<a href="artikel-miete-ansteigt.html"
-   class="article-card"
-   data-time="2025-12-11T20:10:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Wirtschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Mieten steigen weiter – Experten erklären die Gründe.
-  </h3>
-  <p class="article-desc">
-    Warum Städte immer teurer werden und welche Maßnahmen jetzt im Gespräch sind.
-  </p>
-</a>
-<a href="artikel-schule-digital.html"
-   class="article-card"
-   data-time="2025-12-11T18:55:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Bildung</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Digitalunterricht 2.0: Neuer Plan der Kultusminister vorgestellt.
-  </h3>
-  <p class="article-desc">
-    Was Schulen erwartet: KI-Hilfen, neue Tablets, weniger Chaos – in klaren Punkten erklärt.
-  </p>
-</a>
-<a href="artikel-gesundheit-kinderarzt.html"
-   class="article-card"
-   data-time="2025-12-11T17:20:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Gesundheit</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Kinderärzte warnen: So viele Infekte wie seit Jahren nicht.
-  </h3>
-  <p class="article-desc">
-    Warum die Welle kommt, wer betroffen ist und wie man sich wirklich schützen kann.
-  </p>
-</a>
-<a href="artikel-internet-sicherheit.html"
-   class="article-card"
-   data-time="2025-12-11T15:45:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Tech</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Große Sicherheitslücke entdeckt – Millionen Accounts betroffen.
-  </h3>
-  <p class="article-desc">
-    Welche Plattformen Probleme haben und wie du sofort checken kannst, ob du betroffen bist.
-  </p>
-</a>
-<a href="artikel-klima-proteste.html"
-   class="article-card"
-   data-time="2025-12-11T13:30:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Welt</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neue Klima-Proteste weltweit – das steckt dahinter.
-  </h3>
-  <p class="article-desc">
-    Länderüberblick: Warum der Druck wieder steigt und welche Forderungen im Zentrum stehen.
-  </p>
-</a>
-<a href="artikel-socialmedia-study.html"
-   class="article-card"
-   data-time="2025-12-11T11:05:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Gesellschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Studie: Social Media beeinflusst Schlaf stärker als gedacht.
-  </h3>
-  <p class="article-desc">
-    Forscher erklären den Zusammenhang und was wirklich gegen schlechte Nächte hilft.
-  </p>
-</a>
-<a href="artikel-energie-preise.html"
-   class="article-card"
-   data-time="2025-12-11T09:15:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Wirtschaft</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Energiepreise sinken leicht – was Verbraucher jetzt sparen können.
-  </h3>
-  <p class="article-desc">
-    Zahlen, Trends und warum die Entlastung trotzdem noch nicht überall spürbar ist.
-  </p>
-</a>
-<a href="artikel-fruehstueck-studie.html"
-   class="article-card"
-   data-time="2025-12-11T06:45:00+01:00">
-  <div class="article-chip-row">
-    <span class="article-chip">Lifestyle</span>
-    <span class="article-time">lädt...</span>
-  </div>
-  <h3 class="article-title">
-    Neue Studie: Frühstück beeinflusst Konzentration stärker als gedacht.
-  </h3>
-  <p class="article-desc">
-    Was Forscher empfehlen und welche Lebensmittel tatsächlich einen Unterschied machen.
-  </p>
-</a>
+      <h2 id="politik" class="section-title">Aktuelle Themen (nur heute)</h2>
 
-
-        <!-- Artikel 2 -->
-        <a href="artikel-inflation.html"
-           class="article-card"
-           data-time="2025-12-10T11:30:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Wirtschaft</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Preise, Inflation, Löhne: Die Lage in einfachen Worten erklärt.
-          </h3>
-          <p class="article-desc">
-            Kein Finanz-Deutsch, sondern Klartext: Warum alles teurer wird – und welche Entscheidungen jetzt wirklich einen Unterschied machen.
-          </p>
-        </a>
-
-        <!-- Artikel 3 -->
-        <a href="artikel-tiktoktrend.html"
-           class="article-card"
-           data-time="2025-12-10T08:00:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Gesellschaft</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Warum dieses Thema gerade auf TikTok explodiert – und was dahinter steckt.
-          </h3>
-          <p class="article-desc">
-            Trend erklärt in 3 Punkten: Ursprung, Problem, Auswirkungen. Ohne Drama, mit Kontext.
-          </p>
-        </a>
-
-        <!-- Artikel 4 -->
-        <a href="artikel-krise.html"
-           id="welt"
-           class="article-card"
-           data-time="2025-12-09T18:30:00+01:00">
-          <div class="article-chip-row">
-            <span class="article-chip">Welt</span>
-            <span class="article-time">lädt...</span>
-          </div>
-          <h3 class="article-title">
-            Internationale Krise in 60 Sekunden: Timeline, Fakten, Folgen.
-          </h3>
-          <p class="article-desc">
-            Wir sortieren die Lage: Was ist wirklich passiert, wer ist beteiligt und welche Szenarien sind jetzt realistisch?
-          </p>
-        </a>
+      <!-- Hier werden automatisch 3 Karten gerendert -->
+      <section class="articles-grid" id="articles-today">
+        <!-- JS rendert hier rein -->
       </section>
 
+      <h2 id="welt" class="section-title">Archiv (50 Themen im System)</h2>
+      <p style="color: var(--muted); font-size: 0.86rem; margin: 0 2px 10px;">
+        Im Hintergrund sind 50 Artikel vorbereitet. Jeden Tag werden automatisch 3 davon veröffentlicht.
+      </p>
     </section>
 
     <!-- Sidebar -->
@@ -997,27 +616,27 @@
         <h2 class="sidebar-title">Kurz & wichtig</h2>
         <ul class="sidebar-list">
           <li class="sidebar-item">
-            <a href="artikel-3-dinge.html" class="sidebar-link">
+            <a href="#top" class="sidebar-link" id="open-today-briefing">
               <div class="sidebar-link-title">3 Dinge, die du heute wissen musst.</div>
               <div class="sidebar-link-sub">Daily Klaro Briefing</div>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="artikel-faq-news.html" class="sidebar-link">
-              <div class="sidebar-link-title">FAQ: Wie wir News auswählen &amp; prüfen.</div>
-              <div class="sidebar-link-sub">Transparenz &amp; Quellen</div>
+            <a href="#top" class="sidebar-link" id="open-faq">
+              <div class="sidebar-link-title">FAQ: Wie wir Themen auswählen.</div>
+              <div class="sidebar-link-sub">Transparenz &amp; Prinzipien</div>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="artikel-finanzierung.html" class="sidebar-link">
-              <div class="sidebar-link-title">So finanzieren wir uns – ohne dich vollzuspammen.</div>
-              <div class="sidebar-link-sub">Ads, Partner &amp; Pläne</div>
+            <a href="#top" class="sidebar-link" id="open-finance">
+              <div class="sidebar-link-title">So finanzieren wir uns – ohne Spam.</div>
+              <div class="sidebar-link-sub">Ads (fair), später mehr</div>
             </a>
           </li>
           <li class="sidebar-item">
-            <a href="artikel-community.html" class="sidebar-link">
-              <div class="sidebar-link-title">Werde Teil der ersten KlaroNews-Community.</div>
-              <div class="sidebar-link-sub">Feedback, Themenwünsche, Ideen</div>
+            <a href="#top" class="sidebar-link" id="open-community">
+              <div class="sidebar-link-title">Werde Teil der KlaroNews-Community.</div>
+              <div class="sidebar-link-sub">Themenwünsche &amp; Feedback</div>
             </a>
           </li>
         </ul>
@@ -1028,16 +647,10 @@
             Bald kannst du hier das tägliche <strong>„Klaro Briefing“</strong> per Mail abonnieren. Feature ist noch im Aufbau.
           </p>
 
-          <!-- Platzhalter-Form – macht noch nichts -->
           <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter kommt später. Aktuell noch nicht aktiv.');">
-            <input
-              class="newsletter-input"
-              type="email"
-              placeholder="Deine E-Mail-Adresse (noch nicht aktiv)"
-            />
+            <input class="newsletter-input" type="email" placeholder="Deine E-Mail-Adresse (noch nicht aktiv)" />
             <button class="newsletter-button" type="submit">Noch nicht verfügbar</button>
           </form>
-
         </div>
       </section>
     </aside>
@@ -1053,143 +666,2277 @@
   </footer>
 </div>
 
+<!-- SCRIPT 1: Artikel-Engine + UI -->
 <script>
 document.addEventListener("DOMContentLoaded", () => {
-  const container = document.querySelector(".articles-grid");
-  let cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
+  // =========================================================
+  // 1) HIER DEINE ARTIKEL REINPASTEN (WICHTIG!)
+  // =========================================================
+  // Format:
+  // const ARTICLES = [
+  //   { id:"kn01", category:"Tech", title:"...", summary:"...", body:"..." },
+  //   ...
+  // ];
+  const ARTICLES = [
+    /* ⬅️ PASTE DEINE 50 ARTIKEL HIER REIN */
+  ];
 
-  // 1. Artikel nach Datum sortieren (neueste zuerst)
-  cards.sort((a, b) => {
-    const timeA = new Date(a.getAttribute("data-time"));
-    const timeB = new Date(b.getAttribute("data-time"));
-    return timeB - timeA;
-  });
+  // Safety: Wenn leer, nicht crashen
+  if (!Array.isArray(ARTICLES) || ARTICLES.length === 0) {
+    console.warn("ARTICLES ist leer. Bitte deine Artikel im Script einfügen.");
+    return;
+  }
 
-  cards.forEach(card => container.appendChild(card));
+  // ---------- Utilities (seeded random, stabil pro Tag) ----------
+  function xmur3(str) {
+    let h = 1779033703 ^ str.length;
+    for (let i = 0; i < str.length; i++) {
+      h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+      h = (h << 13) | (h >>> 19);
+    }
+    return function () {
+      h = Math.imul(h ^ (h >>> 16), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return (h ^= h >>> 16) >>> 0;
+    };
+  }
 
-  // 2. Relative Zeit berechnen
-  cards.forEach(card => {
-    const timeAttr = card.getAttribute("data-time");
-    const timeEl = card.querySelector(".article-time");
-    const published = new Date(timeAttr);
-    const now = new Date();
+  function mulberry32(a) {
+    return function () {
+      let t = (a += 0x6D2B79F5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
 
+  function pad2(n) { return String(n).padStart(2, "0"); }
+
+  function formatDEDate(d) {
+    return `${pad2(d.getDate())}.${pad2(d.getMonth() + 1)}.${d.getFullYear()}`;
+  }
+
+  function formatTimeDE(d) {
+    return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+  }
+
+  function relativeLabel(published, now) {
     const diffMs = now - published;
-    const diffMin = Math.floor(diffMs / 1000 / 60);
+    if (diffMs < 0) return "später heute";
+
+    const diffMin = Math.floor(diffMs / 60000);
     const diffHours = Math.floor(diffMin / 60);
     const diffDays = Math.floor(diffHours / 24);
 
-    let text = "";
+    if (diffMin < 1) return "gerade eben";
+    if (diffMin < 60) return `vor ${diffMin} Min`;
+    if (diffHours < 24) return `vor ${diffHours} Std`;
+    if (diffDays === 1) return "gestern";
+    return `${diffDays} Tage alt`;
+  }
 
-    if (diffMin < 1) text = "gerade eben";
-    else if (diffMin < 60) text = `vor ${diffMin} Min`;
-    else if (diffHours < 24) text = `vor ${diffHours} Std`;
-    else if (diffDays === 1) text = "gestern";
-    else text = `${diffDays} Tage alt`;
+  function escapeHTML(str) {
+    return String(str ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
 
-    if (timeEl) timeEl.textContent = text;
-  });
+  // ---------- Datum / Footer ----------
+  const todayEl = document.getElementById("today-label");
+  const yearEl = document.getElementById("year");
+  const now = new Date();
 
-  // 3. "Letztes 60-Sekunden-Update" -> öffnet neuesten Artikel
+  if (todayEl) todayEl.textContent = formatDEDate(now);
+  if (yearEl) yearEl.textContent = now.getFullYear();
+
+  // ---------- Tagesauswahl: IMMER 3 Artikel pro Tag, stable seed ----------
+  const seedStr = `${now.getFullYear()}-${pad2(now.getMonth() + 1)}-${pad2(now.getDate())}`;
+  const seedFn = xmur3(seedStr);
+  const rng = mulberry32(seedFn());
+
+  // pickUnique: 3 verschiedene Artikel
+  function pickUnique(count, max) {
+    if (max <= 0) return [];
+    if (count >= max) return Array.from({ length: max }, (_, i) => i);
+
+    const set = new Set();
+    while (set.size < count) set.add(Math.floor(rng() * max));
+    return Array.from(set);
+  }
+
+  const todaysIdx = pickUnique(3, ARTICLES.length);
+
+  // --------- Veröffentlichungs-Zeitfenster ---------
+  // (stabil pro Tag, aber "random") — du kannst das ändern:
+  const WINDOW_START_MIN = 6 * 60 + 30;   // 06:30
+  const WINDOW_END_MIN   = 22 * 60 + 30;  // 22:30
+
+  function randomTimeToday() {
+    const minutes = Math.floor(WINDOW_START_MIN + rng() * (WINDOW_END_MIN - WINDOW_START_MIN));
+    const hh = Math.floor(minutes / 60);
+    const mm = minutes % 60;
+    const t = new Date(now);
+    t.setHours(hh, mm, 0, 0);
+    return t;
+  }
+
+  // 3 Artikel bekommen Zeiten, dann sortieren wir sie:
+  // ABER: wir wollen "in Reihenfolge publishen" (Slot1 < Slot2 < Slot3),
+  // darum vergeben wir 3 Zeiten und sortieren aufsteigend für Publishing.
+  const picked = todaysIdx.map(i => ({ ...ARTICLES[i] }));
+  const timesAsc = [randomTimeToday(), randomTimeToday(), randomTimeToday()].sort((a, b) => a - b);
+
+  const todaysArticles = picked.map((a, idx) => ({
+    ...a,
+    publishedAt: timesAsc[idx] // Slot 1,2,3 in Reihenfolge
+  }));
+
+  // Für Anzeige: neueste oben (aber nur wenn schon veröffentlicht)
+  function getVisibleArticles() {
+    const n = new Date();
+    return todaysArticles
+      .filter(a => a.publishedAt <= n)
+      .sort((a, b) => b.publishedAt - a.publishedAt);
+  }
+
+  // ---------- Render Cards (nur veröffentlichte!) ----------
+  const grid = document.getElementById("articles-today");
+
+  function createCard(article) {
+    const a = document.createElement("a");
+    a.href = "#";
+    a.className = "article-card";
+    a.dataset.time = article.publishedAt.toISOString();
+    a.dataset.articleId = article.id;
+
+    a.innerHTML = `
+      <div class="article-chip-row">
+        <span class="article-chip">${escapeHTML(article.category)}</span>
+        <span class="article-time">lädt...</span>
+      </div>
+      <h3 class="article-title">${escapeHTML(article.title)}</h3>
+      <p class="article-desc">${escapeHTML(article.summary)}</p>
+    `;
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      openArticle(article);
+    });
+
+    return a;
+  }
+
+  function renderGrid() {
+    if (!grid) return;
+
+    const visible = getVisibleArticles();
+
+    if (visible.length === 0) {
+      grid.innerHTML = `
+        <div class="article-card" style="cursor:default">
+          <div class="article-chip-row">
+            <span class="article-chip">KlaroNews</span>
+            <span class="article-time">bald</span>
+          </div>
+          <h3 class="article-title">Heute noch nichts live.</h3>
+          <p class="article-desc">Der nächste Post kommt später. (Ja, wir sind pünktlich 😄)</p>
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = "";
+    visible.forEach(a => grid.appendChild(createCard(a)));
+  }
+
+  // ---------- Relative time labels ----------
+  function updateTimes() {
+    const cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
+    const n = new Date();
+    cards.forEach(card => {
+      const timeEl = card.querySelector(".article-time");
+      if (!timeEl) return;
+      const published = new Date(card.dataset.time);
+      timeEl.textContent = relativeLabel(published, n);
+    });
+  }
+
+  // initial render
+  renderGrid();
+  updateTimes();
+
+  // re-render + update labels (damit Posts genau dann auftauchen)
+  setInterval(() => {
+    renderGrid();
+    updateTimes();
+  }, 30 * 1000);
+
+  // ---------- Buttons ----------
   const lastUpdateBtn = document.getElementById("btn-last-update");
   if (lastUpdateBtn) {
     lastUpdateBtn.addEventListener("click", () => {
-      const firstCard = document.querySelector(".articles-grid .article-card");
-      if (firstCard && firstCard.href) {
-        window.location.href = firstCard.href;
-      }
+      const visible = getVisibleArticles();
+      if (visible[0]) openArticle(visible[0]);
     });
   }
 
-  // 4. "Heutige Zusammenfassung ansehen" -> wenn keine vorhanden, rot flashen
   const summaryBtn = document.getElementById("btn-summary");
-  let hasSummary = false;
-  let summaryUrl = ""; // z.B. "artikel-heutige-zusammenfassung.html"
-
   if (summaryBtn) {
     summaryBtn.addEventListener("click", () => {
-      if (hasSummary && summaryUrl) {
-        window.location.href = summaryUrl;
-      } else {
-        const originalText = summaryBtn.textContent;
-        summaryBtn.classList.add("btn-error");
-        summaryBtn.textContent = "Noch keine Zusammenfassung verfügbar";
+      const visible = getVisibleArticles();
+      const top3 = visible.slice(0, 3);
 
-        setTimeout(() => {
-          summaryBtn.classList.remove("btn-error");
-          summaryBtn.textContent = originalText;
-        }, 1200);
-      }
+      const sum = {
+        id: "summary",
+        category: "Daily Briefing",
+        title: `Heute (${formatDEDate(now)}): 3 Dinge, die du wissen solltest`,
+        publishedAt: new Date(),
+        body:
+          (top3[0] ? `1) ${top3[0].title}\n\n` : "") +
+          (top3[1] ? `2) ${top3[1].title}\n\n` : "") +
+          (top3[2] ? `3) ${top3[2].title}\n\n` : "") +
+          `Klaro-Fazit: Wenig Drama, mehr Kontext.`
+      };
+
+      openArticle(sum, { isSummary: true });
     });
   }
 
-  // 5. Jahr im Footer setzen
-  const yearEl = document.getElementById("year");
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
-
-  // 6. Datum "Stand: heute" setzen (TT.MM.JJJJ)
-  const todayEl = document.getElementById("today-label");
-  if (todayEl) {
-    const d = new Date();
-    const day = String(d.getDate()).padStart(2, "0");
-    const month = String(d.getMonth() + 1).padStart(2, "0");
-    const year = d.getFullYear();
-    todayEl.textContent = `${day}.${month}.${year}`;
+  // Sidebar Links (optional)
+  const openToday = document.getElementById("open-today-briefing");
+  if (openToday && summaryBtn) {
+    openToday.addEventListener("click", (e) => { e.preventDefault(); summaryBtn.click(); });
   }
+
+  // ---------- Modal ----------
+  const modal = document.getElementById("article-modal");
+  const boxTitle = document.getElementById("article-title");
+  const boxCategory = document.getElementById("article-category");
+  const boxTime = document.getElementById("article-time");
+  const boxBody = document.getElementById("article-body");
+  const closeBtn = document.getElementById("article-close");
+
+  function openArticle(article, opts = {}) {
+    if (!modal || !boxTitle || !boxCategory || !boxTime || !boxBody) return;
+
+    boxTitle.textContent = article.title || "";
+    boxCategory.textContent = article.category || "";
+
+    const p = article.publishedAt instanceof Date ? article.publishedAt : new Date(article.publishedAt || Date.now());
+    const dateLabel = formatDEDate(p);
+    const timeLabel = formatTimeDE(p);
+    boxTime.textContent = opts.isSummary ? `${dateLabel}` : `${dateLabel} · ${timeLabel}`;
+
+    const text = String(article.body || "").trim();
+    boxBody.innerHTML = text
+      .split(/\n\s*\n/g)
+      .map(p => `<p>${escapeHTML(p)}</p>`)
+      .join("");
+
+    modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeArticle() {
+    if (!modal) return;
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeArticle);
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeArticle();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeArticle();
+  });
 });
+</script>
 
-// Datenschutz-Overlay-Logik
-if (!localStorage.getItem("dsAccepted")) {
-  document.getElementById("ds-overlay").style.display = "flex";
+<!-- SCRIPT 2: Datenschutz-Overlay (getrennt) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("ds-overlay");
+  const content = document.getElementById("ds-content");
+  const acceptBtn = document.getElementById("ds-accept");
+  const skipBtn = document.getElementById("ds-skip");
 
-  // datenschutz.html in das Popup laden
-  fetch("datenschutz.html")
-    .then(res => res.text())
-    .then(html => {
-      document.querySelector("#ds-content").innerHTML = html;
-    });
-}
+  if (!overlay || !content || !acceptBtn || !skipBtn) return;
 
-const overlay = document.getElementById("ds-overlay");
-const content = document.getElementById("ds-content");
-const acceptBtn = document.getElementById("ds-accept");
-const skipBtn = document.getElementById("ds-skip");
-
-// Helper zum Overlay ausblenden (für beide Buttons)
-function hideOverlay() {
-  if (!overlay) return;
-
-  overlay.style.opacity = 1;
-
-  setTimeout(() => {
+  function hideOverlay() {
+    overlay.style.opacity = "0";
     overlay.style.transition = "0.4s";
-    overlay.style.opacity = 0;
-
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 400);
-  }, 50);
-}
-
-// Scroll-Check, Button erst aktiv wenn unten
-content.addEventListener("scroll", () => {
-  if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
-    acceptBtn.classList.add("active");
-    acceptBtn.textContent = "Akzeptieren";
-    acceptBtn.disabled = false;
+    setTimeout(() => { overlay.style.display = "none"; }, 400);
   }
-});
 
-// Akzeptieren → merkt sich Zustimmung in localStorage
-acceptBtn.addEventListener("click", () => {
-  localStorage.setItem("dsAccepted", "true");
-  hideOverlay();
-});
+  if (!localStorage.getItem("dsAccepted")) {
+    overlay.style.display = "flex";
+    overlay.style.opacity = "1";
 
-// Weiter ohne Auswahl → auch merken, damit es nicht mehr erscheint
-skipBtn.addEventListener("click", () => {
-  localStorage.setItem("dsAccepted", "true");
-  hideOverlay();
+    fetch("datenschutz.html")
+      .then(res => res.ok ? res.text() : Promise.reject())
+      .then(html => { content.innerHTML = html; })
+      .catch(() => {
+        content.innerHTML =
+          "<p><strong>Datenschutz konnte nicht geladen werden.</strong></p>" +
+          "<p>Bitte stelle sicher, dass <code>datenschutz.html</code> im gleichen Ordner liegt.</p>";
+      });
+  }
+
+  content.addEventListener("scroll", () => {
+    if (content.scrollTop + content.clientHeight >= content.scrollHeight - 10) {
+      acceptBtn.disabled = false;
+      acceptBtn.classList.add("active");
+      acceptBtn.textContent = "Akzeptieren";
+    }
+  });
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+
+  skipBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+});
+</script>
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+const ARTICLES = [
+  {
+    id: "kn01",
+    category: "Tech",
+    title: "„Ich wurde nicht gehackt — ich war nur bequem“: Die 9 Fehler, die Accounts zerstören (und wie du sie stoppst)",
+    summary: "Die meisten Account-Übernahmen passieren nicht durch Hollywood-Hacker, sondern durch simple Routine-Fehler. Hier ist der echte Schutzplan.",
+    body:
+`Wenn jemand sagt „Ich wurde gehackt“, klingt das wie ein Sci-Fi-Problem. In der Realität ist es meistens ein Business-Problem: schlechte Prozesse. Und zwar bei dir. Nicht böse gemeint – aber genau das ist die gute Nachricht: Du kannst es fixen.
+
+## Warum das passiert (ohne Drama)
+Viele „Hacks“ sind:
+- Passwort wiederverwendet (ein Leak reicht, dann Domino)
+- Phishing-Link geklickt (Stress + Fake-Seite)
+- Kein 2FA (ein Passwort = eine Tür)
+- Geräte nicht aktualisiert (Sicherheitslücken bleiben offen)
+
+## Die 9 Klassiker, die du ab heute stoppst
+1) **Ein Passwort für alles**  
+Das ist wie derselbe Schlüssel für Wohnung, Schule, Spind, Bike. Wenn einer weg ist: RIP.
+
+2) **Passwort = Name/Geburtstag/„Sommer2025!“**  
+Das ist nicht kreativ, das ist Standardliste.
+
+3) **2FA nicht an, weil „nervt“**  
+2FA nervt genau 4 Sekunden. Konto zurückholen nervt Wochen.
+
+4) **Links aus E-Mails / DMs klicken**  
+„Dein Konto wird gesperrt“ ist der Klassiker. Wenn’s dringend wirkt, ist es oft Scam.
+
+5) **„Passwort speichern“ auf random Geräten**  
+Freund-PC, Schul-PC, Internet-Café — bro… nein.
+
+6) **Kein Update seit 2 Monaten**  
+Updates sind Security-Patches. Kein Update = offene Tür.
+
+7) **Apps mit Vollzugriff**  
+„Taschenlampe will Standort & Kontakte“ — sus.
+
+8) **Gleiche Sicherheitsfragen überall**  
+„Mädchenname der Mutter“ ist oft öffentlich rausfindbar.
+
+9) **Kein Recovery-Plan**  
+Wenn du nicht weißt, wie du dein Konto wiederbekommst, bist du im Ernstfall lost.
+
+## Der Klaro-Plan (30 Minuten, dann bist du deutlich sicherer)
+- Nimm einen Passwortmanager ODER erstelle 3–5 sehr lange Passphrasen.
+- **2FA**: am besten Authenticator-App, sonst SMS (SMS ist besser als nichts).
+- Wichtigste Konten zuerst: Mail, Socials, Banking, Gaming.
+- Check „Geräte“, „Sitzungen“, „Login-Verlauf“ und logge Fremdes aus.
+- Mach ein Recovery-Mail + Telefonnummer aktuell.
+- Update: Handy + Browser + Messenger.
+
+## Real Talk
+Sicherheit ist kein „Vibe“, es ist Hygiene. Wie Zähneputzen: nicht sexy, aber du willst auch keine Katastrophe.
+
+Wenn du willst, bau ich dir noch eine Mini-Funktion: „Security-Checklist“ Button auf der Seite, die deinen Usern das als 60-Sekunden-Plan zeigt.`
+  },
+
+  {
+    id: "kn02",
+    category: "Bildung",
+    title: "Warum du beim Lernen manchmal „dumm“ fühlst, obwohl du’s nicht bist (und wie du das Gehirn austrickst)",
+    summary: "Das Problem ist selten Intelligenz. Es ist Überlastung, falsches Timing und ein System, das dich stresst. Hier ist der Fix.",
+    body:
+`Dieses „Ich check’s einfach nicht“-Gefühl ist brutal – aber es ist oft kein Beweis, dass du „zu blöd“ bist. Es ist eher ein Zeichen, dass dein System gerade schlecht konfiguriert ist.
+
+## Was da im Kopf passiert
+Wenn du gestresst bist, schaltet der Körper in Alarm: Fight/Flight.  
+Ergebnis: weniger Zugriff auf ruhiges Denken, mehr Chaos-Gefühl, mehr Blackout. Das ist Biologie, kein Charakterfehler.
+
+## Die 5 Gründe, warum Lernen plötzlich nicht mehr geht
+1) **Du lernst zu lange am Stück**  
+Nach 60–90 Minuten sinkt Fokus. Dein Kopf braucht Reset.
+
+2) **Du lernst ohne aktive Abfrage**  
+Lesen fühlt sich nach Lernen an, ist aber oft nur „Information streicheln“.  
+Aktiv = Aufgaben machen, erklären, abfragen.
+
+3) **Du lernst im falschen Zustand**  
+Hunger, Schlafmangel, zu viel Koffein, Stress – alles killt das Arbeitsgedächtnis.
+
+4) **Du lernst zu groß**  
+„Ich lerne Mathe“ ist zu groß. „Ich kann lineare Gleichungen Schritt 1–3“ ist machbar.
+
+5) **Du verwechselst Üben mit Prüfen**  
+Wenn du nur Aufgaben anschaust, prüfst du dich nicht.  
+Du musst spüren: „Kann ich’s ohne Hilfe?“
+
+## Der Klaro-Lernplan (einfach, aber effektiv)
+- **25/5 oder 45/10**: Timer an, Pause geplant.
+- **Start-mini**: „Ich mache nur 1 Aufgabe“ – Einstieg ist das Schwerste.
+- **Fehlerliste**: Schreib deine Top 5 Fehler auf. Wiederhole gezielt.
+- **Erklären**: Tu so, als würdest du’s einem 12-Jährigen erklären.
+- **Kurz-Zusammenfassung**: Am Ende 5 Zeilen in eigenen Worten.
+
+## Wenn du Stress hast
+Ein Trick: **länger ausatmen** als einatmen (z.B. 4 Sekunden ein, 6 Sekunden aus).  
+Das signalisiert dem Nervensystem: „Kein Notfall.“  
+Plötzlich wird Denken wieder möglich.
+
+## Wichtigster Satz
+Du bist nicht dein Moment von Überforderung.  
+Du bist ein Projekt, das gerade die richtigen Tools braucht.`
+  },
+
+  {
+    id: "kn03",
+    category: "Gesellschaft",
+    title: "Manipulation erkennt man nicht an Worten – sondern an Mustern: 7 Moves, die Leute emotional kontrollieren",
+    summary: "Schuldumkehr, Druck, „nur Spaß“, Lovebombing – hier ist, wie du’s erkennst und stabil reagierst, ohne cringe zu werden.",
+    body:
+`Manipulation ist selten „böse Film-Villain“-Style. Es ist oft subtile Kontrolle: über dein schlechtes Gewissen, deine Angst, deine Hoffnung.
+
+## Erstmal: Was ist Manipulation?
+Wenn jemand versucht, dein Verhalten zu steuern, ohne ehrlich über Bedürfnisse zu sprechen – sondern über Druck, Schuld, Verwirrung.
+
+## Die 7 typischen Muster
+1) **Schuldumkehr**  
+Du sprichst ein Problem an, und plötzlich bist du „der Böse“.
+
+2) **Druck mit Zeit**  
+„Entscheide jetzt“, „Wenn nicht heute, dann nie“.  
+Stress ist die Währung von Manipulation.
+
+3) **„War doch nur Spaß“**  
+Wenn du verletzt bist, wird’s runtergespielt.  
+Aber Wirkung zählt mehr als Absicht.
+
+4) **Lovebombing → Entzug**  
+Erst zu viel Nähe, dann plötzlich kalt. Du jagst den alten Zustand.
+
+5) **Grenzen testen**  
+Du sagst „nein“ – und es kommt sofort Verhandeln, Diskutieren, Drama.
+
+6) **„Wenn du mich liebst, dann…“**  
+Gefühle als Erpressung. Klassiker.
+
+7) **Isolation**  
+„Deine Freunde sind schlecht“, „Nur ich verstehe dich“.  
+Das ist Kontrolle, nicht Liebe.
+
+## Wie du reagierst (ohne dass es eskaliert)
+- **Kurz & klar**: „Ich entscheide in meinem Tempo.“
+- **Nicht diskutieren**: Wenn jemand dich nicht verstehen will, wird jede Erklärung Munition.
+- **Wiederhole deine Grenze**: Keine neue Argumente, gleiche Message.
+- **Exit-Option**: „Ich beende das Gespräch jetzt.“
+
+## Reality-Check
+Eine gesunde Person respektiert Grenzen, auch wenn’s ihr nicht passt.  
+Respekt ist nicht romantisch – aber er ist die Basis, ohne die alles Müll ist.
+
+## Klaro-Rule
+Wer dich wirklich mag, will nicht deine Kontrolle – sondern deine Sicherheit.`
+  },
+
+  {
+    id: "kn04",
+    category: "Wirtschaft",
+    title: "Warum du am Monatsende „kein Geld“ hast, obwohl du kaum was gekauft hast: Der unsichtbare Kosten-Fresser",
+    summary: "Kleine Zahlungen + Abos + Snacks + „nur mal kurz“ sind ein Systemproblem. Hier ist dein Budget-Reset ohne Excel-Pain.",
+    body:
+`Wenn du am Monatsende leer bist und denkst „aber ich hab doch nichts Großes gekauft“, dann bist du Opfer von Micro-Spending. Das ist kein Moralproblem – das ist Mathe + Gewohnheit.
+
+## Der unsichtbare Fresser
+- Abos (3€ hier, 7€ da)
+- Lieferdienst / Snacks
+- In-App / Skins / Games
+- „Einmal kurz“ unterwegs
+- Gebühren, Versand, kleine Add-ons
+
+Das fühlt sich klein an – aber addiert sich brutal.
+
+## Der 3-Konten-Move (super simpel)
+1) **Fixkosten** (Miete/Handy/ÖPNV)  
+2) **Alltag** (Essen, unterwegs, Spaß)  
+3) **Ziel** (Sparen: Führerschein, Notgroschen)
+
+Trick: Ziel-Konto wird zuerst befüllt, nicht „wenn was übrig ist“.
+
+## 10-Minuten Budget Reset
+- Liste alle Abos auf (wirklich alle).
+- Streiche 1–2, die du kaum nutzt.
+- Setze ein Wochenlimit für Alltag (bar oder eigenes Konto).
+- Mach Automatisierung: z.B. 10€ pro Monat weg.
+
+## Warum das psychologisch funktioniert
+Wenn Geld „unsichtbar“ ist (Karte, Apple Pay), spürst du keinen Cut.  
+Bar oder separates Konto macht’s real.
+
+## Klaro-Outcome
+Budget ist nicht „arm sein“. Budget ist Kontrolle.  
+Kontrolle ist Freiheit.`
+  },
+
+  {
+    id: "kn05",
+    category: "Lifestyle",
+    title: "Schlaf ist keine Faulheit: Warum du ohne Schlaf literally weniger du bist (Mood, Fokus, Körper) – in Klartext",
+    summary: "Schlaf entscheidet, ob du klar denkst oder alles dich stresst. Hier ist wie du besser schläfst, ohne „perfektes Leben“ zu brauchen.",
+    body:
+`Schlaf ist das meist unterschätzte Upgrade überhaupt. Nicht weil Schlaf „cool“ ist – sondern weil alles ohne Schlaf schlechter wird: Konzentration, Gedächtnis, Laune, Hunger, Stress.
+
+## Was schlechter Schlaf oft macht
+- du bist schneller gereizt
+- du hast weniger Geduld
+- du lernst langsamer
+- du bekommst mehr Heißhunger
+- du fühlst dich „komisch leer“ oder overthinking
+
+## Warum „nur noch 10 Minuten scrollen“ dich killt
+Kurzvideos nehmen dir Stop-Signale. Du bekommst ständig neue Reize.  
+Dein Kopf bleibt „an“, obwohl der Körper müde ist.
+
+## Der realistische Schlaf-Fix (ohne Influencer-Gelaber)
+- **Timer**: 20–30 Minuten vor Schlaf Handy weg oder zumindest weg vom Bett.
+- **Licht runter**: dunkler = einfacher für Melatonin.
+- **Mini-Routine**: Zähne, Wasser, 2 Minuten atmen, fertig.
+- **Koffein früher**: eher Vormittag statt Abend.
+- **Wenn Gedanken rasen**: schreib 5 Zeilen „Brain dump“ auf Papier.
+
+## Wenn du sehr gestresst bist
+Du musst nicht „perfekt schlafen“.  
+Du brauchst erstmal: Stabilität, Rhythmus, kleine Schritte.
+
+## Klaro-Fazit
+Schlaf ist nicht Zeitverlust. Schlaf ist Performance-Basis.`
+  },
+
+  {
+    id: "kn06",
+    category: "Tech",
+    title: "Dein Handy sammelt mehr über dich als du denkst – aber du kannst das in 5 Minuten massiv reduzieren",
+    summary: "Du musst nicht paranoid sein. Nur bewusst. Hier sind die schnellsten Settings, die wirklich was bringen.",
+    body:
+`Du musst kein „Datenschutz-Nerd“ sein, um kluge Settings zu setzen. Ziel ist nicht „unsichtbar werden“. Ziel ist: weniger unnötige Daten abgeben.
+
+## 5-Minuten Privacy Sprint
+1) **Standort**: Stell Apps auf „Nur beim Nutzen“.  
+2) **Mikro/Kamera**: Check, wer Zugriff hat.  
+3) **Tracking**: iPhone/Android Tracking & Ad-Personalisierung reduzieren.  
+4) **Browser**: Tracking-Schutz an, Cookies regelmäßig löschen.  
+5) **Pushs**: Alles aus, außer wirklich wichtig.
+
+## Warum das so wichtig ist
+Daten sind Profiling-Futter: wann du online bist, was dich triggert, was du kaufst.  
+Das wird genutzt, um dir Dinge zu verkaufen – oder deine Aufmerksamkeit zu steuern.
+
+## Klaro-Tipp
+Du musst nicht alles blockieren.  
+Aber du solltest wissen, was du erlaubst und warum.
+
+Bewusste Settings = weniger Manipulation = mehr Ruhe.`
+  },
+
+  {
+    id: "kn07",
+    category: "Bildung",
+    title: "Prüfungsangst fühlt sich wie „Versagen“ an, ist aber nur Alarm: So bekommst du Kontrolle zurück",
+    summary: "Herzrasen, Blackout, Zittern – das ist dein Nervensystem, nicht dein Talent. Hier ist ein Plan, der wirklich praktikabel ist.",
+    body:
+`Prüfungsangst ist nicht „du bist schwach“. Es ist ein Alarmprogramm, das zu laut eingestellt ist.
+
+## Was der Körper macht
+Stress → Adrenalin → Herz schneller, Atmung flacher, Fokus enger.  
+Das kann hilfreich sein – aber wenn’s zu stark wird, blockt Denken.
+
+## 3 Dinge, die sofort helfen
+1) **Länger ausatmen** (z.B. 4 ein, 6 aus) – beruhigt das System.  
+2) **Mini-Start**: Erste Aufgabe anfangen, auch wenn’s nur ein Schritt ist.  
+3) **Reframing**: „Das ist Alarm, nicht Wahrheit.“
+
+## Vorbereitung (ohne Overkill)
+- Übe unter echten Bedingungen (Zeit, keine Hilfe).
+- Mach eine Fehlerliste (typische Fallen).
+- Wiederhole Basics öfter als seltenes Spezialzeug.
+- Schlaf vor der Prüfung ist wichtiger als „noch 2 Stunden“.
+
+## Im Moment der Prüfung
+Wenn Blackout:
+- Schreib irgendwas Einfaches hin (Definition, Formel, Skizze).
+- Das öffnet den Kopf wieder.
+- Dann weiter.
+
+## Klaro-Fazit
+Du brauchst kein „mutigeres Gehirn“.  
+Du brauchst ein besseres System.`
+  },
+
+  {
+    id: "kn08",
+    category: "Gesellschaft",
+    title: "Warum Online-Diskussionen dich so schnell fertig machen (und wie du deine Energie nicht verschenkt)",
+    summary: "Algorithmen pushen Drama, nicht Wahrheit. Hier ist, wie du nicht zum Gratis-Content für Streit wirst.",
+    body:
+`Online-Diskussionen sind oft nicht für Verständnis gebaut, sondern für Reaktion. Reaktion = Kommentare = Reichweite. Du bist in deren Business-Model, wenn du dich emotional reinziehen lässt.
+
+## Warum es eskaliert
+- Text ohne Ton → Missverständnisse
+- Publikum schaut zu → Ego spielt mit
+- Algorithmen pushen Konflikt
+
+## Der Energy-Saver
+- Antwort nicht sofort. 30 Sekunden Pause.
+- Frag nach: „Meinst du X oder Y?“
+- Wenn’s beleidigend wird: Exit. Block/Muting ist kein L.
+
+## Klaro-Rule
+Nicht jeder verdient Zugriff auf deine Nerven.  
+Deine Ruhe ist ein Asset.`
+  },
+
+  {
+    id: "kn09",
+    category: "Welt",
+    title: "News, die dich krank machen: Wie du informiert bleibst ohne Doomscrolling (echte Medienhygiene)",
+    summary: "Informiert sein heißt nicht: 24/7 Alarm. Hier ist ein Plan, der dich nicht kaputt macht.",
+    body:
+`Doomscrolling ist wie Junkfood fürs Gehirn: du bekommst viel Input, aber wenig Stabilität.
+
+## Warum dein Kopf danach schlechter drauf ist
+Dauer-Alarm = Stress. Dein Gehirn liebt Muster, und wenn du ständig Krisen siehst, wirkt die Welt wie „nur schlimm“.
+
+## Medienhygiene (pragmatisch)
+- 2 feste News-Slots am Tag (z.B. 10 Min mittags + 10 Min abends)
+- Keine News direkt vor Schlaf
+- Quellen, die erklären statt schockieren
+- Frag: „Was kann ich beeinflussen?“ → das reduziert Ohnmacht
+
+## Klaro-Fazit
+Informiert sein soll dich handlungsfähig machen, nicht leer.`
+  },
+
+  {
+    id: "kn10",
+    category: "Gesundheit",
+    title: "„Ich bin ständig müde“: 8 echte Ursachen (die nicht nur „zu wenig Schlaf“ sind) – und was du testen kannst",
+    summary: "Müdigkeit ist oft ein Mix aus Schlaf, Essen, Stress, Routine und Gewohnheiten. Hier ist ein realistischer Check ohne Panik.",
+    body:
+`Wenn du ständig müde bist, ist es selten nur ein Ding. Meist ist es ein Stack aus kleinen Faktoren.
+
+## 8 häufige Ursachen
+1) Schlafrhythmus (unregelmäßig)  
+2) Zu wenig essen oder sehr unregelmäßig essen  
+3) Zu wenig trinken  
+4) Zu viel Koffein (macht Crash)  
+5) Dauerstress (Körper im Alarmmodus)  
+6) Zu wenig Bewegung (Kreislauf low)  
+7) Zu viel Bildschirm spät (Kopf bleibt an)  
+8) Stimmung/mentale Belastung (zieht Energie)
+
+## Der 7-Tage-Test (ohne Perfektion)
+- gleiche Schlafzeit +/- 30 Min
+- morgens 1 Glas Wasser
+- 1 echte Mahlzeit + Protein
+- 10–20 Min Bewegung
+- Koffein nur vormittags
+- abends 20 Min weniger Screen
+
+## Wann du Hilfe holen solltest
+Wenn es sehr stark ist, lange anhält oder mit starken Symptomen kommt (z.B. Schwindel, Atemnot, extreme Schwäche): Arzt. Das ist keine Panik, das ist Verantwortung.
+
+## Klaro-Fazit
+Du musst nicht „härter werden“.  
+Du musst deine Basics stabil machen.`
+  }
+  {
+  id: "kn11",
+  category: "Bildung",
+  title: "Warum Schule sich oft wie ein Kampf anfühlt – und was das mit deinem Nervensystem zu tun hat",
+  summary: "Wenn Lernen sich wie Überleben anfühlt, liegt das selten an Faulheit. Meist ist dein Körper im Dauer-Alarm.",
+  body:
+`Viele Schüler denken: „Mit mir stimmt was nicht“, wenn Schule sie komplett auslaugt. In Wahrheit passiert oft etwas anderes: Dein Nervensystem ist im Stressmodus. Das ist keine Meinung, sondern Biologie.
+
+## Was wirklich passiert
+Dauerstress (Druck, Bewertungen, Angst vor Fehlern, soziale Konflikte) versetzt den Körper in einen Alarmzustand. Adrenalin und Cortisol steigen. Kurzfristig hilft das. Langfristig macht es müde, reizbar und blockiert Denken.
+
+Das erklärt, warum:
+- Konzentration plötzlich weg ist  
+- Lernen ewig dauert  
+- du schneller genervt oder traurig wirst  
+- dein Kopf „zumacht“, obwohl du willst  
+
+## Warum Motivation dann nicht hilft
+Im Alarmmodus denkt das Gehirn nicht strategisch. Es will Sicherheit. „Reiß dich zusammen“ funktioniert da genauso wenig wie „lauf schneller“ mit verstauchtem Fuß.
+
+## Was wirklich hilft
+- **Vorhersehbare Struktur**: feste Zeiten, gleiche Abläufe  
+- **Mini-Ziele** statt „alles schaffen“  
+- **Pausen ohne Bildschirm**, damit das Nervensystem runterfährt  
+- **Atem verlängern** (länger aus- als einatmen)  
+
+## Der wichtigste Perspektivwechsel
+Schule darf anstrengend sein. Aber wenn sie sich dauerhaft wie Bedrohung anfühlt, ist das kein Charakterproblem, sondern ein Signal.
+
+## Klaro-Fazit
+Du bist nicht kaputt.  
+Dein System versucht gerade, dich zu schützen.  
+Und Schutz kann man lernen zu regulieren.`
+},
+
+{
+  id: "kn12",
+  category: "Gesellschaft",
+  title: "Warum du dich manchmal für Dinge entschuldigst, die gar nicht deine Schuld sind",
+  summary: "Überangepasst sein fühlt sich höflich an – kann aber Selbstwert kosten. Hier ist der Grund und der Exit.",
+  body:
+`Viele Menschen sagen automatisch „Sorry“, auch wenn sie nichts falsch gemacht haben. Das wirkt nett, ist aber oft ein Zeichen von innerem Druck.
+
+## Woher das kommt
+Übermäßiges Entschuldigen entsteht häufig durch:
+- Angst vor Konflikten  
+- frühe Erfahrungen mit Kritik  
+- Wunsch, gemocht zu werden  
+- Unsicherheit über eigene Grenzen  
+
+Das Gehirn lernt: „Wenn ich mich klein mache, bin ich sicher.“
+
+## Das Problem daran
+Wer sich ständig entschuldigt, sendet unbewusst die Botschaft: „Ich bin im Unrecht.“ Das kann:
+- Respekt untergraben  
+- Beziehungen unausgeglichen machen  
+- inneren Stress verstärken  
+
+## Typische Situationen
+- „Sorry, dass ich frage…“  
+- „Tut mir leid, dass ich Zeit brauche“  
+- „Sorry, ich wollte nicht nerven“  
+
+## Der saubere Ersatz
+Statt Entschuldigung → **neutrale Klarheit**:
+- „Danke fürs Warten.“
+- „Ich brauche kurz Zeit.“
+- „Ich sehe das anders.“
+
+## Warum das kein Ego-Trip ist
+Grenzen sind kein Angriff. Sie sind Information. Menschen, die dich respektieren, kommen damit klar.
+
+## Klaro-Fazit
+Du musst dich nicht entschuldigen, um respektvoll zu sein.  
+Respekt beginnt oft dort, wo du aufhörst, dich selbst abzuwerten.`
+},
+
+{
+  id: "kn13",
+  category: "Tech",
+  title: "Warum dein Feed dich besser kennt als deine Freunde – und was das mit dir macht",
+  summary: "Algorithmen sind nicht böse, aber extrem gut trainiert. Hier ist, was das mit deinem Kopf macht.",
+  body:
+`Soziale Medien zeigen dir nicht die Realität – sie zeigen dir das, worauf du reagierst. Likes, Watchtime, Kommentare: daraus entsteht dein Feed.
+
+## Wie Algorithmen wirklich funktionieren
+Sie fragen nicht: „Was ist gut für dich?“  
+Sie fragen: „Worauf bleibst du länger?“
+
+Das führt dazu, dass:
+- Extreme Inhalte öfter erscheinen  
+- Emotionale Themen gepusht werden  
+- Nuancen verschwinden  
+
+## Die psychologische Wirkung
+Dein Gehirn liebt Wiederholung. Wenn du ständig ähnliche Inhalte siehst, fühlt sich das „normal“ an – selbst wenn es verzerrt ist.
+
+Das kann:
+- dein Weltbild verengen  
+- Unsicherheit verstärken  
+- Vergleichsdruck erhöhen  
+
+## Warum du nichts „falsch“ machst
+Diese Systeme sind dafür gebaut, Aufmerksamkeit zu halten. Du bist nicht schwach – du bist Mensch.
+
+## Konkrete Gegenmaßnahmen
+- bewusst andere Inhalte liken  
+- Accounts stummschalten, nicht nur entfolgen  
+- feste Zeiten statt Dauer-Scroll  
+- Inhalte speichern statt endlos konsumieren  
+
+## Klaro-Fazit
+Dein Feed ist ein Spiegel deiner Reaktionen – kein objektives Fenster zur Welt.  
+Und Spiegel kann man neu einstellen.`
+},
+
+{
+  id: "kn14",
+  category: "Gesundheit",
+  title: "Warum emotionale Erschöpfung sich oft wie körperliche Krankheit anfühlt",
+  summary: "Müdigkeit, Schmerzen, Leere – manchmal ist das kein Virus, sondern Überlastung.",
+  body:
+`Viele Menschen gehen zum Arzt, weil sie sich körperlich schlecht fühlen – und alle Werte sind „okay“. Das heißt nicht, dass nichts los ist.
+
+## Was da passiert
+Dauerstress beeinflusst:
+- Schlafqualität  
+- Muskelspannung  
+- Verdauung  
+- Immunsystem  
+
+Der Körper trägt mit, was der Kopf lange hält.
+
+## Typische Signale
+- ständige Müdigkeit  
+- Kopf- oder Bauchschmerzen  
+- innere Leere  
+- Reizbarkeit  
+- häufige Infekte  
+
+## Warum das real ist
+Stress ist kein Gefühl, sondern ein körperlicher Zustand. Hormone, Nerven und Muskeln reagieren messbar.
+
+## Was helfen kann
+- Rhythmus (Schlaf, Essen, Pausen)  
+- Bewegung ohne Leistungsdruck  
+- Gespräche statt alles „runterschlucken“  
+- professionelle Hilfe, wenn es anhält  
+
+## Wichtig
+Das ist keine Einbildung.  
+Und Hilfe zu brauchen heißt nicht, schwach zu sein.
+
+## Klaro-Fazit
+Manchmal braucht der Körper Ruhe, weil die Seele zu lange funktioniert hat.`
+},
+
+{
+  id: "kn15",
+  category: "Wirtschaft",
+  title: "Warum Geldstress so viel mit Angst zu tun hat – selbst wenn es nicht um große Summen geht",
+  summary: "Finanzieller Druck ist oft psychologischer als mathematischer Stress.",
+  body:
+`Geldstress entsteht nicht nur bei Schulden oder Armut. Er entsteht, wenn Kontrolle fehlt. Auch bei kleinen Beträgen.
+
+## Warum das Gehirn so reagiert
+Unklarheit triggert Angst. Wenn du nicht weißt:
+- wie viel du hast  
+- was noch kommt  
+- was sicher ist  
+
+geht der Kopf in Worst-Case-Modus.
+
+## Typische Folgen
+- ständiges Grübeln  
+- Schuldgefühle beim Ausgeben  
+- Vermeidung (nicht hinschauen)  
+- Scham  
+
+## Der Kontroll-Hebel
+Nicht mehr Geld, sondern **mehr Übersicht**:
+- alles aufschreiben  
+- Fixkosten kennen  
+- ein kleines, klares Sparziel  
+
+## Warum kleine Schritte reichen
+Schon 10€ regelmäßig sparen verändert dein Gefühl von Sicherheit. Nicht wegen der Summe – sondern wegen der Struktur.
+
+## Klaro-Fazit
+Geldstress ist oft Kontrollstress.  
+Und Kontrolle kann man lernen – Schritt für Schritt.`
+},
+
+{
+  id: "kn16",
+  category: "Gesellschaft",
+  title: "Warum Grenzen setzen sich falsch anfühlt – obwohl es richtig ist",
+  summary: "Grenzen aktivieren oft Schuldgefühle. Nicht, weil sie falsch sind, sondern ungewohnt.",
+  body:
+`Viele Menschen wissen, dass sie Grenzen brauchen – und fühlen sich trotzdem schlecht, wenn sie sie setzen.
+
+## Warum das passiert
+Grenzen verändern Dynamiken. Wer gewohnt ist, dass du immer verfügbar bist, spürt Verlust – und reagiert manchmal mit Druck.
+
+## Typische innere Sätze
+- „Ich bin egoistisch“
+- „Ich enttäusche andere“
+- „Ich mache es schlimmer“
+
+## Die Realität
+Grenzen sind keine Strafe.  
+Sie sind Information: Das geht, das nicht.
+
+## Gesunde Reaktionen erkennen
+Respektvolle Menschen:
+- akzeptieren dein Nein  
+- fragen nach, ohne Druck  
+- bleiben fair  
+
+## Ungesunde Reaktionen
+- Schuldumkehr  
+- Drama  
+- Abwertung  
+
+## Klaro-Fazit
+Schuldgefühl heißt nicht, dass du falsch liegst.  
+Oft heißt es nur, dass du gerade wächst.`
+},
+
+{
+  id: "kn17",
+  category: "Tech",
+  title: "Warum ständige Benachrichtigungen dein Gehirn fragmentieren",
+  summary: "Nicht Ablenkung ist das Problem – sondern ständiger Kontextwechsel.",
+  body:
+`Jede Benachrichtigung reißt dich aus einem Gedankengang. Auch wenn du nicht reagierst.
+
+## Was im Gehirn passiert
+Dein Fokus braucht Zeit zum Aufbau. Jede Unterbrechung setzt ihn zurück. Das nennt man „Attention Residue“.
+
+## Die Folgen
+- langsameres Denken  
+- mehr Fehler  
+- mentale Erschöpfung  
+
+## Warum Multitasking ein Mythos ist
+Du machst nicht mehrere Dinge gleichzeitig.  
+Du wechselst schnell – und verlierst jedes Mal Energie.
+
+## Die einfache Lösung
+- Pushs aus für alles außer Wichtiges  
+- feste Check-Zeiten  
+- Handy beim Lernen außer Reichweite  
+
+## Klaro-Fazit
+Dein Gehirn ist kein Browser mit 30 Tabs.  
+Es arbeitet besser mit Fokus statt Dauer-Ping.`
+},
+
+{
+  id: "kn18",
+  category: "Bildung",
+  title: "Warum schlechte Noten nicht automatisch schlechte Zukunft bedeuten",
+  summary: "Schulsystem misst Leistung – nicht Potenzial. Der Unterschied ist entscheidend.",
+  body:
+`Noten fühlen sich endgültig an. Sind sie aber nicht.
+
+## Was Noten wirklich messen
+- Anpassung an ein System  
+- Tempo  
+- Prüfungsformate  
+
+Nicht:
+- Kreativität  
+- emotionale Intelligenz  
+- langfristige Entwicklung  
+
+## Warum viele später aufblühen
+Mit Reife ändern sich:
+- Lernstrategien  
+- Selbstvertrauen  
+- Umfeld  
+
+## Der Fehler
+Noten mit Wert verwechseln.
+
+## Was du stattdessen tun kannst
+- analysieren statt bewerten  
+- Hilfe annehmen  
+- Skills aufbauen (Organisation, Fokus)  
+
+## Klaro-Fazit
+Du bist kein Zeugnis.  
+Du bist ein Prozess.`
+},
+
+{
+  id: "kn19",
+  category: "Welt",
+  title: "Warum sich die Welt chaotischer anfühlt, als sie statistisch ist",
+  summary: "Medien zeigen Ausnahmen – unser Gehirn macht daraus die Regel.",
+  body:
+`Unser Gehirn bewertet Gefahr höher als Ruhe. Medien verstärken das.
+
+## Der Denkfehler
+Seltene, extreme Ereignisse wirken präsent, weil sie sichtbar sind.
+
+## Die Folge
+- Dauerstress  
+- Ohnmachtsgefühl  
+- Überforderung  
+
+## Der Realitätssplit
+Statistisch sind viele Dinge stabiler, als sie sich anfühlen.  
+Gefühl ≠ Daten.
+
+## Medienkompetenz heißt
+- Kontext suchen  
+- Häufigkeit prüfen  
+- Pausen zulassen  
+
+## Klaro-Fazit
+Informiert sein heißt nicht, alles zu fühlen.`
+},
+
+{
+  id: "kn20",
+  category: "Gesundheit",
+  title: "Warum Selbstfürsorge nichts mit Luxus zu tun hat",
+  summary: "Selbstfürsorge ist Wartung – kein Wellness-Trip.",
+  body:
+`Selbstfürsorge wird oft als Ego oder Luxus dargestellt. In Wahrheit ist sie Grundversorgung.
+
+## Was echte Selbstfürsorge ist
+- schlafen  
+- essen  
+- Grenzen  
+- Pausen  
+
+Nicht:
+- Perfektion  
+- Konsum  
+- Dauer-Optimierung  
+
+## Warum sie so schwerfällt
+Weil viele gelernt haben, erst zu funktionieren.
+
+## Die Wahrheit
+Wer sich nie erholt, wird irgendwann gezwungen.
+
+## Klaro-Fazit
+Selbstfürsorge ist kein Extra.  
+Sie ist Voraussetzung.`
+},
+{
+  id: "kn21",
+  category: "Bildung",
+  title: "Warum Prokrastination kein Zeitproblem ist, sondern ein Emotionsproblem",
+  summary: "Aufschieben fühlt sich faul an – ist aber oft Selbstschutz vor Überforderung.",
+  body:
+`Viele denken bei Prokrastination an fehlende Disziplin. In Wahrheit steckt meist etwas anderes dahinter: Emotionen. Dein Gehirn versucht, unangenehme Gefühle zu vermeiden – nicht Arbeit.
+
+## Was wirklich blockiert
+Typische Auslöser sind:
+- Angst, es nicht gut genug zu machen
+- Unklarheit, wo man anfangen soll
+- zu große Aufgaben ohne Struktur
+- negative Erfahrungen aus der Vergangenheit
+
+Das Gehirn wählt dann den kurzfristig angenehmsten Ausweg: Ablenkung.
+
+## Warum Druck alles schlimmer macht
+Je mehr du dich selbst beschimpfst („Ich bin faul“), desto größer wird der innere Widerstand. Scham blockiert Motivation.
+
+## Der funktionierende Gegenansatz
+- **Aufgabe verkleinern**: nicht „lernen“, sondern „Überschrift schreiben“
+- **Zeit begrenzen**: 5 Minuten reichen als Einstieg
+- **Erlaubnis zum Unperfekten**: Ziel ist Start, nicht Qualität
+
+## Der psychologische Trick
+Sobald du beginnst, sinkt die emotionale Hürde. Motivation folgt oft der Handlung – nicht umgekehrt.
+
+## Klaro-Fazit
+Prokrastination ist kein Defekt.  
+Sie ist ein Signal, dass etwas emotional zu groß wirkt.`
+},
+
+{
+  id: "kn22",
+  category: "Gesellschaft",
+  title: "Warum Konflikte eskalieren, obwohl beide Seiten eigentlich Recht haben",
+  summary: "Viele Streits gehen nicht um Inhalt – sondern um Sicherheit und Anerkennung.",
+  body:
+`In vielen Konflikten reden Menschen über Fakten, kämpfen aber eigentlich um etwas anderes: gesehen und respektiert zu werden.
+
+## Der versteckte Kern
+Hinter Sätzen wie:
+- „Du hörst mir nie zu“
+- „Das ist doch logisch“
+- „Du übertreibst“
+
+steckt oft: „Ich fühle mich nicht ernst genommen.“
+
+## Warum Logik dann nichts bringt
+Wenn sich jemand emotional bedroht fühlt, schaltet das Gehirn in Verteidigung. Argumente werden dann nicht verarbeitet, sondern abgewehrt.
+
+## Typische Eskalationsmuster
+- Unterbrechen
+- Rechtfertigen
+- Verallgemeinern („immer“, „nie“)
+- Lauter werden
+
+## Der Deeskalations-Move
+- Gefühle spiegeln („Ich merke, das ist dir wichtig“)
+- Nachfragen statt kontern
+- Tempo rausnehmen
+
+## Klaro-Fazit
+Konflikte lösen sich selten durch bessere Argumente.  
+Sondern durch mehr Sicherheit im Gespräch.`
+},
+
+{
+  id: "kn23",
+  category: "Tech",
+  title: "Warum dein Gehirn Push-Nachrichten wie Mini-Stress empfindet",
+  summary: "Jede Notification ist ein kleiner Alarm – auch wenn sie harmlos aussieht.",
+  body:
+`Push-Nachrichten wirken banal, haben aber messbare Effekte auf Konzentration und Stresslevel.
+
+## Was neurologisch passiert
+Jede Benachrichtigung aktiviert dein Aufmerksamkeitsnetzwerk. Dein Gehirn prüft sofort: „Wichtig oder nicht?“ – auch wenn du nicht reagierst.
+
+## Die Langzeitfolgen
+- fragmentierter Fokus
+- schnellere mentale Ermüdung
+- Gefühl von Dauer-Unruhe
+
+## Warum das besonders beim Lernen stört
+Nach jeder Unterbrechung braucht das Gehirn Zeit, um wieder in die Tiefe zu kommen. Diese Zeit summiert sich.
+
+## Die realistische Lösung
+- Pushs nur für Menschen, nicht für Apps
+- Sammelzeiten statt Dauer-Ping
+- Handy außer Sichtweite beim Arbeiten
+
+## Klaro-Fazit
+Stille ist kein Luxus.  
+Sie ist die Voraussetzung für klares Denken.`
+},
+
+{
+  id: "kn24",
+  category: "Gesundheit",
+  title: "Warum ständiger Vergleich deine Energie frisst – auch wenn du es gar nicht merkst",
+  summary: "Vergleichen passiert automatisch. Der Schaden entsteht, wenn es unbewusst bleibt.",
+  body:
+`Soziale Vergleiche sind menschlich. Problematisch werden sie, wenn sie dauerhaft und einseitig sind.
+
+## Was Vergleich im Kopf macht
+Du siehst meist nur Highlights anderer – und vergleichst sie mit deinem Alltag. Das verzerrt dein Selbstbild.
+
+## Typische Folgen
+- innere Unruhe
+- Gefühl, „hinterher zu sein“
+- Motivationseinbruch
+- Selbstzweifel
+
+## Warum dein Gehirn darauf anspringt
+Unser Gehirn ist auf soziale Orientierung programmiert. Früher ging es ums Überleben, heute um Likes und Status.
+
+## Gegenstrategie
+- bewusst eigene Fortschritte notieren
+- Vergleichs-Trigger reduzieren
+- Fokus auf Entwicklung statt Position
+
+## Klaro-Fazit
+Vergleich sagt wenig über deinen Wert.  
+Aber viel über deinen Blickwinkel.`
+},
+
+{
+  id: "kn25",
+  category: "Wirtschaft",
+  title: "Warum Sparen scheitert, wenn es nur ein guter Vorsatz ist",
+  summary: "Sparen funktioniert nicht über Motivation, sondern über Systeme.",
+  body:
+`Viele nehmen sich vor zu sparen – und scheitern nicht aus Faulheit, sondern wegen fehlender Struktur.
+
+## Das Hauptproblem
+„Ich spare, wenn was übrig ist“ funktioniert selten. Alltag frisst Überschüsse.
+
+## Was wirklich funktioniert
+- automatisches Weglegen
+- getrennte Konten
+- kleine, klare Ziele
+
+## Warum kleine Beträge reichen
+Regelmäßigkeit verändert dein Sicherheitsgefühl. Das Gehirn liebt Vorhersagbarkeit.
+
+## Typische Denkfehler
+- „Das lohnt sich nicht“
+- „Ich fang später an“
+- „Erst wenn ich mehr verdiene“
+
+## Klaro-Fazit
+Sparen ist kein Charaktertest.  
+Es ist ein Prozess-Design.`
+},
+
+{
+  id: "kn26",
+  category: "Bildung",
+  title: "Warum Lernen kurz vor der Prüfung sich gut anfühlt – aber wenig bringt",
+  summary: "Last-Minute-Lernen täuscht Kontrolle vor, baut aber kaum Wissen auf.",
+  body:
+`Kurz vor Prüfungen zu lernen fühlt sich intensiv an. Das Problem: Intensität ist nicht gleich Wirksamkeit.
+
+## Warum es sich gut anfühlt
+Stress aktiviert Aufmerksamkeit. Du bist wach, fokussiert, angespannt. Das fühlt sich nach Leistung an.
+
+## Warum es nicht hält
+Ohne Wiederholung und Pausen wird Wissen nicht langfristig gespeichert.
+
+## Was besser wirkt
+- verteiltes Lernen
+- Wiederholungen
+- Schlaf zwischen den Einheiten
+
+## Realistischer Kompromiss
+Auch kurze, frühere Einheiten schlagen stundenlanges Pauken am Abend davor.
+
+## Klaro-Fazit
+Lernen ist ein Langstreckenlauf – kein Sprint.`
+},
+
+{
+  id: "kn27",
+  category: "Gesellschaft",
+  title: "Warum Schweigen manchmal gesünder ist als sich zu erklären",
+  summary: "Nicht jede Situation braucht eine Rechtfertigung.",
+  body:
+`Viele Menschen erklären sich zu viel – aus Angst, missverstanden zu werden.
+
+## Warum wir das tun
+- Harmoniebedürfnis
+- Angst vor Ablehnung
+- Wunsch, fair zu wirken
+
+## Das Problem
+Erklärungen werden oft als Einladung zur Diskussion verstanden.
+
+## Wann Schweigen stärker ist
+- wenn Grenzen klar sind
+- wenn jemand nicht verstehen will
+- wenn Diskussion nichts bringt
+
+## Gesunde Klarheit
+Ein kurzer Satz reicht: „Das ist meine Entscheidung.“
+
+## Klaro-Fazit
+Nicht alles braucht Worte.  
+Manches braucht Standfestigkeit.`
+},
+
+{
+  id: "kn28",
+  category: "Tech",
+  title: "Warum öffentliches WLAN mehr ist als nur „langsames Internet“",
+  summary: "Offene Netzwerke sind bequem – aber oft unsicher.",
+  body:
+`Öffentliches WLAN spart Datenvolumen, bringt aber Risiken mit sich.
+
+## Das Grundproblem
+Daten können mitgelesen oder manipuliert werden – besonders ohne Verschlüsselung.
+
+## Typische Gefahren
+- Fake-Hotspots
+- Man-in-the-Middle-Angriffe
+- Datendiebstahl
+
+## Was du vermeiden solltest
+- Banking
+- Passwortänderungen
+- sensible Logins
+
+## Safer Use
+- HTTPS prüfen
+- VPN nutzen
+- danach Cookies löschen
+
+## Klaro-Fazit
+Bequemlichkeit ist kein Sicherheitskonzept.`
+},
+
+{
+  id: "kn29",
+  category: "Gesundheit",
+  title: "Warum Bewegung wirkt, auch wenn sie keinen Spaß macht",
+  summary: "Bewegung ist kein Lifestyle-Trend, sondern Biologie.",
+  body:
+`Viele glauben, Sport müsse motivierend sein. Tatsächlich wirkt er auch ohne Lust.
+
+## Was Bewegung auslöst
+- Stressabbau
+- bessere Durchblutung
+- stabilere Stimmung
+
+## Warum wenig reicht
+Schon 10–20 Minuten verändern den Hormonhaushalt messbar.
+
+## Der Denkfehler
+Alles oder nichts.  
+Dabei schlägt regelmäßig klein jedes seltene Extrem.
+
+## Klaro-Fazit
+Bewegung ist Medizin.  
+Nicht Unterhaltung.`
+},
+
+{
+  id: "kn30",
+  category: "Welt",
+  title: "Warum Unsicherheit in der Welt dich persönlich so stark trifft",
+  summary: "Globale Krisen aktivieren unser Sicherheitsbedürfnis – auch ohne direkten Kontakt.",
+  body:
+`Menschen reagieren emotional auf Unsicherheit, auch wenn sie nicht direkt betroffen sind.
+
+## Warum das so ist
+Unser Gehirn kann Bedrohung nicht gut filtern. Es reagiert auf Möglichkeit, nicht nur Realität.
+
+## Die Folgen
+- Grübeln
+- Schlafprobleme
+- Ohnmachtsgefühl
+
+## Was hilft
+- Informationszeiten begrenzen
+- Fokus auf beeinflussbare Dinge
+- Routine im Alltag
+
+## Klaro-Fazit
+Du darfst die Welt ernst nehmen –  
+ohne dich selbst dabei zu verlieren.`
+},
+{
+  id: "kn31",
+  category: "Gesundheit",
+  title: "Warum dein Körper oft früher weiß als du, dass etwas zu viel ist",
+  summary: "Kopfschmerzen, Bauchdruck, Müdigkeit – dein Körper sendet Signale, lange bevor der Kopf sie ernst nimmt.",
+  body:
+`Viele Menschen merken erst spät, dass sie überlastet sind. Nicht, weil sie ignorant sind – sondern weil der Körper leiser spricht als der Alltag.
+
+## Die frühen Warnsignale
+Bevor es zu einem richtigen Zusammenbruch kommt, zeigt der Körper oft:
+- häufige Kopfschmerzen
+- Verspannungen
+- Magenprobleme
+- Schlafstörungen
+- schnelle Reizbarkeit
+
+Diese Symptome wirken „harmlos“, sind aber Hinweise auf Dauerstress.
+
+## Warum wir das ignorieren
+Gesellschaftlich gilt: funktionieren = stark sein.  
+Pausen werden oft als Schwäche gelesen. Also lernt man, Signale wegzudrücken.
+
+## Das Problem dabei
+Stress, der nicht abgebaut wird, bleibt im Nervensystem.  
+Irgendwann braucht der Körper drastischere Wege, um gehört zu werden.
+
+## Was hilft wirklich
+- regelmäßige Mini-Pausen
+- ausreichend Essen & Trinken
+- Bewegung ohne Leistungsdruck
+- Schlaf nicht verhandeln
+
+## Klaro-Fazit
+Dein Körper ist kein Gegner.  
+Er ist dein Frühwarnsystem.`
+},
+
+{
+  id: "kn32",
+  category: "Bildung",
+  title: "Warum Motivation überschätzt wird – und Routinen alles verändern",
+  summary: "Motivation kommt und geht. Systeme bleiben.",
+  body:
+`Viele warten auf Motivation, um anzufangen. Das Problem: Motivation ist unzuverlässig.
+
+## Die Wahrheit über Motivation
+Sie hängt von:
+- Schlaf
+- Stimmung
+- Stress
+- äußeren Reizen
+
+ab. Kein stabiles Fundament.
+
+## Warum Routinen stärker sind
+Routinen reduzieren Entscheidungsmüdigkeit.  
+Du musst nicht jedes Mal neu kämpfen.
+
+## Beispiele
+- Lernen immer zur gleichen Uhrzeit
+- gleicher Ort
+- gleiche Reihenfolge
+
+Das Gehirn erkennt Muster – und spart Energie.
+
+## Typischer Denkfehler
+„Ich bin heute nicht motiviert“ wird zu „Ich kann heute nichts tun“.
+
+## Klaro-Fazit
+Motivation startet vielleicht den Motor.  
+Routinen halten ihn am Laufen.`
+},
+
+{
+  id: "kn33",
+  category: "Gesellschaft",
+  title: "Warum Grenzen setzen sich oft falsch anfühlt – aber langfristig alles stabiler macht",
+  summary: "Unangenehm im Moment, entlastend im Leben.",
+  body:
+`Grenzen setzen löst bei vielen Schuldgefühle aus. Nicht, weil Grenzen falsch sind – sondern weil man es nie gelernt hat.
+
+## Woher das schlechte Gefühl kommt
+- Angst, andere zu verletzen
+- Wunsch nach Harmonie
+- alte Rollen („Ich muss nett sein“)
+
+## Was ohne Grenzen passiert
+- innerer Druck
+- passive Aggression
+- Erschöpfung
+- Beziehungsprobleme
+
+## Wie gesunde Grenzen aussehen
+- klar
+- ruhig
+- ohne Rechtfertigung
+
+Ein einfaches „Das passt für mich nicht“ reicht.
+
+## Langfristiger Effekt
+Menschen wissen, woran sie sind.  
+Beziehungen werden klarer – nicht kälter.
+
+## Klaro-Fazit
+Grenzen sind kein Angriff.  
+Sie sind Wartung für Beziehungen.`
+},
+
+{
+  id: "kn34",
+  category: "Tech",
+  title: "Warum dein Handy dich schneller müde macht als echte Arbeit",
+  summary: "Reizüberflutung erschöpft mehr als Fokus.",
+  body:
+`Viele fühlen sich nach Stunden am Handy erschöpfter als nach einem langen Lerntag. Das ist kein Zufall.
+
+## Was dein Gehirn da leisten muss
+- ständiger Kontextwechsel
+- neue Reize im Sekundentakt
+- emotionale Mini-Reaktionen
+
+Das kostet Energie.
+
+## Warum Fokus weniger ermüdet
+Bei konzentrierter Arbeit arbeitet das Gehirn gleichmäßiger.  
+Weniger Sprünge = weniger Stress.
+
+## Die Illusion von Entspannung
+Scrollen fühlt sich leicht an, ist aber mental aktiv.
+
+## Praktischer Gegenmove
+- feste Scroll-Zeiten
+- Handy aus dem Blickfeld
+- Pausen ohne Screen
+
+## Klaro-Fazit
+Nicht alles, was sich leicht anfühlt, erholt dich.`
+},
+
+{
+  id: "kn35",
+  category: "Wirtschaft",
+  title: "Warum Geldstress selten nur mit Geld zu tun hat",
+  summary: "Unsicherheit, Kontrolle und Zukunftsangst spielen eine größere Rolle als Zahlen.",
+  body:
+`Geldstress fühlt sich oft wie ein Rechenproblem an. In Wahrheit ist es häufig ein Kontrollproblem.
+
+## Typische Auslöser
+- unklare Einnahmen
+- fehlende Rücklagen
+- keine Übersicht
+- Zukunftsangst
+
+## Warum das so belastet
+Geld steht für Sicherheit.  
+Wenn sie wackelt, reagiert das Nervensystem.
+
+## Was wirklich hilft
+- Transparenz (alles aufschreiben)
+- kleine Rücklagen
+- realistische Planung
+
+Nicht Perfektion – Übersicht.
+
+## Klaro-Fazit
+Ordnung reduziert Stress,  
+auch wenn die Summe gleich bleibt.`
+},
+
+{
+  id: "kn36",
+  category: "Bildung",
+  title: "Warum Fehler machen beim Lernen ein gutes Zeichen ist",
+  summary: "Fehler zeigen, dass dein Gehirn arbeitet – nicht, dass du versagst.",
+  body:
+`Viele haben Angst vor Fehlern. Dabei sind Fehler ein notwendiger Teil von Lernen.
+
+## Was Fehler bedeuten
+Sie zeigen:
+- wo Verständnis fehlt
+- wo Übung nötig ist
+- wo Wachstum passiert
+
+## Das eigentliche Problem
+Nicht der Fehler – sondern ihn zu vermeiden.
+
+## Effektiver Umgang
+- Fehler notieren
+- Muster erkennen
+- gezielt wiederholen
+
+## Warum das Selbstvertrauen stärkt
+Du merkst: Fehler sind kontrollierbar.
+
+## Klaro-Fazit
+Ohne Fehler kein Fortschritt.`
+},
+
+{
+  id: "kn37",
+  category: "Gesellschaft",
+  title: "Warum manche Gespräche dich leer zurücklassen",
+  summary: "Nicht jedes Gespräch ist Austausch – manche sind emotional einseitig.",
+  body:
+`Manche Gespräche fühlen sich danach schwer an. Das liegt selten am Thema – sondern an der Dynamik.
+
+## Typische Merkmale
+- du hörst nur zu
+- deine Sicht wird ignoriert
+- Probleme werden abgeladen
+
+## Warum das Energie zieht
+Emotionale Einseitigkeit fordert, ohne zu geben.
+
+## Was du tun kannst
+- Gespräch begrenzen
+- Thema wechseln
+- eigene Grenzen benennen
+
+## Klaro-Fazit
+Gespräche dürfen verbinden –  
+nicht auslaugen.`
+},
+
+{
+  id: "kn38",
+  category: "Tech",
+  title: "Warum Updates nerven – und trotzdem unverhandelbar sind",
+  summary: "Sicherheit entsteht nicht durch Glück, sondern durch Aktualität.",
+  body:
+`Updates wirken lästig. Sie unterbrechen, verändern Dinge, brauchen Zeit. Trotzdem sind sie entscheidend.
+
+## Warum Updates wichtig sind
+Sie schließen bekannte Sicherheitslücken.  
+Angreifer nutzen genau diese Schwachstellen.
+
+## Typischer Irrtum
+„Mich betrifft das nicht“ – bis es passiert.
+
+## Praktischer Umgang
+- Updates über WLAN
+- regelmäßig neu starten
+- automatische Updates aktivieren
+
+## Klaro-Fazit
+Updates sind kein Extra.  
+Sie sind Grundschutz.`
+},
+
+{
+  id: "kn39",
+  category: "Gesundheit",
+  title: "Warum Pausen kein Luxus sind, sondern Leistungsstrategie",
+  summary: "Ohne Pause sinkt Leistung – egal wie motiviert du bist.",
+  body:
+`Pausen werden oft als Zeitverschwendung gesehen. Biologisch sind sie das Gegenteil.
+
+## Was Pausen im Gehirn machen
+- Informationen werden verarbeitet
+- Stresshormone sinken
+- Fokus wird erneuert
+
+## Ohne Pausen passiert
+- Fehler häufen sich
+- Reizbarkeit steigt
+- Lernen wird ineffizient
+
+## Gute Pausen
+- kurz
+- bewusst
+- ohne neuen Input
+
+## Klaro-Fazit
+Pausen sind Teil der Arbeit.`
+},
+
+{
+  id: "kn40",
+  category: "Welt",
+  title: "Warum sich die Welt unsicher anfühlt, auch wenn dein Alltag stabil ist",
+  summary: "Medienlogik verzerrt Wahrnehmung – dein Nervensystem reagiert trotzdem.",
+  body:
+`Viele leben objektiv sicher, fühlen sich aber dauerhaft angespannt. Ein Grund dafür ist Informationsüberflutung.
+
+## Warum das Gehirn so reagiert
+Es unterscheidet schlecht zwischen Nähe und Distanz.  
+Bedrohung ist Bedrohung – egal wo.
+
+## Folgen
+- unterschwellige Angst
+- Daueranspannung
+- Zukunftssorgen
+
+## Was hilft
+- Medienkonsum begrenzen
+- lokale Realität wahrnehmen
+- Alltag strukturieren
+
+## Klaro-Fazit
+Du darfst informiert sein,  
+ohne ständig im Alarm zu leben.`
+},
+    {
+  id: "kn41",
+  category: "Gesundheit",
+  title: "Warum dein Kopf manchmal abschaltet, obwohl du eigentlich weitermachen willst",
+  summary: "Mentale Erschöpfung fühlt sich wie Faulheit an – ist aber ein Schutzmechanismus.",
+  body:
+`Dieses Gefühl von „Ich kann einfach nicht mehr denken“ kommt nicht aus dem Nichts. Es ist oft das Ergebnis von Daueranspannung, Reizüberflutung und fehlender Erholung.
+
+## Was im Gehirn passiert
+Wenn Stress lange anhält, priorisiert das Gehirn Überleben statt Leistung. Kreatives Denken, Planung und Fokus werden runtergefahren. Das fühlt sich wie Blockade an.
+
+## Typische Auslöser
+- zu viele Aufgaben gleichzeitig
+- permanenter Leistungsdruck
+- wenig Schlaf
+- kaum echte Pausen
+- ständige Erreichbarkeit
+
+## Warum Durchziehen nicht hilft
+Mehr Druck verstärkt den Schutzmodus. Dein Kopf macht nicht zu, weil er „schwach“ ist – sondern weil er dich bremsen will.
+
+## Was wirklich hilft
+- Aufgaben reduzieren
+- klare Prioritäten
+- kurze Pausen ohne Input
+- Schlaf ernst nehmen
+- Bewegung ohne Ziel
+
+## Klaro-Fazit
+Mentale Leere ist kein Versagen.  
+Sie ist ein Signal, langsamer zu werden.`
+},
+
+{
+  id: "kn42",
+  category: "Bildung",
+  title: "Warum Schule oft Leistung misst, aber Lernen übersieht",
+  summary: "Noten zeigen Ergebnisse – nicht immer Verständnis.",
+  body:
+`Schule bewertet oft Tempo, Format und Anpassung. Lernen selbst ist komplexer.
+
+## Was Noten gut messen
+- Reproduktion
+- Zeitmanagement
+- Stressresistenz
+
+## Was sie schlecht messen
+- tiefes Verständnis
+- Kreativität
+- langfristiges Behalten
+- individuelle Lernwege
+
+## Warum das frustriert
+Viele lernen viel, sehen aber wenig Ergebnis. Das erzeugt Selbstzweifel, obwohl das Lernpotenzial da ist.
+
+## Was du daraus machen kannst
+- Fokus auf Verstehen statt Auswendiglernen
+- eigene Zusammenfassungen schreiben
+- erklären können, nicht nur wiederholen
+- Hilfe holen, bevor es eskaliert
+
+## Klaro-Fazit
+Du bist nicht deine Note.  
+Sie ist nur ein Messwert in einem begrenzten System.`
+},
+
+{
+  id: "kn43",
+  category: "Gesellschaft",
+  title: "Warum Menschen Nähe wollen, aber Angst vor echten Gesprächen haben",
+  summary: "Verletzlichkeit ist riskant – aber ohne sie bleibt alles oberflächlich.",
+  body:
+`Viele wünschen sich echte Verbindung, halten Gespräche aber bewusst oberflächlich. Der Grund ist meist Angst.
+
+## Wovor genau?
+- abgelehnt zu werden
+- falsch verstanden zu werden
+- zu viel zu sein
+
+## Was stattdessen passiert
+Smalltalk, Witze, Ablenkung. Nähe wird simuliert, aber nicht erreicht.
+
+## Warum das langfristig einsam macht
+Ohne echte Offenheit entsteht keine emotionale Sicherheit. Beziehungen bleiben instabil.
+
+## Wie Nähe entstehen kann
+- ehrliche, kleine Aussagen
+- zuhören ohne sofort zu lösen
+- eigene Grenzen respektieren
+
+## Klaro-Fazit
+Nähe braucht Mut –  
+aber sie ist der einzige Weg raus aus emotionaler Distanz.`
+},
+
+{
+  id: "kn44",
+  category: "Tech",
+  title: "Warum Algorithmen nicht neutral sind – und was das mit deinem Denken macht",
+  summary: "Feeds zeigen nicht die Welt, sondern das, was dich bindet.",
+  body:
+`Algorithmen sind darauf optimiert, Aufmerksamkeit zu halten – nicht Wahrheit zu zeigen.
+
+## Wie das funktioniert
+Inhalte werden nach Reaktionen bewertet: Klicks, Kommentare, Emotionen. Extreme Inhalte performen besser.
+
+## Die Folgen
+- verzerrte Wahrnehmung
+- stärkere Meinungen
+- mehr Stress
+- weniger Grautöne
+
+## Warum das dein Denken beeinflusst
+Was du oft siehst, wirkt normal. Dein Gehirn passt sich an.
+
+## Gegenmaßnahmen
+- verschiedene Quellen
+- bewusste Pausen
+- längere Formate
+- Feeds aktiv kuratieren
+
+## Klaro-Fazit
+Was du konsumierst, formt dein Weltbild.  
+Wähle bewusst.`
+},
+
+{
+  id: "kn45",
+  category: "Wirtschaft",
+  title: "Warum finanzielle Sicherheit mehr mit Verhalten als mit Einkommen zu tun hat",
+  summary: "Mehr Geld löst keine Chaos-Gewohnheiten.",
+  body:
+`Viele glauben, finanzielle Probleme verschwinden mit höherem Einkommen. Oft stimmt das nicht.
+
+## Der wahre Faktor
+Verhalten:
+- Überblick
+- Planung
+- Impulskontrolle
+
+## Typische Muster
+- steigende Ausgaben mit steigendem Einkommen
+- keine Rücklagen
+- fehlende Ziele
+
+## Was wirklich Sicherheit bringt
+- fixe Sparroutinen
+- klare Budgets
+- Notgroschen
+- realistische Ziele
+
+## Klaro-Fazit
+Sicherheit entsteht nicht durch Höhe –  
+sondern durch Struktur.`
+},
+
+{
+  id: "kn46",
+  category: "Gesundheit",
+  title: "Warum ständiger Stress krank macht, auch wenn du ihn ‚aushältst‘",
+  summary: "Der Körper vergisst Stress nicht – auch wenn du es versuchst.",
+  body:
+`Stress ist kurzfristig hilfreich. Langfristig wird er zur Belastung.
+
+## Was Dauerstress bewirkt
+- erhöhter Blutdruck
+- Schlafprobleme
+- Immunschwäche
+- Verdauungsprobleme
+- emotionale Erschöpfung
+
+## Warum viele es nicht merken
+Stress wird normalisiert. Man lebt im Dauerzustand.
+
+## Was hilft
+- Stressquellen identifizieren
+- Pausen einbauen
+- Prioritäten klären
+- Unterstützung suchen
+
+## Klaro-Fazit
+Aushalten ist keine Lösung.  
+Regulation ist es.`
+},
+
+{
+  id: "kn47",
+  category: "Bildung",
+  title: "Warum Wiederholen der langweiligste – und effektivste – Lerntrick ist",
+  summary: "Gedächtnis liebt Wiederholung, nicht Abwechslung.",
+  body:
+`Wiederholen fühlt sich unspektakulär an. Genau deshalb wirkt es.
+
+## Wie Gedächtnis funktioniert
+Information wird durch Wiederholung stabilisiert. Ohne sie verblasst Wissen schnell.
+
+## Typischer Fehler
+Alles einmal lernen – nichts festigen.
+
+## Besserer Ansatz
+- kurze Wiederholungen
+- zeitlich verteilt
+- aktiv (abfragen, erklären)
+
+## Klaro-Fazit
+Lernen ist kein Event.  
+Es ist ein Prozess.`
+},
+
+{
+  id: "kn48",
+  category: "Gesellschaft",
+  title: "Warum ‚nett sein‘ oft zu innerem Druck führt",
+  summary: "Dauerhaftes Anpassen kostet Energie.",
+  body:
+`Nett sein wird oft belohnt – bis es zur Selbstaufgabe wird.
+
+## Das Problem
+Eigene Bedürfnisse werden unterdrückt, um Konflikte zu vermeiden.
+
+## Die Folgen
+- Frust
+- Erschöpfung
+- passive Aggression
+
+## Gesunde Alternative
+- ehrlich, respektvoll, klar
+- Nein sagen ohne Schuldgefühl
+
+## Klaro-Fazit
+Freundlichkeit ohne Grenzen ist kein Wert –  
+sie ist Selbstverlust.`
+},
+
+{
+  id: "kn49",
+  category: "Tech",
+  title: "Warum Multitasking dein Gehirn langsamer macht, nicht schneller",
+  summary: "Du machst nicht mehr – du wechselst nur öfter.",
+  body:
+`Multitasking fühlt sich produktiv an, reduziert aber Effizienz.
+
+## Was wirklich passiert
+Das Gehirn springt zwischen Aufgaben. Jeder Wechsel kostet Zeit und Energie.
+
+## Die Folgen
+- mehr Fehler
+- längere Dauer
+- höhere Ermüdung
+
+## Bessere Strategie
+- eine Aufgabe
+- klare Zeitblöcke
+- Ablenkungen raus
+
+## Klaro-Fazit
+Fokus ist kein Talent.  
+Er ist eine Entscheidung.`
+},
+
+{
+  id: "kn50",
+  category: "Welt",
+  title: "Warum Hoffnung realistisch ist – auch wenn die Welt chaotisch wirkt",
+  summary: "Hoffnung heißt nicht Verdrängen, sondern Handlungsfähigkeit.",
+  body:
+`Hoffnung wird oft mit Naivität verwechselt. Dabei ist sie eine psychologische Ressource.
+
+## Was Hoffnung wirklich ist
+Die Überzeugung, dass Handeln Sinn hat – trotz Unsicherheit.
+
+## Warum sie wichtig ist
+Ohne Hoffnung entsteht Lähmung. Mit Hoffnung entsteht Bewegung.
+
+## Wie du sie stärkst
+- kleine Erfolge wahrnehmen
+- Einflussbereiche erkennen
+- Gemeinschaft suchen
+
+## Klaro-Fazit
+Hoffnung ist kein Gefühl.  
+Sie ist eine Entscheidung, weiterzumachen.`
+}
+                    
+];
+
+  // Safety: Wenn leer, nicht crashen
+  if (!Array.isArray(ARTICLES) || ARTICLES.length === 0) {
+    console.warn("ARTICLES ist leer. Bitte deine Artikel im Script einfügen.");
+    return;
+  }
+
+  // ---------- Utilities (seeded random, stabil pro Tag) ----------
+  function xmur3(str) {
+    let h = 1779033703 ^ str.length;
+    for (let i = 0; i < str.length; i++) {
+      h = Math.imul(h ^ str.charCodeAt(i), 3432918353);
+      h = (h << 13) | (h >>> 19);
+    }
+    return function () {
+      h = Math.imul(h ^ (h >>> 16), 2246822507);
+      h = Math.imul(h ^ (h >>> 13), 3266489909);
+      return (h ^= h >>> 16) >>> 0;
+    };
+  }
+
+  function mulberry32(a) {
+    return function () {
+      let t = (a += 0x6D2B79F5);
+      t = Math.imul(t ^ (t >>> 15), t | 1);
+      t ^= t + Math.imul(t ^ (t >>> 7), t | 61);
+      return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
+    };
+  }
+
+  function pad2(n) { return String(n).padStart(2, "0"); }
+
+  function formatDEDate(d) {
+    return `${pad2(d.getDate())}.${pad2(d.getMonth() + 1)}.${d.getFullYear()}`;
+  }
+
+  function formatTimeDE(d) {
+    return `${pad2(d.getHours())}:${pad2(d.getMinutes())}`;
+  }
+
+  function relativeLabel(published, now) {
+    const diffMs = now - published;
+    if (diffMs < 0) return "später heute";
+
+    const diffMin = Math.floor(diffMs / 60000);
+    const diffHours = Math.floor(diffMin / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    if (diffMin < 1) return "gerade eben";
+    if (diffMin < 60) return `vor ${diffMin} Min`;
+    if (diffHours < 24) return `vor ${diffHours} Std`;
+    if (diffDays === 1) return "gestern";
+    return `${diffDays} Tage alt`;
+  }
+
+  function escapeHTML(str) {
+    return String(str ?? "")
+      .replaceAll("&", "&amp;")
+      .replaceAll("<", "&lt;")
+      .replaceAll(">", "&gt;")
+      .replaceAll('"', "&quot;")
+      .replaceAll("'", "&#039;");
+  }
+
+  // ---------- Datum / Footer ----------
+  const todayEl = document.getElementById("today-label");
+  const yearEl = document.getElementById("year");
+  const now = new Date();
+
+  if (todayEl) todayEl.textContent = formatDEDate(now);
+  if (yearEl) yearEl.textContent = now.getFullYear();
+
+  // ---------- Tagesauswahl: IMMER 3 Artikel pro Tag, stable seed ----------
+  const seedStr = `${now.getFullYear()}-${pad2(now.getMonth() + 1)}-${pad2(now.getDate())}`;
+  const seedFn = xmur3(seedStr);
+  const rng = mulberry32(seedFn());
+
+  // pickUnique: 3 verschiedene Artikel
+  function pickUnique(count, max) {
+    if (max <= 0) return [];
+    if (count >= max) return Array.from({ length: max }, (_, i) => i);
+
+    const set = new Set();
+    while (set.size < count) set.add(Math.floor(rng() * max));
+    return Array.from(set);
+  }
+
+  const todaysIdx = pickUnique(3, ARTICLES.length);
+
+  // --------- Veröffentlichungs-Zeitfenster ---------
+  // (stabil pro Tag, aber "random") — du kannst das ändern:
+  const WINDOW_START_MIN = 6 * 60 + 30;   // 06:30
+  const WINDOW_END_MIN   = 22 * 60 + 30;  // 22:30
+
+  function randomTimeToday() {
+    const minutes = Math.floor(WINDOW_START_MIN + rng() * (WINDOW_END_MIN - WINDOW_START_MIN));
+    const hh = Math.floor(minutes / 60);
+    const mm = minutes % 60;
+    const t = new Date(now);
+    t.setHours(hh, mm, 0, 0);
+    return t;
+  }
+
+  // 3 Artikel bekommen Zeiten, dann sortieren wir sie:
+  // ABER: wir wollen "in Reihenfolge publishen" (Slot1 < Slot2 < Slot3),
+  // darum vergeben wir 3 Zeiten und sortieren aufsteigend für Publishing.
+  const picked = todaysIdx.map(i => ({ ...ARTICLES[i] }));
+  const timesAsc = [randomTimeToday(), randomTimeToday(), randomTimeToday()].sort((a, b) => a - b);
+
+  const todaysArticles = picked.map((a, idx) => ({
+    ...a,
+    publishedAt: timesAsc[idx] // Slot 1,2,3 in Reihenfolge
+  }));
+
+  // Für Anzeige: neueste oben (aber nur wenn schon veröffentlicht)
+  function getVisibleArticles() {
+    const n = new Date();
+    return todaysArticles
+      .filter(a => a.publishedAt <= n)
+      .sort((a, b) => b.publishedAt - a.publishedAt);
+  }
+
+  // ---------- Render Cards (nur veröffentlichte!) ----------
+  const grid = document.getElementById("articles-today");
+
+  function createCard(article) {
+    const a = document.createElement("a");
+    a.href = "#";
+    a.className = "article-card";
+    a.dataset.time = article.publishedAt.toISOString();
+    a.dataset.articleId = article.id;
+
+    a.innerHTML = `
+      <div class="article-chip-row">
+        <span class="article-chip">${escapeHTML(article.category)}</span>
+        <span class="article-time">lädt...</span>
+      </div>
+      <h3 class="article-title">${escapeHTML(article.title)}</h3>
+      <p class="article-desc">${escapeHTML(article.summary)}</p>
+    `;
+
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      openArticle(article);
+    });
+
+    return a;
+  }
+
+  function renderGrid() {
+    if (!grid) return;
+
+    const visible = getVisibleArticles();
+
+    if (visible.length === 0) {
+      grid.innerHTML = `
+        <div class="article-card" style="cursor:default">
+          <div class="article-chip-row">
+            <span class="article-chip">KlaroNews</span>
+            <span class="article-time">bald</span>
+          </div>
+          <h3 class="article-title">Heute noch nichts live.</h3>
+          <p class="article-desc">Der nächste Post kommt später. (Ja, wir sind pünktlich 😄)</p>
+        </div>
+      `;
+      return;
+    }
+
+    grid.innerHTML = "";
+    visible.forEach(a => grid.appendChild(createCard(a)));
+  }
+
+  // ---------- Relative time labels ----------
+  function updateTimes() {
+    const cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
+    const n = new Date();
+    cards.forEach(card => {
+      const timeEl = card.querySelector(".article-time");
+      if (!timeEl) return;
+      const published = new Date(card.dataset.time);
+      timeEl.textContent = relativeLabel(published, n);
+    });
+  }
+
+  // initial render
+  renderGrid();
+  updateTimes();
+
+  // re-render + update labels (damit Posts genau dann auftauchen)
+  setInterval(() => {
+    renderGrid();
+    updateTimes();
+  }, 30 * 1000);
+
+  // ---------- Buttons ----------
+  const lastUpdateBtn = document.getElementById("btn-last-update");
+  if (lastUpdateBtn) {
+    lastUpdateBtn.addEventListener("click", () => {
+      const visible = getVisibleArticles();
+      if (visible[0]) openArticle(visible[0]);
+    });
+  }
+
+  const summaryBtn = document.getElementById("btn-summary");
+  if (summaryBtn) {
+    summaryBtn.addEventListener("click", () => {
+      const visible = getVisibleArticles();
+      const top3 = visible.slice(0, 3);
+
+      const sum = {
+        id: "summary",
+        category: "Daily Briefing",
+        title: `Heute (${formatDEDate(now)}): 3 Dinge, die du wissen solltest`,
+        publishedAt: new Date(),
+        body:
+          (top3[0] ? `1) ${top3[0].title}\n\n` : "") +
+          (top3[1] ? `2) ${top3[1].title}\n\n` : "") +
+          (top3[2] ? `3) ${top3[2].title}\n\n` : "") +
+          `Klaro-Fazit: Wenig Drama, mehr Kontext.`
+      };
+
+      openArticle(sum, { isSummary: true });
+    });
+  }
+
+  // Sidebar Links (optional)
+  const openToday = document.getElementById("open-today-briefing");
+  if (openToday && summaryBtn) {
+    openToday.addEventListener("click", (e) => { e.preventDefault(); summaryBtn.click(); });
+  }
+
+  // ---------- Modal ----------
+  const modal = document.getElementById("article-modal");
+  const boxTitle = document.getElementById("article-title");
+  const boxCategory = document.getElementById("article-category");
+  const boxTime = document.getElementById("article-time");
+  const boxBody = document.getElementById("article-body");
+  const closeBtn = document.getElementById("article-close");
+
+  function openArticle(article, opts = {}) {
+    if (!modal || !boxTitle || !boxCategory || !boxTime || !boxBody) return;
+
+    boxTitle.textContent = article.title || "";
+    boxCategory.textContent = article.category || "";
+
+    const p = article.publishedAt instanceof Date ? article.publishedAt : new Date(article.publishedAt || Date.now());
+    const dateLabel = formatDEDate(p);
+    const timeLabel = formatTimeDE(p);
+    boxTime.textContent = opts.isSummary ? `${dateLabel}` : `${dateLabel} · ${timeLabel}`;
+
+    const text = String(article.body || "").trim();
+    boxBody.innerHTML = text
+      .split(/\n\s*\n/g)
+      .map(p => `<p>${escapeHTML(p)}</p>`)
+      .join("");
+
+    modal.style.display = "flex";
+    modal.setAttribute("aria-hidden", "false");
+    document.body.style.overflow = "hidden";
+  }
+
+  function closeArticle() {
+    if (!modal) return;
+    modal.style.display = "none";
+    modal.setAttribute("aria-hidden", "true");
+    document.body.style.overflow = "";
+  }
+
+  if (closeBtn) closeBtn.addEventListener("click", closeArticle);
+  if (modal) {
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeArticle();
+    });
+  }
+
+  document.addEventListener("keydown", (e) => {
+    if (e.key === "Escape") closeArticle();
+  });
+});
+</script>
+
+<!-- SCRIPT 2: Datenschutz-Overlay (getrennt) -->
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const overlay = document.getElementById("ds-overlay");
+  const content = document.getElementById("ds-content");
+  const acceptBtn = document.getElementById("ds-accept");
+  const skipBtn = document.getElementById("ds-skip");
+
+  if (!overlay || !content || !acceptBtn || !skipBtn) return;
+
+  function hideOverlay() {
+    overlay.style.opacity = "0";
+    overlay.style.transition = "0.4s";
+    setTimeout(() => { overlay.style.display = "none"; }, 400);
+  }
+
+  if (!localStorage.getItem("dsAccepted")) {
+    overlay.style.display = "flex";
+    overlay.style.opacity = "1";
+
+    fetch("datenschutz.html")
+      .then(res => res.ok ? res.text() : Promise.reject())
+      .then(html => { content.innerHTML = html; })
+      .catch(() => {
+        content.innerHTML =
+          "<p><strong>Datenschutz konnte nicht geladen werden.</strong></p>" +
+          "<p>Bitte stelle sicher, dass <code>datenschutz.html</code> im gleichen Ordner liegt.</p>";
+      });
+  }
+
+  content.addEventListener("scroll", () => {
+    if (content.scrollTop + content.clientHeight >= content.scrollHeight - 10) {
+      acceptBtn.disabled = false;
+      acceptBtn.classList.add("active");
+      acceptBtn.textContent = "Akzeptieren";
+    }
+  });
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+
+  skipBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
 });
 </script>
 
@@ -1198,4 +2945,3 @@ skipBtn.addEventListener("click", () => {
      crossorigin="anonymous"></script>
 </body>
 </html>
-
