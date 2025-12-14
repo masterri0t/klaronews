@@ -9,6 +9,16 @@
   --border: #262626;
   --radius-lg: 26px;
 }
+.toast{
+  position:fixed; left:50%; bottom:26px;
+  transform:translateX(-50%) translateY(18px);
+  opacity:0;
+  padding:12px 14px; border-radius:14px;
+  background:rgba(20,20,20,.92);
+  border:1px solid rgba(255,255,255,.08);
+  transition:.2s ease; z-index:9999
+}
+.toast.show{opacity:1; transform:translateX(-50%) translateY(0)}
 
 * {
   box-sizing: border-box;
@@ -300,3 +310,4 @@ footer {
     font-size: 1.6rem;
   }
 }
+
