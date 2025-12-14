@@ -3,7 +3,7 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-  <base href="/main/">
+
   <title>KlaroNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KlaroNews – kurze und klare Nachrichten. Was heute wirklich wichtig war, in einfachen Worten erklärt." />
@@ -679,13 +679,11 @@
       </div>
 
       <nav class="reader-nav">
-       <a href="/main/">Heute</a>
-        <a class="nav-link" href="/main/">Politik</a>
+     <a class="nav-link active" href="/main/">Heute</a>
+<a class="nav-link" href="/main/#politik">Politik</a>
+<a class="nav-link" href="/main/#welt">Welt</a>
+<a class="nav-link" href="/main/#gesellschaft">Gesellschaft</a>
 
-
-        <a class="nav-link" href="#welt">Welt</a>
-        <a class="nav-link" href="#gesellschaft">Gesellschaft</a>
-        <a class="nav-cta" href="#newsletter">Newsletter</a>
       </nav>
     </div>
 
@@ -797,10 +795,11 @@
     <footer>
       <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
       <div class="footer-links">
+<a href="/main/">Startseite</a>
 <a href="/main/impressum/">Impressum</a>
 <a href="/main/datenschutz/">Datenschutz</a>
 <a href="/main/kontakt/">Kontakt</a>
-<a href="/main/">Startseite</a>
+
 
 
 
@@ -2818,7 +2817,8 @@ Sie ist eine Entscheidung, weiterzumachen.`
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-    history.replaceState(null, "", `#article=${encodeURIComponent(id)}`);
+   history.replaceState(null, "", location.pathname);
+
     window.scrollTo({ top: 0, behavior: "instant" });
   }
 
@@ -2827,7 +2827,8 @@ Sie ist eine Entscheidung, weiterzumachen.`
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    history.replaceState(null, "", "#top");
+    history.replaceState(null, "", location.pathname);
+
   }
 
   if (modalBack) modalBack.addEventListener("click", closeReader);
@@ -2942,10 +2943,3 @@ if (!localStorage.getItem("dsAccepted")) {
     crossorigin="anonymous"></script>
 </body>
 </html>
-
-
-
-
-
-
-
