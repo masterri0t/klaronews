@@ -1,0 +1,26 @@
+name: Auto Publish KlaroNews
+
+on:
+  schedule:
+    - cron: "0 8 * * *"
+    - cron: "0 14 * * *"
+    - cron: "0 20 * * *"
+  workflow_dispatch:
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Publish article
+        run: |
+          node scripts/publish.js
+
+      - name: Commit changes
+        run: |
+          git config user.name "KlaroBot"
+          git config user.email "bot@klaronews.com"
+          git add data/published.json
+          git commit -m "auto: publish article" || echo "Nothing to publish"
+          git push
