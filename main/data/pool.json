@@ -1,0 +1,11 @@
+{
+  "items": [
+    {
+      "id": "kn01",
+      "category": "Tech",
+      "title": "Warum Passwörter dich verraten",
+      "summary": "Die größten Security-Fehler.",
+      "bodyHtml": "<p>Dein Artikel...</p>"
+    }
+  ]
+}
