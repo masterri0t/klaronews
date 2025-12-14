@@ -2916,38 +2916,89 @@ if (!localStorage.getItem("dsAccepted")) {
 }
 </script>
 
-
 <script>
-document.addEventListener("DOMContentLoaded", () => {
-  const MAP = {
-    "datenschutz": "/main/datenschutz/",
-    "impressum": "/main/impressum/",
-    "kontakt": "/main/kontakt/",
-    "startseite": "/main/",
-    "home": "/main/"
+(() => {
+  // Ziel-Routen (immer sauber mit Slash am Ende)
+  const ROUTES = [
+    { key: "datenschutz", target: "/main/datenschutz/" },
+    { key: "impressum",  target: "/main/impressum/"  },
+    { key: "kontakt",    target: "/main/kontakt/"    },
+    { key: "main",       target: "/main/"            }
+  ];
+
+  const normalize = (p) => {
+    if (!p) return "/";
+    // doppelte slashes killen
+    p = p.replace(/\/{2,}/g, "/");
+    // wenn /main ohne slash -> /main/
+    if (p === "/main") return "/main/";
+    // wenn /main/datenschutz ohne slash -> /main/datenschutz/
+    if (/^\/main\/(datenschutz|impressum|kontakt)$/.test(p)) return p + "/";
+    return p;
   };
 
-  document.querySelectorAll("a").forEach(link => {
-    link.addEventListener("click", (e) => {
-      const href = (link.getAttribute("href") || "").toLowerCase();
+  const hardFixIfNeeded = () => {
+    const current = normalize(window.location.pathname);
 
-      for (const key in MAP) {
-        if (href.includes(key)) {
-          e.preventDefault();
-          window.location.href = MAP[key];
-          return;
+    // Wenn wir auf einer der Seiten sind, aber die URL ist nicht exakt target -> HARD redirect
+    for (const r of ROUTES) {
+      // matcht z.B. /main/datenschutz, /main/datenschutz/index.html, /main/datenschutz/irgendwas
+      const rx = new RegExp("^/main/" + r.key + "(?:/.*)?$", "i");
+
+      if (r.key === "main") {
+        // main route: /main oder /main/index.html oder /main/
+        if (/^\/main(?:\/index\.html)?\/?$/i.test(current) && current !== r.target) {
+          window.location.replace(r.target);
+          return true;
+        }
+      } else {
+        if (rx.test(current) && current !== r.target) {
+          window.location.replace(r.target);
+          return true;
         }
       }
-    });
-  });
-});
+    }
+
+    // Wenn jemand datenschutz.html / impressum.html etc. aufruft → sauber umleiten
+    const lower = current.toLowerCase();
+    if (lower.endsWith("datenschutz.html")) { window.location.replace("/main/datenschutz/"); return true; }
+    if (lower.endsWith("impressum.html"))  { window.location.replace("/main/impressum/");  return true; }
+    if (lower.endsWith("kontakt.html"))    { window.location.replace("/main/kontakt/");    return true; }
+
+    return false;
+  };
+
+  // 1) Beim Laden sofort erzwingen
+  if (hardFixIfNeeded()) return;
+
+  // 2) Klicks abfangen, damit immer die saubere Route kommt (mit echtem Refresh)
+  document.addEventListener("click", (e) => {
+    const a = e.target.closest && e.target.closest("a");
+    if (!a) return;
+
+    const href = (a.getAttribute("href") || "").trim();
+    if (!href || href.startsWith("http") || href.startsWith("mailto:") || href.startsWith("tel:")) return;
+
+    const h = href.toLowerCase();
+
+    if (h.includes("datenschutz")) { e.preventDefault(); window.location.href = "/main/datenschutz/"; return; }
+    if (h.includes("impressum"))  { e.preventDefault(); window.location.href = "/main/impressum/";  return; }
+    if (h.includes("kontakt"))    { e.preventDefault(); window.location.href = "/main/kontakt/";    return; }
+    if (h === "/" || h.includes("/main")) { /* optional */ }
+  }, true);
+
+  // 3) Falls der Host intern was ändert (Back/Forward), nochmal checken
+  window.addEventListener("popstate", hardFixIfNeeded);
+})();
 </script>
+
 
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
     crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
