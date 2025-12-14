@@ -2933,11 +2933,23 @@ if (!localStorage.getItem("dsAccepted")) {
 
 <script>
 (function () {
-  if (location.hash.startsWith("#article") || location.hash === "#top") {
-    history.replaceState(null, "", location.pathname);
+  const path = window.location.pathname;
+
+  const FIXES = [
+    { match: /\/main\/impressum(\/.*)?$/, target: "/main/impressum/" },
+    { match: /\/main\/datenschutz(\/.*)?$/, target: "/main/datenschutz/" },
+    { match: /\/main\/kontakt(\/.*)?$/, target: "/main/kontakt/" }
+  ];
+
+  for (const fix of FIXES) {
+    if (fix.match.test(path) && path !== fix.target) {
+      window.location.replace(fix.target);
+      return;
+    }
   }
 })();
 </script>
+
 
 
 
@@ -2945,5 +2957,6 @@ if (!localStorage.getItem("dsAccepted")) {
     crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
