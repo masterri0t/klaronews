@@ -5831,33 +5831,6 @@ if (!localStorage.getItem("dsAccepted")) {
   }
 }
 </script>
-<script>
-(function () {
-  const routes = {
-    "/index.html": "/main",
-    "/datenschutz.html": "/datenschutz",
-    "/impressum.html": "/impressum",
-    "/kontakt.html": "/kontakt"
-  };
-
-  const path = window.location.pathname;
-  const hash = window.location.hash;
-
-  // #top entfernen
-  if (hash === "#top") {
-    history.replaceState(null, document.title, path);
-  }
-
-  // Pretty URL setzen
-  if (routes[path]) {
-    history.replaceState(
-      null,
-      document.title,
-      routes[path]
-    );
-  }
-})();
-</script>
 
 
 
