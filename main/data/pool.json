@@ -77,9 +77,5 @@
       "summary": "Müdigkeit ist oft ein Mix aus Schlaf, Essen, Stress, Routine und Gewohnheiten. Hier ist ein realistischer Check ohne Panik.",
       "body": "Wenn du ständig müde bist, ist es selten nur ein Ding. Meist ist es ein Stack aus kleinen Faktoren.\n\n## 8 häufige Ursachen\n1) Schlafrhythmus (unregelmäßig)  \n2) Zu wenig essen oder sehr unregelmäßig essen  \n3) Zu wenig trinken  \n4) Zu viel Koffein (macht Crash)  \n5) Dauerstress (Körper im Alarmmodus)  \n6) Zu wenig Bewegung (Kreislauf low)  \n7) Zu viel Bildschirm spät (Kopf bleibt an)  \n8) Stimmung/mentale Belastung (zieht Energie)\n\n## Der 7-Tage-Test (ohne Perfektion)\n- gleiche Schlafzeit +/- 30 Min\n- morgens 1 Glas Wasser\n- 1 echte Mahlzeit + Protein\n- 10–20 Min Bewegung\n- Koffein nur vormittags\n- abends 20 Min weniger Screen\n\n## Wann du Hilfe holen solltest\nWenn es sehr stark ist, lange anhält oder mit starken Symptomen kommt (z.B. Schwindel, Atemnot, extreme Schwäche): Arzt. Das ist keine Panik, das ist Verantwortung.\n\n## Klaro-Fazit\nDu musst nicht „härter werden“.  \nDu musst deine Basics stabil machen."
     }
-
-    /* kn11 - kn50: genau gleiches Muster:
-       { "id": "...", "category": "...", "title": "...", "summary": "...", "body": "...\n..." }
-       -> Wenn du willst, paste ich dir kn11–kn50 auch als fertige JSON (aber das ist ultra lang für einen Chat-Post). */
   ]
 }
