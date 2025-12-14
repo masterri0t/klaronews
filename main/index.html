@@ -2887,58 +2887,71 @@ Sie ist eine Entscheidung, weiterzumachen.`
 });
 
 // ================== Datenschutz-Overlay ==================
-if (!localStorage.getItem("dsAccepted")) {
+ // ❌ Overlay NIE auf rechtlichen Seiten
+  const BLOCKED = [
+    "/main/datenschutz/",
+    "/main/impressum/",
+    "/main/kontakt/"
+  ];
+
+  if (BLOCKED.includes(path)) return;
+  if (localStorage.getItem("dsAccepted")) return;
+
   const overlay = document.getElementById("ds-overlay");
   const content = document.getElementById("ds-content");
   const acceptBtn = document.getElementById("ds-accept");
   const skipBtn = document.getElementById("ds-skip");
 
-  if (overlay && content && acceptBtn && skipBtn) {
-    overlay.style.display = "flex";
-    
+  if (!overlay || !content || !acceptBtn || !skipBtn) return;
+
+  overlay.style.display = "flex";
+
   fetch("/main/datenschutz/index.html")
-  .then(r => r.text())
-  .then(html => {
-    const doc = new DOMParser().parseFromString(html, "text/html");
-    const ds = doc.querySelector("#ds-only");
-    content.innerHTML = ds ? ds.innerHTML : "<p>Fehler beim Laden.</p>";
-  })
-  .catch(() => {
-    content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>";
-  });
-
-
-    function hideOverlay() {
-      overlay.style.opacity = 1;
-      setTimeout(() => {
-        overlay.style.transition = "0.4s";
-        overlay.style.opacity = 0;
-        setTimeout(() => { overlay.style.display = "none"; }, 400);
-      }, 50);
-    }
-
-    content.addEventListener("scroll", () => {
-      if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
-        acceptBtn.classList.add("active");
-        acceptBtn.textContent = "Akzeptieren";
-        acceptBtn.disabled = false;
-      }
+    .then(r => r.text())
+    .then(html => {
+      const doc = new DOMParser().parseFromString(html, "text/html");
+      const ds = doc.querySelector("#ds-only");
+      content.innerHTML = ds ? ds.innerHTML : "<p>Fehler beim Laden.</p>";
+    })
+    .catch(() => {
+      content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>";
     });
 
-    acceptBtn.addEventListener("click", () => { localStorage.setItem("dsAccepted", "true"); hideOverlay(); });
-    skipBtn.addEventListener("click", () => { localStorage.setItem("dsAccepted", "true"); hideOverlay(); });
+  function hideOverlay() {
+    overlay.style.transition = "opacity 0.4s";
+    overlay.style.opacity = "0";
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 400);
   }
-}
-</script>
 
+  content.addEventListener("scroll", () => {
+    if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
+      acceptBtn.classList.add("active");
+      acceptBtn.textContent = "Akzeptieren";
+      acceptBtn.disabled = false;
+    }
+  });
+
+  acceptBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+
+  skipBtn.addEventListener("click", () => {
+    localStorage.setItem("dsAccepted", "true");
+    hideOverlay();
+  });
+});
+</script>
 <script>
 (function () {
   const path = window.location.pathname;
 
   const FIXES = [
-    { match: /\/main\/impressum(\/.*)?$/, target: "/main/impressum/" },
-    { match: /\/main\/datenschutz(\/.*)?$/, target: "/main/datenschutz/" },
-    { match: /\/main\/kontakt(\/.*)?$/, target: "/main/kontakt/" }
+    { match: /^\/main\/impressum\/?$/, target: "/main/impressum/" },
+    { match: /^\/main\/datenschutz\/?$/, target: "/main/datenschutz/" },
+    { match: /^\/main\/kontakt\/?$/, target: "/main/kontakt/" }
   ];
 
   for (const fix of FIXES) {
@@ -2953,10 +2966,12 @@ if (!localStorage.getItem("dsAccepted")) {
 
 
 
+
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
     crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
