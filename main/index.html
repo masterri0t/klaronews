@@ -2917,12 +2917,38 @@ if (!localStorage.getItem("dsAccepted")) {
 </script>
 
 
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const MAP = {
+    "datenschutz": "/main/datenschutz/",
+    "impressum": "/main/impressum/",
+    "kontakt": "/main/kontakt/",
+    "startseite": "/main/",
+    "home": "/main/"
+  };
+
+  document.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", (e) => {
+      const href = (link.getAttribute("href") || "").toLowerCase();
+
+      for (const key in MAP) {
+        if (href.includes(key)) {
+          e.preventDefault();
+          window.location.href = MAP[key];
+          return;
+        }
+      }
+    });
+  });
+});
+</script>
 
 
   <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
     crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
