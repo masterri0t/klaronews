@@ -1,1 +1,1203 @@
 
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>KlaroNews</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="KlaroNews – kurze und klare Nachrichten. Was heute wirklich wichtig war, in einfachen Worten erklärt." />
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+ <link rel="icon" href="klaronews.png" type="image/png"> 
+  <!-- Favicon / PWA -->
+  <link rel="icon" type="image/png" href="/favicon-96x96.png" sizes="96x96" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <link rel="shortcut icon" href="/favicon.ico" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+  <meta name="apple-mobile-web-app-title" content="KlaroNews" />
+  <link rel="manifest" href="/site.webmanifest" />
+
+  <style>
+    :root {
+      --bg: #050505;
+      --bg-card: #111111;
+      --bg-card-soft: #181818;
+      --accent: #f9ff00;
+      --text: #ffffff;
+      --muted: #a3a3a3;
+      --border: #2b2b2b;
+      --radius-lg: 18px;
+      --radius-md: 12px;
+      --shadow-soft: 0 18px 40px rgba(0,0,0,0.45);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #151515 0, #050505 45%, #000 100%);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.5;
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .page {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 20px 16px 48px;
+    }
+
+    /* Header / Nav */
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 26px;
+    }
+
+    .logo-wrap {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-box {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: #000;
+      border: 1px solid #202020;
+      box-shadow: 0 0 0 1px rgba(255,255,255,0.02);
+    }
+
+    .logo-text-main {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      font-size: 0.86rem;
+    }
+
+    .logo-pill {
+      width: 20px;
+      height: 20px;
+      background: var(--accent);
+      border-radius: 6px 6px 6px 0;
+      margin-left: 10px;
+    }
+
+    .logo-tagline {
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 0.9rem;
+    }
+
+    .nav-link {
+      padding: 6px 10px;
+      border-radius: 999px;
+      color: var(--muted);
+      transition: 0.18s ease;
+    }
+
+    .nav-link:hover {
+      color: var(--text);
+      background: rgba(249,255,0,0.06);
+    }
+
+    .nav-link.active {
+      color: #000;
+      background: var(--accent);
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      padding: 7px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      color: var(--accent);
+      cursor: pointer;
+      font-size: 0.78rem;
+      background: rgba(0,0,0,0.35);
+      transition: 0.18s ease;
+    }
+
+    .nav-cta:hover {
+      background: rgba(249,255,0,0.1);
+      border-color: rgba(249,255,0,0.6);
+    }
+
+    /* Layout: Hero + Sidebar */
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.2fr) minmax(260px, 1.1fr);
+      gap: 20px;
+    }
+
+    @media (max-width: 840px) {
+      .layout {
+        grid-template-columns: minmax(0, 1fr);
+      }
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      nav {
+        width: 100%;
+        justify-content: space-between;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Hero Card */
+    .hero-card {
+      position: relative;
+      padding: 20px 20px 18px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(145deg, #151515 0%, #060606 60%, #181818 100%);
+      box-shadow: var(--shadow-soft);
+      border: 1px solid rgba(255,255,255,0.03);
+      overflow: hidden;
+    }
+
+    .hero-label-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin-bottom: 16px;
+    }
+
+    .badge-live {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      background: #000;
+      color: var(--accent);
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      border: 1px solid rgba(249,255,0,0.6);
+    }
+
+    .badge-live-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(249,255,0,0.35);
+    }
+
+    .hero-meta {
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .hero-title {
+      font-family: "Montserrat", system-ui, sans-serif;
+      font-size: 1.6rem;
+      line-height: 1.18;
+      margin-bottom: 10px;
+    }
+
+    .hero-subtitle {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 18px;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 10px;
+    }
+
+    .btn-primary {
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.86rem;
+      font-weight: 600;
+      border: none;
+      cursor: pointer;
+      transition: 0.18s ease;
+    }
+
+    .btn-primary:hover {
+      filter: brightness(1.05);
+      transform: translateY(-1px);
+      box-shadow: 0 12px 24px rgba(249,255,0,0.25);
+    }
+
+    .btn-primary.btn-error {
+      background: #ff3b3b;
+      color: #ffffff;
+    }
+
+    .btn-ghost {
+      padding: 8px 12px;
+      border-radius: 999px;
+      font-size: 0.82rem;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: 0.18s ease;
+    }
+
+    .btn-ghost:hover {
+      border-color: rgba(255,255,255,0.3);
+      color: var(--text);
+      background: rgba(255,255,255,0.02);
+    }
+
+    .hero-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 4px;
+    }
+
+    .tag {
+      padding: 4px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+
+    .hero-highlight {
+      position: absolute;
+      inset: auto -120px -130px auto;
+      width: 260px;
+      height: 260px;
+      background: radial-gradient(circle, rgba(249,255,0,0.22) 0, transparent 65%);
+      opacity: 0.9;
+      pointer-events: none;
+    }
+
+    /* Article Grid */
+    .section-title {
+      font-size: 0.92rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin: 18px 2px 10px;
+    }
+
+    .articles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 16px;
+    }
+
+    .article-card {
+      background: var(--bg-card);
+      border-radius: var(--radius-md);
+      padding: 14px 14px 12px;
+      border: 1px solid var(--border);
+      transition: 0.18s ease;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .article-card:hover {
+      transform: translateY(-2px);
+      border-color: rgba(249,255,0,0.45);
+      box-shadow: 0 12px 24px rgba(0,0,0,0.55);
+    }
+
+    .article-chip-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .article-chip {
+      font-size: 0.72rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.11em;
+    }
+
+    .article-time {
+      font-size: 0.7rem;
+      color: var(--muted);
+    }
+
+    .article-title {
+      font-size: 0.98rem;
+      font-weight: 600;
+    }
+
+    .article-desc {
+      font-size: 0.83rem;
+      color: var(--muted);
+    }
+
+    /* Sidebar */
+    .sidebar-card {
+      background: var(--bg-card-soft);
+      border-radius: var(--radius-lg);
+      padding: 16px 16px 14px;
+      border: 1px solid var(--border);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.55);
+    }
+
+    .sidebar-title {
+      font-size: 0.9rem;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .sidebar-list {
+      list-style: none;
+    }
+
+    .sidebar-item {
+      padding: 9px 0;
+      border-bottom: 1px dashed #292929;
+    }
+
+    .sidebar-item:last-child {
+      border-bottom: none;
+    }
+
+    .sidebar-link {
+      display: block;
+    }
+
+    .sidebar-link-title {
+      font-size: 0.86rem;
+    }
+
+    .sidebar-link-sub {
+      font-size: 0.74rem;
+      color: var(--muted);
+    }
+
+    .sidebar-item:hover .sidebar-link-title {
+      text-decoration: underline;
+    }
+
+    .newsletter {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid #292929;
+    }
+
+    .newsletter p {
+      font-size: 0.84rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .newsletter-form {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .newsletter-input {
+      flex: 1 1 140px;
+      padding: 8px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: #050505;
+      color: var(--text);
+      font-size: 0.82rem;
+      outline: none;
+    }
+
+    .newsletter-input::placeholder {
+      color: #555;
+    }
+
+    .newsletter-button {
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: none;
+      background: var(--accent);
+      color: #000;
+      font-size: 0.82rem;
+      font-weight: 600;
+      cursor: pointer;
+      white-space: nowrap;
+      transition: 0.18s ease;
+    }
+
+    .newsletter-button:hover {
+      filter: brightness(1.05);
+    }
+
+    /* Tablet-Optimierung */
+    @media (max-width: 900px) {
+      .page {
+        padding: 16px 12px 32px;
+      }
+
+      header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      nav {
+        width: 100%;
+        justify-content: flex-start;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .nav-link,
+      .nav-cta {
+        font-size: 0.82rem;
+        padding: 6px 10px;
+      }
+
+      .layout {
+        grid-template-columns: 1fr;
+        gap: 18px;
+      }
+
+      .hero-card {
+        padding: 16px 14px 16px;
+      }
+
+      .hero-title {
+        font-size: 1.35rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.9rem;
+      }
+
+      .articles-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .sidebar-card {
+        margin-top: 6px;
+      }
+    }
+
+    /* Handy-Optimierung */
+    @media (max-width: 600px) {
+      .logo-box {
+        padding: 7px 12px;
+      }
+
+      .logo-text-main {
+        font-size: 0.78rem;
+      }
+
+      .logo-tagline {
+        font-size: 0.7rem;
+      }
+
+      nav {
+        gap: 6px;
+      }
+
+      .nav-link,
+      .nav-cta {
+        padding: 5px 9px;
+        font-size: 0.78rem;
+      }
+
+      .hero-label-row {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 6px;
+      }
+
+      .hero-title {
+        font-size: 1.25rem;
+      }
+
+      .hero-subtitle {
+        font-size: 0.86rem;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+
+      .article-card {
+        padding: 12px 12px 10px;
+      }
+
+      .article-title {
+        font-size: 0.94rem;
+      }
+
+      .article-desc {
+        font-size: 0.8rem;
+      }
+
+      .sidebar-card {
+        padding: 14px 12px 12px;
+      }
+
+      footer {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 8px;
+      }
+    }
+
+    /* Footer */
+    footer {
+      margin-top: 32px;
+      padding-top: 18px;
+      border-top: 1px solid #181818;
+      font-size: 0.76rem;
+      color: var(--muted);
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px 18px;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a {
+      color: var(--muted);
+    }
+
+    .footer-links a:hover {
+      color: var(--text);
+    }
+
+    /* Datenschutz-Overlay */
+    #ds-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.65);
+      backdrop-filter: blur(4px);
+      display: none;
+      justify-content: center;
+      align-items: center;
+      z-index: 99999;
+      padding: 20px;
+    }
+
+    #ds-box {
+      background: #111;
+      color: white;
+      width: 90%;
+      max-width: 900px;
+      max-height: 90vh;
+      border-radius: 16px;
+      padding: 20px;
+      overflow: hidden;
+      border: 1px solid #2b2b2b;
+      box-shadow: 0 18px 40px rgba(0,0,0,0.5);
+    }
+
+    #ds-box h2 {
+      font-size: 1.4rem;
+      margin-bottom: 12px;
+    }
+
+    #ds-content {
+      background: #181818;
+      border-radius: 12px;
+      border: 1px solid #2b2b2b;
+      padding: 14px;
+      height: 60vh;
+      overflow-y: auto;
+    }
+
+    .ds-buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    #ds-accept {
+      width: 100%;
+      padding: 12px;
+      background: #555;
+      color: #aaa;
+      border-radius: 999px;
+      font-size: 1rem;
+      border: none;
+      cursor: not-allowed;
+      transition: 0.25s;
+    }
+
+    #ds-accept.active {
+      background: #f9ff00;
+      color: #000;
+      cursor: pointer;
+    }
+
+    #ds-skip {
+      width: 100%;
+      padding: 10px;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      border: 1px solid #2b2b2b;
+      background: transparent;
+      color: #ddd;
+      cursor: pointer;
+      transition: 0.25s;
+    }
+
+    #ds-skip:hover {
+      background: rgba(255,255,255,0.04);
+      border-color: rgba(255,255,255,0.4);
+    }
+  </style>
+</head>
+<body id="top">
+
+<!-- Datenschutz-Overlay -->
+<div id="ds-overlay">
+  <div id="ds-box">
+    <h2>Datenschutzerklärung</h2>
+
+    <div id="ds-content">
+      <!-- HIER WIRD AUTOMATISCH datenschutz.html GELADEN -->
+      <p>Wird geladen...</p>
+    </div>
+
+    <div class="ds-buttons">
+      <button id="ds-accept" disabled>Bis zum Ende scrollen…</button>
+      <button id="ds-skip" type="button">Weiter ohne Auswahl</button>
+    </div>
+  </div>
+</div>
+
+<div class="page">
+  <header>
+    <div class="logo-wrap">
+      <div>
+        <div class="logo-box">
+          <span class="logo-text-main">KLARONEWS</span>
+          <span class="logo-pill"></span>
+        </div>
+        <div class="logo-tagline">News, kurz & klar</div>
+      </div>
+    </div>
+
+    <nav>
+      <a class="nav-link active" href="#top">Heute</a>
+      <a class="nav-link" href="#politik">Politik</a>
+      <a class="nav-link" href="#welt">Welt</a>
+      <a class="nav-link" href="#gesellschaft">Gesellschaft</a>
+      <a class="nav-cta" href="#newsletter">Newsletter</a>
+    </nav>
+  </header>
+
+  <main class="layout">
+    <!-- Main Content -->
+    <section>
+      <!-- Hero -->
+      <article class="hero-card">
+        <div class="hero-label-row">
+          <div class="badge-live">
+            <span class="badge-live-dot"></span>
+            <span>Daily Briefing</span>
+          </div>
+          <div class="hero-meta">
+            Stand: <span id="today-label">heute</span> · <span>in 60 Sekunden erklärt</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Was du heute wirklich wissen musst.
+        </h1>
+        <p class="hero-subtitle">
+          KlaroNews fasst den Tag für dich zusammen. Nur das, was für dein Leben relevant ist.
+        </p>
+
+        <div class="hero-actions">
+          <button class="btn-primary" type="button" id="btn-summary">
+            Heutige Zusammenfassung ansehen
+          </button>
+          <button class="btn-ghost" type="button" id="btn-last-update">
+            ▶ Letztes 60-Sekunden-Update
+          </button>
+        </div>
+
+        <div class="hero-tags">
+          <span class="tag">Politik &amp; Weltlage</span>
+          <span class="tag">Einfach erklärt</span>
+          <span class="tag">Für Gen&nbsp;Z &amp; junge Erwachsene</span>
+        </div>
+
+        <div class="hero-highlight"></div>
+      </article>
+
+      <h2 id="politik" class="section-title">Aktuelle Themen</h2>
+      <section class="articles-grid">
+        <!-- Artikel 1 -->
+        <a href="artikel-regierung.html"
+           class="article-card"
+           data-time="2025-12-10T14:00:00+01:00">
+          <div class="article-chip-row">
+            <span class="article-chip">Politik</span>
+            <span class="article-time">lädt...</span>
+          </div>
+          <h3 class="article-title">
+            Neue Entscheidung der Regierung – was sich für Schüler &amp; Azubis ändert.
+          </h3>
+          <p class="article-desc">
+            Wir brechen die wichtigsten Punkte runter: Was wurde beschlossen? Ab wann gilt es? Und was bedeutet es konkret für deinen Alltag?
+          </p>
+        </a>
+      <a href="artikel-ki-gesetz-eu.html"
+   class="article-card"
+   data-time="2025-12-11T22:25:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Politik</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neues KI-Gesetz in der EU: Was sich für dich jetzt ändert.
+  </h3>
+  <p class="article-desc">
+    Ein klarer Überblick: Welche Regeln kommen, was verboten wird – und warum das Thema alle betrifft.
+  </p>
+</a>
+<a href="artikel-bahn-streik.html"
+   class="article-card"
+   data-time="2025-12-11T21:40:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Deutschland</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Bahn kündigt neuen Streik an – das musst du morgen wissen.
+  </h3>
+  <p class="article-desc">
+    Welche Linien ausfallen, wie du planen kannst und warum die Verhandlungen wieder feststecken.
+  </p>
+</a>
+<a href="artikel-miete-ansteigt.html"
+   class="article-card"
+   data-time="2025-12-11T20:10:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Wirtschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Mieten steigen weiter – Experten erklären die Gründe.
+  </h3>
+  <p class="article-desc">
+    Warum Städte immer teurer werden und welche Maßnahmen jetzt im Gespräch sind.
+  </p>
+</a>
+<a href="artikel-schule-digital.html"
+   class="article-card"
+   data-time="2025-12-11T18:55:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Bildung</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Digitalunterricht 2.0: Neuer Plan der Kultusminister vorgestellt.
+  </h3>
+  <p class="article-desc">
+    Was Schulen erwartet: KI-Hilfen, neue Tablets, weniger Chaos – in klaren Punkten erklärt.
+  </p>
+</a>
+<a href="artikel-gesundheit-kinderarzt.html"
+   class="article-card"
+   data-time="2025-12-11T17:20:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Gesundheit</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Kinderärzte warnen: So viele Infekte wie seit Jahren nicht.
+  </h3>
+  <p class="article-desc">
+    Warum die Welle kommt, wer betroffen ist und wie man sich wirklich schützen kann.
+  </p>
+</a>
+<a href="artikel-internet-sicherheit.html"
+   class="article-card"
+   data-time="2025-12-11T15:45:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Tech</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Große Sicherheitslücke entdeckt – Millionen Accounts betroffen.
+  </h3>
+  <p class="article-desc">
+    Welche Plattformen Probleme haben und wie du sofort checken kannst, ob du betroffen bist.
+  </p>
+</a>
+<a href="artikel-klima-proteste.html"
+   class="article-card"
+   data-time="2025-12-11T13:30:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Welt</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neue Klima-Proteste weltweit – das steckt dahinter.
+  </h3>
+  <p class="article-desc">
+    Länderüberblick: Warum der Druck wieder steigt und welche Forderungen im Zentrum stehen.
+  </p>
+</a>
+<a href="artikel-socialmedia-study.html"
+   class="article-card"
+   data-time="2025-12-11T11:05:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Gesellschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Studie: Social Media beeinflusst Schlaf stärker als gedacht.
+  </h3>
+  <p class="article-desc">
+    Forscher erklären den Zusammenhang und was wirklich gegen schlechte Nächte hilft.
+  </p>
+</a>
+<a href="artikel-energie-preise.html"
+   class="article-card"
+   data-time="2025-12-11T09:15:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Wirtschaft</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Energiepreise sinken leicht – was Verbraucher jetzt sparen können.
+  </h3>
+  <p class="article-desc">
+    Zahlen, Trends und warum die Entlastung trotzdem noch nicht überall spürbar ist.
+  </p>
+</a>
+<a href="artikel-fruehstueck-studie.html"
+   class="article-card"
+   data-time="2025-12-11T06:45:00+01:00">
+  <div class="article-chip-row">
+    <span class="article-chip">Lifestyle</span>
+    <span class="article-time">lädt...</span>
+  </div>
+  <h3 class="article-title">
+    Neue Studie: Frühstück beeinflusst Konzentration stärker als gedacht.
+  </h3>
+  <p class="article-desc">
+    Was Forscher empfehlen und welche Lebensmittel tatsächlich einen Unterschied machen.
+  </p>
+</a>
+
+
+        <!-- Artikel 2 -->
+        <a href="artikel-inflation.html"
+           class="article-card"
+           data-time="2025-12-10T11:30:00+01:00">
+          <div class="article-chip-row">
+            <span class="article-chip">Wirtschaft</span>
+            <span class="article-time">lädt...</span>
+          </div>
+          <h3 class="article-title">
+            Preise, Inflation, Löhne: Die Lage in einfachen Worten erklärt.
+          </h3>
+          <p class="article-desc">
+            Kein Finanz-Deutsch, sondern Klartext: Warum alles teurer wird – und welche Entscheidungen jetzt wirklich einen Unterschied machen.
+          </p>
+        </a>
+
+        <!-- Artikel 3 -->
+        <a href="artikel-tiktoktrend.html"
+           class="article-card"
+           data-time="2025-12-10T08:00:00+01:00">
+          <div class="article-chip-row">
+            <span class="article-chip">Gesellschaft</span>
+            <span class="article-time">lädt...</span>
+          </div>
+          <h3 class="article-title">
+            Warum dieses Thema gerade auf TikTok explodiert – und was dahinter steckt.
+          </h3>
+          <p class="article-desc">
+            Trend erklärt in 3 Punkten: Ursprung, Problem, Auswirkungen. Ohne Drama, mit Kontext.
+          </p>
+        </a>
+
+        <!-- Artikel 4 -->
+        <a href="artikel-krise.html"
+           id="welt"
+           class="article-card"
+           data-time="2025-12-09T18:30:00+01:00">
+          <div class="article-chip-row">
+            <span class="article-chip">Welt</span>
+            <span class="article-time">lädt...</span>
+          </div>
+          <h3 class="article-title">
+            Internationale Krise in 60 Sekunden: Timeline, Fakten, Folgen.
+          </h3>
+          <p class="article-desc">
+            Wir sortieren die Lage: Was ist wirklich passiert, wer ist beteiligt und welche Szenarien sind jetzt realistisch?
+          </p>
+        </a>
+      </section>
+
+    </section>
+
+    <!-- Sidebar -->
+    <aside>
+      <section class="sidebar-card">
+        <h2 class="sidebar-title">Kurz & wichtig</h2>
+        <ul class="sidebar-list">
+          <li class="sidebar-item">
+            <a href="artikel-3-dinge.html" class="sidebar-link">
+              <div class="sidebar-link-title">3 Dinge, die du heute wissen musst.</div>
+              <div class="sidebar-link-sub">Daily Klaro Briefing</div>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="artikel-faq-news.html" class="sidebar-link">
+              <div class="sidebar-link-title">FAQ: Wie wir News auswählen &amp; prüfen.</div>
+              <div class="sidebar-link-sub">Transparenz &amp; Quellen</div>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="artikel-finanzierung.html" class="sidebar-link">
+              <div class="sidebar-link-title">So finanzieren wir uns – ohne dich vollzuspammen.</div>
+              <div class="sidebar-link-sub">Ads, Partner &amp; Pläne</div>
+            </a>
+          </li>
+          <li class="sidebar-item">
+            <a href="artikel-community.html" class="sidebar-link">
+              <div class="sidebar-link-title">Werde Teil der ersten KlaroNews-Community.</div>
+              <div class="sidebar-link-sub">Feedback, Themenwünsche, Ideen</div>
+            </a>
+          </li>
+        </ul>
+
+        <div class="newsletter" id="newsletter">
+          <h3 class="sidebar-title">Newsletter (bald)</h3>
+          <p>
+            Bald kannst du hier das tägliche <strong>„Klaro Briefing“</strong> per Mail abonnieren. Feature ist noch im Aufbau.
+          </p>
+
+          <!-- Platzhalter-Form – macht noch nichts -->
+          <form class="newsletter-form" onsubmit="event.preventDefault(); alert('Newsletter kommt später. Aktuell noch nicht aktiv.');">
+            <input
+              class="newsletter-input"
+              type="email"
+              placeholder="Deine E-Mail-Adresse (noch nicht aktiv)"
+            />
+            <button class="newsletter-button" type="submit">Noch nicht verfügbar</button>
+          </form>
+
+        </div>
+      </section>
+    </aside>
+  </main>
+
+  <footer>
+    <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+    <div class="footer-links">
+      <a class="nav-link active" href="impressum.html">Impressum</a>
+      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
+      <a class="nav-link" href="kontakt.html">Kontakt</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", () => {
+  const container = document.querySelector(".articles-grid");
+  let cards = Array.from(document.querySelectorAll(".article-card[data-time]"));
+
+  // 1. Artikel nach Datum sortieren (neueste zuerst)
+  cards.sort((a, b) => {
+    const timeA = new Date(a.getAttribute("data-time"));
+    const timeB = new Date(b.getAttribute("data-time"));
+    return timeB - timeA;
+  });
+
+  cards.forEach(card => container.appendChild(card));
+
+  // 2. Relative Zeit berechnen
+  cards.forEach(card => {
+    const timeAttr = card.getAttribute("data-time");
+    const timeEl = card.querySelector(".article-time");
+    const published = new Date(timeAttr);
+    const now = new Date();
+
+    const diffMs = now - published;
+    const diffMin = Math.floor(diffMs / 1000 / 60);
+    const diffHours = Math.floor(diffMin / 60);
+    const diffDays = Math.floor(diffHours / 24);
+
+    let text = "";
+
+    if (diffMin < 1) text = "gerade eben";
+    else if (diffMin < 60) text = `vor ${diffMin} Min`;
+    else if (diffHours < 24) text = `vor ${diffHours} Std`;
+    else if (diffDays === 1) text = "gestern";
+    else text = `${diffDays} Tage alt`;
+
+    if (timeEl) timeEl.textContent = text;
+  });
+
+  // 3. "Letztes 60-Sekunden-Update" -> öffnet neuesten Artikel
+  const lastUpdateBtn = document.getElementById("btn-last-update");
+  if (lastUpdateBtn) {
+    lastUpdateBtn.addEventListener("click", () => {
+      const firstCard = document.querySelector(".articles-grid .article-card");
+      if (firstCard && firstCard.href) {
+        window.location.href = firstCard.href;
+      }
+    });
+  }
+
+  // 4. "Heutige Zusammenfassung ansehen" -> wenn keine vorhanden, rot flashen
+  const summaryBtn = document.getElementById("btn-summary");
+  let hasSummary = false;
+  let summaryUrl = ""; // z.B. "artikel-heutige-zusammenfassung.html"
+
+  if (summaryBtn) {
+    summaryBtn.addEventListener("click", () => {
+      if (hasSummary && summaryUrl) {
+        window.location.href = summaryUrl;
+      } else {
+        const originalText = summaryBtn.textContent;
+        summaryBtn.classList.add("btn-error");
+        summaryBtn.textContent = "Noch keine Zusammenfassung verfügbar";
+
+        setTimeout(() => {
+          summaryBtn.classList.remove("btn-error");
+          summaryBtn.textContent = originalText;
+        }, 1200);
+      }
+    });
+  }
+
+  // 5. Jahr im Footer setzen
+  const yearEl = document.getElementById("year");
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+  // 6. Datum "Stand: heute" setzen (TT.MM.JJJJ)
+  const todayEl = document.getElementById("today-label");
+  if (todayEl) {
+    const d = new Date();
+    const day = String(d.getDate()).padStart(2, "0");
+    const month = String(d.getMonth() + 1).padStart(2, "0");
+    const year = d.getFullYear();
+    todayEl.textContent = `${day}.${month}.${year}`;
+  }
+});
+
+// Datenschutz-Overlay-Logik
+if (!localStorage.getItem("dsAccepted")) {
+  document.getElementById("ds-overlay").style.display = "flex";
+
+  // datenschutz.html in das Popup laden
+  fetch("datenschutz.html")
+    .then(res => res.text())
+    .then(html => {
+      document.querySelector("#ds-content").innerHTML = html;
+    });
+}
+
+const overlay = document.getElementById("ds-overlay");
+const content = document.getElementById("ds-content");
+const acceptBtn = document.getElementById("ds-accept");
+const skipBtn = document.getElementById("ds-skip");
+
+// Helper zum Overlay ausblenden (für beide Buttons)
+function hideOverlay() {
+  if (!overlay) return;
+
+  overlay.style.opacity = 1;
+
+  setTimeout(() => {
+    overlay.style.transition = "0.4s";
+    overlay.style.opacity = 0;
+
+    setTimeout(() => {
+      overlay.style.display = "none";
+    }, 400);
+  }, 50);
+}
+
+// Scroll-Check, Button erst aktiv wenn unten
+content.addEventListener("scroll", () => {
+  if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
+    acceptBtn.classList.add("active");
+    acceptBtn.textContent = "Akzeptieren";
+    acceptBtn.disabled = false;
+  }
+});
+
+// Akzeptieren → merkt sich Zustimmung in localStorage
+acceptBtn.addEventListener("click", () => {
+  localStorage.setItem("dsAccepted", "true");
+  hideOverlay();
+});
+
+// Weiter ohne Auswahl → auch merken, damit es nicht mehr erscheint
+skipBtn.addEventListener("click", () => {
+  localStorage.setItem("dsAccepted", "true");
+  hideOverlay();
+});
+</script>
+
+
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2226170695110634"
+     crossorigin="anonymous"></script>
+</body>
+</html>
+
+
