@@ -3,11 +3,10 @@
 <html lang="de">
 <head>
   <meta charset="UTF-8" />
-
   <title>KlaroNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="KlaroNews – kurze und klare Nachrichten. Was heute wirklich wichtig war, in einfachen Worten erklärt." />
-  <link rel="canonical" href="https://klaronews.com/main/">
+
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -675,15 +674,15 @@
           <span class="logo-text-main">KLARONEWS</span>
           <span class="logo-pill"></span>
         </div>
-        <div class="logo-tagline">News, kurz &amp; klar.</div>
+        <div class="logo-tagline">News, kurz &amp; klar – ohne Bullshit.</div>
       </div>
 
       <nav class="reader-nav">
-     <a class="nav-link active" href="/main/">Heute</a>
-<a class="nav-link" href="/main/#politik">Politik</a>
-<a class="nav-link" href="/main/#welt">Welt</a>
-<a class="nav-link" href="/main/#gesellschaft">Gesellschaft</a>
-
+        <a class="nav-link" href="#top">Heute</a>
+        <a class="nav-link" href="#politik">Politik</a>
+        <a class="nav-link" href="#welt">Welt</a>
+        <a class="nav-link" href="#gesellschaft">Gesellschaft</a>
+        <a class="nav-cta" href="#newsletter">Newsletter</a>
       </nav>
     </div>
 
@@ -727,7 +726,6 @@
         <a class="nav-link" href="#welt">Welt</a>
         <a class="nav-link" href="#gesellschaft">Gesellschaft</a>
         <a class="nav-cta" href="#newsletter">Newsletter</a>
-        
       </nav>
     </header>
 
@@ -795,14 +793,9 @@
     <footer>
       <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
       <div class="footer-links">
-<a href="/main/">Startseite</a>
-<a href="/main/impressum">Impressum</a>
-<a href="/main/datenschutz">Datenschutz</a>
+<a href="/main/impressum/">Impressum</a>
+<a href="/main/datenschutz/">Datenschutz</a>
 <a href="/main/kontakt/">Kontakt</a>
-
-
-
-
 
 
       </div>
@@ -2534,9 +2527,9 @@ Sie ist eine Entscheidung, weiterzumachen.`
   // ================== "Kurz & wichtig" Static Pages ==================
   // (aus deinem Screenshot / deinen Dateien)
   const IMPORTANT_PAGES = [
-    { title: "3 Dinge, die du heute wissen musst.", sub: "Daily Klaro Briefing", href: "/main/artikel-3-dinge.html" },
-    { title: "FAQ: Wie wir News auswählen & prüfen.", sub: "Transparenz & Quellen", href: "/main/artikel-faq-news.html" },
-    { title: "Werde Teil der ersten KlaroNews-Community.", sub: "Feedback, Themenwünsche, Ideen", href: "/main/artikel-community.html" },
+    { title: "3 Dinge, die du heute wissen musst.", sub: "Daily Klaro Briefing", href: "artikel-3-dinge.html" },
+    { title: "FAQ: Wie wir News auswählen & prüfen.", sub: "Transparenz & Quellen", href: "artikel-faq-news.html" },
+    { title: "Werde Teil der ersten KlaroNews-Community.", sub: "Feedback, Themenwünsche, Ideen", href: "artikel-community.html" },
   ];
 
   // ================== Deine ARTICLES übernehmen ==================
@@ -2819,8 +2812,7 @@ Sie ist eine Entscheidung, weiterzumachen.`
     modal.style.display = "block";
     modal.setAttribute("aria-hidden", "false");
     document.body.style.overflow = "hidden";
-   history.replaceState(null, "", location.pathname);
-
+    history.replaceState(null, "", `#article=${encodeURIComponent(id)}`);
     window.scrollTo({ top: 0, behavior: "instant" });
   }
 
@@ -2829,8 +2821,7 @@ Sie ist eine Entscheidung, weiterzumachen.`
     modal.style.display = "none";
     modal.setAttribute("aria-hidden", "true");
     document.body.style.overflow = "";
-    history.replaceState(null, "", location.pathname);
-
+    history.replaceState(null, "", "#top");
   }
 
   if (modalBack) modalBack.addEventListener("click", closeReader);
@@ -2887,82 +2878,43 @@ Sie ist eine Entscheidung, weiterzumachen.`
 });
 
 // ================== Datenschutz-Overlay ==================
- // ❌ Overlay NIE auf rechtlichen Seiten
-  const BLOCKED = [
-    "/main/datenschutz/",
-    "/main/impressum/",
-    "/main/kontakt/"
-  ];
-
-  if (BLOCKED.includes(path)) return;
-  if (localStorage.getItem("dsAccepted")) return;
-
+if (!localStorage.getItem("dsAccepted")) {
   const overlay = document.getElementById("ds-overlay");
   const content = document.getElementById("ds-content");
   const acceptBtn = document.getElementById("ds-accept");
   const skipBtn = document.getElementById("ds-skip");
 
-  if (!overlay || !content || !acceptBtn || !skipBtn) return;
+  if (overlay && content && acceptBtn && skipBtn) {
+    overlay.style.display = "flex";
 
-  overlay.style.display = "flex";
+    fetch("/main/datenschutz/")
 
-  fetch("/main/datenschutz/index.html")
-    .then(r => r.text())
-    .then(html => {
-      const doc = new DOMParser().parseFromString(html, "text/html");
-      const ds = doc.querySelector("#ds-only");
-      content.innerHTML = ds ? ds.innerHTML : "<p>Fehler beim Laden.</p>";
-    })
-    .catch(() => {
-      content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>";
+      .then(res => res.text())
+      .then(html => { content.innerHTML = html; })
+      .catch(() => { content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>"; });
+
+    function hideOverlay() {
+      overlay.style.opacity = 1;
+      setTimeout(() => {
+        overlay.style.transition = "0.4s";
+        overlay.style.opacity = 0;
+        setTimeout(() => { overlay.style.display = "none"; }, 400);
+      }, 50);
+    }
+
+    content.addEventListener("scroll", () => {
+      if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
+        acceptBtn.classList.add("active");
+        acceptBtn.textContent = "Akzeptieren";
+        acceptBtn.disabled = false;
+      }
     });
 
-  function hideOverlay() {
-    overlay.style.transition = "opacity 0.4s";
-    overlay.style.opacity = "0";
-    setTimeout(() => {
-      overlay.style.display = "none";
-    }, 400);
+    acceptBtn.addEventListener("click", () => { localStorage.setItem("dsAccepted", "true"); hideOverlay(); });
+    skipBtn.addEventListener("click", () => { localStorage.setItem("dsAccepted", "true"); hideOverlay(); });
   }
-
-  content.addEventListener("scroll", () => {
-    if (content.scrollTop + content.clientHeight >= content.scrollHeight - 15) {
-      acceptBtn.classList.add("active");
-      acceptBtn.textContent = "Akzeptieren";
-      acceptBtn.disabled = false;
-    }
-  });
-
-  acceptBtn.addEventListener("click", () => {
-    localStorage.setItem("dsAccepted", "true");
-    hideOverlay();
-  });
-
-  skipBtn.addEventListener("click", () => {
-    localStorage.setItem("dsAccepted", "true");
-    hideOverlay();
-  });
-});
+}
 </script>
-<script>
-(function () {
-  const path = window.location.pathname;
-
-  const FIXES = [
-    { match: /^\/main\/impressum\/?$/, target: "/main/impressum/" },
-    { match: /^\/main\/datenschutz\/?$/, target: "/main/datenschutz/" },
-    { match: /^\/main\/kontakt\/?$/, target: "/main/kontakt/" }
-  ];
-
-  for (const fix of FIXES) {
-    if (fix.match.test(path) && path !== fix.target) {
-      window.location.replace(fix.target);
-      return;
-    }
-  }
-})();
-</script>
-
 
 
 
