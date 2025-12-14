@@ -6,18 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="description" content="Kontakt zum KlaroNews-Team: Feedback, Themenwünsche, Fragen." />
 
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="/https://klaronews.com/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/https://klaronews.com/favicon.svg" />
-<link rel="shortcut icon" href="/https://klaronews.com/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/https://klaronews.com/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="KlaroNews" />
-<link rel="manifest" href="/https://klaronews.com/site.webmanifest" />
-<link rel="icon" type="image/x-icon" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/https://klaronews.com/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicons (FIXED) -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="KlaroNews">
+  <link rel="manifest" href="/site.webmanifest">
 
   <style>
     :root {
@@ -123,10 +123,7 @@
     }
 
     @media (max-width: 840px) {
-      .contact-layout {
-        grid-template-columns: 1fr;
-        padding: 16px 14px 16px;
-      }
+      .contact-layout { grid-template-columns: 1fr; padding: 16px 14px 16px; }
     }
 
     .contact-title {
@@ -188,11 +185,7 @@
 
     .btn-send:hover { filter: brightness(1.05); transform: translateY(-1px); }
 
-    .btn-send.disabled {
-      opacity: 0.6;
-      cursor: default;
-      transform: none;
-    }
+    .btn-send.disabled { opacity: 0.6; cursor: default; transform: none; }
 
     .status-msg {
       font-size: 0.8rem;
@@ -212,12 +205,8 @@
       font-size: 0.86rem;
     }
 
-    .contact-sidebar h3 {
-      font-size: 0.9rem;
-      margin-bottom: 8px;
-    }
-
-    .contact-sidebar p { color: var(--muted); margin-bottom: 6px; }
+    .contact-sidebar h3 { font-size: 0.9rem; margin-bottom: 8px; }
+    .contact-sidebar p  { color: var(--muted); margin-bottom: 6px; }
 
     footer {
       margin-top: 32px;
@@ -237,6 +226,7 @@
     .footer-links a:hover { color: var(--text); }
   </style>
 </head>
+
 <body>
 <div class="page">
   <header>
@@ -250,24 +240,25 @@
       </div>
     </div>
 
- <nav>
-  <a class="nav-link" href="/main/">Startseite</a>
-  <a class="nav-link" href="/main/impressum/">Impressum</a>
-  <a class="nav-link" href="/main/datenschutz/">Datenschutz</a>
-  <a class="nav-link active" href="/main/kontakt/">Kontakt</a>
-</nav>
-
+    <nav>
+      <a class="nav-link" href="/main/">Startseite</a>
+      <a class="nav-link" href="/main/impressum/">Impressum</a>
+      <a class="nav-link" href="/main/datenschutz/">Datenschutz</a>
+      <a class="nav-link" href="/main/kontakt/">Kontakt</a>
+    </nav>
   </header>
 
   <main>
     <section class="contact-layout">
       <div>
         <h1 class="contact-title">Kontakt</h1>
-        <p class="contact-intro">
-          Schreib uns, wenn du Feedback, Themenwünsche oder Fragen zu KlaroNews hast.
-        </p>
+        <p class="contact-intro">Schreib uns, wenn du Feedback, Themenwünsche oder Fragen zu KlaroNews hast.</p>
 
-        <form id="contact-form">
+        <form id="contact-form" autocomplete="on">
+          <!-- Honeypot (FIXED: was missing in your file) -->
+          <input type="text" id="website" name="website" autocomplete="off" tabindex="-1"
+                 style="position:absolute;left:-9999px;top:-9999px" aria-hidden="true">
+
           <div class="field-group">
             <label for="name">Name (optional)</label>
             <input id="name" name="name" type="text" class="input" placeholder="Dein Name">
@@ -284,7 +275,7 @@
           </div>
 
           <button type="submit" class="btn-send" id="send-btn">Nachricht senden</button>
-          <p id="form-status" class="status-msg"></p>
+          <p id="form-status" class="status-msg" aria-live="polite"></p>
         </form>
       </div>
 
@@ -292,39 +283,45 @@
         <h3>Direkter Kontakt</h3>
         <p><strong>KlaroNews Team</strong></p>
         <p>E-Mail: KlaroNews@gmail.com</p>
-      
       </aside>
     </section>
   </main>
 
   <footer>
-  <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
-  <div class="footer-links">
-    <a href="/main/impressum/">Impressum</a>
-    <a href="/main/datenschutz/">Datenschutz</a>
-    <a href="/main/kontakt/">Kontakt</a>
-  </div>
-</footer>
+    <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+    <div class="footer-links">
+      <a href="/main/impressum/">Impressum</a>
+      <a href="/main/datenschutz/">Datenschutz</a>
+      <a href="/main/kontakt/">Kontakt</a>
+    </div>
+  </footer>
 </div>
 
 <script>
   // Jahr setzen
   document.getElementById("year").textContent = new Date().getFullYear();
 
-  // 🔴 DEIN DISCORD-WEBHOOK HIER
+  // Active-Link automatisch (damit du nicht überall "active" hardcodest)
+  (function () {
+    const path = location.pathname.replace(/\/+$/, "");
+    document.querySelectorAll("nav a.nav-link").forEach(a => {
+      const href = new URL(a.getAttribute("href"), location.origin).pathname.replace(/\/+$/, "");
+      if (href === path) a.classList.add("active");
+    });
+  })();
+
+  // 🔴 Dein Discord-Webhook (WICHTIG: eigentlich server-side verstecken)
   const DISCORD_WEBHOOK_URL = "https://discord.com/api/webhooks/1448387720077381695/aOs-7r8MAFqbph7YInO-NHv4jB8pHpzc9EqkqQu2ZY0cTa-uDMn3LXJOP22pKttAGbT8";
 
   const form    = document.getElementById("contact-form");
   const status  = document.getElementById("form-status");
   const sendBtn = document.getElementById("send-btn");
 
-  // 🛡 5-Minuten-Limit in Millisekunden
   const COOLDOWN = 5 * 60 * 1000;
 
-  // IP holen
   async function getIP() {
     try {
-      const res = await fetch("https://api.ipify.org?format=json");
+      const res = await fetch("https://api.ipify.org?format=json", { cache: "no-store" });
       const data = await res.json();
       return data.ip || "Unbekannt";
     } catch {
@@ -334,46 +331,45 @@
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
-if (document.getElementById("website").value.trim()) return;
+
+    // Honeypot check
+    if (document.getElementById("website").value.trim()) return;
 
     const name    = document.getElementById("name").value.trim();
     const email   = document.getElementById("email").value.trim();
     const message = document.getElementById("message").value.trim();
 
-    // 📝 Mindestlänge: mind. 3 Wörter
-    if (message.split(" ").filter(w => w.length > 0).length < 3) {
+    // Mindestlänge: mind. 3 Wörter (robust)
+    if (message.trim().split(/\s+/).filter(Boolean).length < 3) {
       status.textContent = "Deine Nachricht muss mindestens 3 Wörter enthalten.";
       status.className = "status-msg status-error";
       return;
     }
 
-    // 🛡 Spam-Schutz: 1 Nachricht pro 5 Minuten pro Browser
+    // Cooldown
     const lastSent = localStorage.getItem("klaronews_last_sent");
     const now = Date.now();
-
     if (lastSent && now - Number(lastSent) < COOLDOWN) {
       const waitSeconds = Math.ceil((COOLDOWN - (now - Number(lastSent))) / 1000);
       const minutes = Math.floor(waitSeconds / 60);
       const seconds = waitSeconds % 60;
-
-      const readable = minutes > 0
-        ? `${minutes} Min ${seconds} Sek`
-        : `${seconds} Sekunden`;
+      const readable = minutes > 0 ? `${minutes} Min ${seconds} Sek` : `${seconds} Sekunden`;
 
       status.textContent = `Bitte warte noch ${readable}, bevor du erneut sendest.`;
       status.className = "status-msg status-error";
       return;
     }
 
-    // Button + Status setzen
+    // UI state
     sendBtn.classList.add("disabled");
+    sendBtn.setAttribute("disabled", "disabled");
     sendBtn.textContent = "Nachricht wird gesendet …";
     status.textContent = "";
     status.className = "status-msg";
 
-    const ip         = await getIP();
-    const userAgent  = navigator.userAgent;
-    const timestamp  = new Date().toISOString();
+    const ip        = await getIP();
+    const userAgent = navigator.userAgent;
+    const timestamp = new Date().toISOString();
 
     const embed = {
       title: "📨 Neue Nachricht über das KlaroNews-Kontaktformular",
@@ -381,10 +377,7 @@ if (document.getElementById("website").value.trim()) return;
       fields: [
         { name: "Name", value: name || "Nicht angegeben", inline: true },
         { name: "E-Mail", value: email, inline: true },
-        {
-          name: "Nachricht",
-          value: message.length > 1024 ? message.slice(0, 1021) + "…" : message
-        },
+        { name: "Nachricht", value: message.length > 1024 ? message.slice(0, 1021) + "…" : message },
         { name: "IP-Adresse", value: "`" + ip + "`", inline: false },
         { name: "Browser / Gerät", value: userAgent, inline: false },
         { name: "Zeitpunkt", value: timestamp, inline: false }
@@ -396,41 +389,28 @@ if (document.getElementById("website").value.trim()) return;
       const res = await fetch(DISCORD_WEBHOOK_URL, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          username: "KlaroNews Kontakt",
-          embeds: [embed]
-        })
+        body: JSON.stringify({ username: "KlaroNews Kontakt", embeds: [embed] })
       });
 
       if (res.ok) {
         status.textContent = "Nachricht wurde gesendet.";
         status.className = "status-msg status-success";
-
-        // ⏳ Cooldown aktivieren
-        localStorage.setItem("klaronews_last_sent", Date.now());
-
+        localStorage.setItem("klaronews_last_sent", String(Date.now()));
         form.reset();
       } else {
         status.textContent = "Fehler beim Senden. Bitte Webhook prüfen.";
         status.className = "status-msg status-error";
       }
-
     } catch (err) {
       console.error(err);
       status.textContent = "Netzwerkfehler. Bist du online?";
       status.className = "status-msg status-error";
-
     } finally {
       sendBtn.classList.remove("disabled");
+      sendBtn.removeAttribute("disabled");
       sendBtn.textContent = "Nachricht senden";
     }
   });
 </script>
-
 </body>
 </html>
-
-
-
-
-
