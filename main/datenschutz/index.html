@@ -4,21 +4,23 @@
   <meta charset="UTF-8" />
   <title>Datenschutzerklärung – KlaroNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Datenschutzerklärung von KlaroNews – Informationen zur Verarbeitung personenbezogener Daten." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="/https://klaronews.com/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/https://klaronews.com/favicon.svg" />
-<link rel="shortcut icon" href="/https://klaronews.com/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/https://klaronews.com/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="KlaroNews" />
-<link rel="manifest" href="/https://klaronews.com/site.webmanifest" />
-<link rel="icon" type="image/x-icon" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/https://klaronews.com/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicons (FIXED) -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="KlaroNews">
+  <link rel="manifest" href="/site.webmanifest">
+
   <style>
-    /* Gleiches Design wie bei Impressum */
-    :root {
+    :root{
       --bg:#050505;--bg-card-soft:#181818;--accent:#f9ff00;
       --text:#ffffff;--muted:#a3a3a3;--border:#2b2b2b;
       --radius-lg:18px;--shadow-soft:0 18px 40px rgba(0,0,0,.45);
@@ -26,7 +28,8 @@
     *{box-sizing:border-box;margin:0;padding:0}
     body{
       background:radial-gradient(circle at top,#151515 0,#050505 45%,#000 100%);
-      color:var(--text);font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+      color:var(--text);
+      font-family:"Inter",system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       min-height:100vh;line-height:1.5;
     }
     a{color:inherit;text-decoration:none}
@@ -40,15 +43,22 @@
     .nav-link{padding:6px 10px;border-radius:999px;color:var(--muted);transition:.18s ease}
     .nav-link:hover{color:var(--text);background:rgba(249,255,0,0.06)}
     .nav-link.active{color:#000;background:var(--accent);font-weight:600}
+
     main{
-      background:var(--bg-card-soft);border-radius:var(--radius-lg);
-      padding:20px 20px 24px;border:1px solid var(--border);
+      background:var(--bg-card-soft);
+      border-radius:var(--radius-lg);
+      padding:20px 20px 24px;
+      border:1px solid var(--border);
       box-shadow:var(--shadow-soft);
     }
+
     h1{font-family:"Montserrat",system-ui,sans-serif;font-size:1.6rem;margin-bottom:10px}
     h2{font-size:1rem;margin-top:18px;margin-bottom:6px}
+    h3{font-size:0.95rem;margin-top:14px;margin-bottom:6px}
     p,li{font-size:0.9rem;color:var(--muted)}
     ul{margin-left:18px;list-style:disc}
+    strong{color:var(--text)}
+
     footer{
       margin-top:32px;padding-top:18px;border-top:1px solid #181818;
       font-size:0.76rem;color:var(--muted);
@@ -57,6 +67,7 @@
     .footer-links{display:flex;gap:12px;flex-wrap:wrap}
     .footer-links a{color:var(--muted)}
     .footer-links a:hover{color:var(--text)}
+
     @media(max-width:700px){
       header{flex-direction:column;align-items:flex-start}
       nav{flex-wrap:wrap;gap:8px}
@@ -64,6 +75,7 @@
     }
   </style>
 </head>
+
 <body>
 <div class="page">
   <header>
@@ -74,201 +86,226 @@
       </div>
       <div class="logo-tagline">News, kurz & klar</div>
     </div>
+
+    <!-- Nav (FIXED for /main/ structure) -->
     <nav>
-      <a class="nav-link" href="index.html">Startseite</a>
-      <a class="nav-link" href="impressum.html">Impressum</a>
-      <a class="nav-link active" href="datenschutz.html">Datenschutz</a>
-      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <a class="nav-link" href="/main/">Startseite</a>
+      <a class="nav-link" href="/main/impressum/">Impressum</a>
+      <a class="nav-link" href="/main/datenschutz/">Datenschutz</a>
+      <a class="nav-link" href="/main/kontakt/">Kontakt</a>
     </nav>
   </header>
 
- <main>
-  <h1>Datenschutzerklärung</h1>
+  <main>
+    <h1>Datenschutzerklärung</h1>
 
-  <p style="margin-bottom:10px;">
-    Der Schutz deiner persönlichen Daten ist uns ein zentrales Anliegen. In dieser 
-    Datenschutzerklärung informieren wir dich ausführlich darüber, welche Daten wir 
-    erheben, wie wir sie verarbeiten, zu welchen Zwecken dies geschieht und welche 
-    Rechte du nach der Datenschutz-Grundverordnung (DSGVO) hast.
-  </p>
+    <p style="margin-bottom:10px;">
+      Der Schutz deiner persönlichen Daten ist uns ein zentrales Anliegen. In dieser
+      Datenschutzerklärung informieren wir dich ausführlich darüber, welche Daten wir
+      erheben, wie wir sie verarbeiten, zu welchen Zwecken dies geschieht und welche
+      Rechte du nach der Datenschutz-Grundverordnung (DSGVO) hast.
+    </p>
 
-  <h2>1. Verantwortlicher</h2>
-  <p>
-    Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
-    <strong>KlaroNews – Mahmoud Bankousli</strong><br>
-    Manager & Betreiber der Website<br>
-    E-Mail: KlaroNews@gmail.com<br>
-  </p>
+    <h2>1. Verantwortlicher</h2>
+    <p>
+      Verantwortlich für die Datenverarbeitung auf dieser Website ist:<br><br>
+      <strong>KlaroNews – Mahmoud Bankousli</strong><br>
+      Manager & Betreiber der Website<br>
+      E-Mail: KlaroNews@gmail.com<br>
+    </p>
 
-  <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
-  <p>
-    Wir verarbeiten personenbezogene Daten grundsätzlich nur, wenn dies für die
-    Bereitstellung unserer Inhalte, für die Funktionsfähigkeit der Website oder zur
-    Bearbeitung deiner Anfragen erforderlich ist. Die Verarbeitung erfolgt auf Basis
-    der DSGVO, insbesondere:
-  </p>
+    <h2>2. Allgemeine Hinweise zur Datenverarbeitung</h2>
+    <p>
+      Wir verarbeiten personenbezogene Daten grundsätzlich nur, wenn dies für die
+      Bereitstellung unserer Inhalte, für die Funktionsfähigkeit der Website oder zur
+      Bearbeitung deiner Anfragen erforderlich ist. Die Verarbeitung erfolgt auf Basis
+      der DSGVO, insbesondere:
+    </p>
 
-  <ul>
-    <li><strong>Art. 6 Abs. 1 lit. a</strong> – Einwilligung</li>
-    <li><strong>Art. 6 Abs. 1 lit. b</strong> – Vertrag oder vorvertragliche Maßnahmen</li>
-    <li><strong>Art. 6 Abs. 1 lit. f</strong> – berechtigtes Interesse</li>
-  </ul>
+    <ul>
+      <li><strong>Art. 6 Abs. 1 lit. a</strong> – Einwilligung</li>
+      <li><strong>Art. 6 Abs. 1 lit. b</strong> – Vertrag oder vorvertragliche Maßnahmen</li>
+      <li><strong>Art. 6 Abs. 1 lit. f</strong> – berechtigtes Interesse</li>
+    </ul>
 
-  <p>
-    Eine Weitergabe deiner Daten an Dritte erfolgt ausschließlich in den Fällen,
-    in denen dies gesetzlich erlaubt oder ausdrücklich von dir gewünscht ist.
-  </p>
+    <p>
+      Eine Weitergabe deiner Daten an Dritte erfolgt ausschließlich in den Fällen,
+      in denen dies gesetzlich erlaubt oder ausdrücklich von dir gewünscht ist.
+    </p>
 
-  <h2>3. Verarbeitung personenbezogener Daten beim Besuch der Website</h2>
-  <p>
-    Beim Aufruf unserer Website werden automatisiert Daten erhoben, die dein Browser
-    an unseren Server übermittelt. Zu den sogenannten Server-Logfiles gehören:
-  </p>
+    <h2>3. Verarbeitung personenbezogener Daten beim Besuch der Website</h2>
+    <p>
+      Beim Aufruf unserer Website werden automatisiert Daten erhoben, die dein Browser
+      an unseren Server übermittelt. Zu den sogenannten Server-Logfiles gehören:
+    </p>
 
-  <ul>
-    <li>IP-Adresse</li>
-    <li>Datum und Uhrzeit des Abrufs</li>
-    <li>Besuchte Seiten / Inhalte</li>
-    <li>HTTP-Statuscode</li>
-    <li>Browsertyp und -version</li>
-    <li>Betriebssystem</li>
-    <li>Referrer-URL (von welcher Seite du kommst)</li>
-  </ul>
+    <ul>
+      <li>IP-Adresse</li>
+      <li>Datum und Uhrzeit des Abrufs</li>
+      <li>Besuchte Seiten / Inhalte</li>
+      <li>HTTP-Statuscode</li>
+      <li>Browsertyp und -version</li>
+      <li>Betriebssystem</li>
+      <li>Referrer-URL (von welcher Seite du kommst)</li>
+    </ul>
 
-  <p>
-    Diese Daten sind technisch erforderlich, um die Website korrekt auszuliefern, 
-    Sicherheit zu gewährleisten und Angriffe oder Missbrauch erkennen zu können.
-  </p>
+    <p>
+      Diese Daten sind technisch erforderlich, um die Website korrekt auszuliefern,
+      Sicherheit zu gewährleisten und Angriffe oder Missbrauch erkennen zu können.
+    </p>
 
-  <p><strong>Speicherdauer:</strong> Logfiles werden vom Hosting-Anbieter nach kurzer Zeit automatisch gelöscht, 
-  sofern keine sicherheitsrelevante Analyse erforderlich ist.</p>
+    <p><strong>Speicherdauer:</strong> Logfiles werden vom Hosting-Anbieter nach kurzer Zeit automatisch gelöscht,
+      sofern keine sicherheitsrelevante Analyse erforderlich ist.</p>
 
-  <h2>4. Kontaktformular</h2>
-  <p>
-    Über unser Kontaktformular kannst du uns jederzeit eine Nachricht senden. Dabei
-    erfassen wir:
-  </p>
+    <h2>4. Kontaktformular</h2>
+    <p>
+      Über unser Kontaktformular kannst du uns jederzeit eine Nachricht senden. Dabei
+      erfassen wir:
+    </p>
 
-  <ul>
-    <li>Name (freiwillig)</li>
-    <li>E-Mail-Adresse (Pflichtfeld)</li>
-    <li>Inhalt deiner Nachricht</li>
-    <li>Datum und Uhrzeit der Übermittlung</li>
-    <li>Automatisch: IP-Adresse zur Missbrauchs- und Betrugsprävention</li>
-  </ul>
+    <ul>
+      <li>Name (freiwillig)</li>
+      <li>E-Mail-Adresse (Pflichtfeld)</li>
+      <li>Inhalt deiner Nachricht</li>
+      <li>Datum und Uhrzeit der Übermittlung</li>
+      <li>Automatisch: IP-Adresse zur Missbrauchs- und Betrugsprävention</li>
+    </ul>
 
-  <p>
-    Die Übermittlung an uns erfolgt technisch über einen <strong>Discord-Webhook</strong>.
-    Das bedeutet, dass deine Nachricht in einem geschützten internen KlaroNews-Discord-Kanal 
-    angezeigt wird. Dieser Kanal ist nicht öffentlich sichtbar und dient ausschließlich 
-    der Bearbeitung deiner Anfrage.
-  </p>
+    <p>
+      Die Übermittlung an uns erfolgt technisch über einen <strong>Discord-Webhook</strong>.
+      Das bedeutet, dass deine Nachricht in einem geschützten internen KlaroNews-Discord-Kanal
+      angezeigt wird. Dieser Kanal ist nicht öffentlich sichtbar und dient ausschließlich
+      der Bearbeitung deiner Anfrage.
+    </p>
 
-  <h3>Rechtsgrundlagen:</h3>
-  <ul>
-    <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Bearbeitung deiner Anfrage</li>
-    <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – unser berechtigtes Interesse, Missbrauch zu verhindern</li>
-  </ul>
+    <h3>Rechtsgrundlagen</h3>
+    <ul>
+      <li><strong>Art. 6 Abs. 1 lit. b DSGVO</strong> – Bearbeitung deiner Anfrage</li>
+      <li><strong>Art. 6 Abs. 1 lit. f DSGVO</strong> – unser berechtigtes Interesse, Missbrauch zu verhindern</li>
+    </ul>
 
-  <h3>Speicherdauer:</h3>
-  <p>
-    Nachrichten werden so lange gespeichert, wie sie zur Bearbeitung erforderlich sind.
-    In Fällen von Missbrauch, Drohungen oder strafbaren Inhalten behalten wir uns vor,
-    die Daten länger aufzubewahren und an Sicherheitsbehörden zu übergeben.
-  </p>
+    <h3>Speicherdauer</h3>
+    <p>
+      Nachrichten werden so lange gespeichert, wie sie zur Bearbeitung erforderlich sind.
+      In Fällen von Missbrauch, Drohungen oder strafbaren Inhalten behalten wir uns vor,
+      die Daten länger aufzubewahren und an Sicherheitsbehörden zu übergeben.
+    </p>
 
-  <h2>5. Anti-Spam-Schutz</h2>
-  <p>
-    Um Manipulationen, Spam und automatisierte Anfragen zu verhindern, nutzt das
-    Kontaktformular mehrere Schutzmechanismen:
-  </p>
+    <h2>5. Anti-Spam-Schutz</h2>
+    <p>
+      Um Manipulationen, Spam und automatisierte Anfragen zu verhindern, nutzt das
+      Kontaktformular mehrere Schutzmechanismen:
+    </p>
 
-  <ul>
-    <li>Mindestens <strong>3 Wörter</strong> pro Nachricht erforderlich</li>
-    <li>Versand nur alle <strong>5 Minuten</strong> möglich (lokale Speicherung im Browser)</li>
-    <li>Speicherung der IP-Adresse pro Anfrage</li>
-  </ul>
+    <ul>
+      <li>Mindestens <strong>3 Wörter</strong> pro Nachricht erforderlich</li>
+      <li>Versand nur alle <strong>5 Minuten</strong> möglich (lokale Speicherung im Browser)</li>
+      <li>Speicherung der IP-Adresse pro Anfrage</li>
+    </ul>
 
-  <p>
-    Diese Maßnahmen dienen ausschließlich dem Schutz vor Missbrauch und der Stabilität
-    des Systems. Es findet keine externe Auswertung statt.
-  </p>
+    <p>
+      Diese Maßnahmen dienen ausschließlich dem Schutz vor Missbrauch und der Stabilität
+      des Systems. Es findet keine externe Auswertung statt.
+    </p>
 
-  <h2>6. Cookies & Tracking</h2>
-  <p>
-    Wir verwenden aktuell <strong>keine Tracking-Cookies</strong>, keine Statistik-Tools wie Google Analytics
-    und keine Werbetracker. Das bedeutet:
-  </p>
+    <h2>6. Cookies & Tracking</h2>
+    <p>
+      Wir verwenden aktuell <strong>keine Tracking-Cookies</strong>, keine Statistik-Tools wie Google Analytics
+      und keine Werbetracker.
+    </p>
 
-  <ul>
-    <li>Kein Profiling</li>
-    <li>Keine Weitergabe an Werbenetzwerke</li>
-    <li>Keine Analyse deines Nutzerverhaltens</li>
-  </ul>
+    <ul>
+      <li>Kein Profiling</li>
+      <li>Keine Weitergabe an Werbenetzwerke</li>
+      <li>Keine Analyse deines Nutzerverhaltens</li>
+    </ul>
 
-  <p>
-    Falls in Zukunft Analyse-Tools eingerichtet werden sollten, wirst du hier vorab
-    transparent informiert.
-  </p>
+    <p>
+      Falls in Zukunft Analyse-Tools eingerichtet werden sollten, wirst du hier vorab
+      transparent informiert.
+    </p>
 
-  <h2>7. Datensicherheit</h2>
-  <p>
-    Wir nutzen technische und organisatorische Maßnahmen, um deine Daten vor Verlust,
-    Zerstörung, Missbrauch oder unberechtigtem Zugriff zu schützen. Dazu gehören:
-  </p>
+    <h2>7. Datensicherheit</h2>
+    <p>
+      Wir nutzen technische und organisatorische Maßnahmen, um deine Daten vor Verlust,
+      Zerstörung, Missbrauch oder unberechtigtem Zugriff zu schützen. Dazu gehören:
+    </p>
 
-  <ul>
-    <li>Verschlüsselte Übertragung (HTTPS)</li>
-    <li>Geschützter Discord-Kanal für Nachrichten</li>
-    <li>Serverseitige Sicherheitsmechanismen beim Hosting-Anbieter</li>
-    <li>Regelmäßige Updates der Website-Komponenten</li>
-  </ul>
+    <ul>
+      <li>Verschlüsselte Übertragung (HTTPS)</li>
+      <li>Geschützter Discord-Kanal für Nachrichten</li>
+      <li>Serverseitige Sicherheitsmechanismen beim Hosting-Anbieter</li>
+      <li>Regelmäßige Updates der Website-Komponenten</li>
+    </ul>
 
-  <h2>8. Weitergabe von Daten an Dritte</h2>
-  <p>
-    Eine Weitergabe erfolgt ausschließlich dann, wenn:
-  </p>
+    <h2>8. Weitergabe von Daten an Dritte</h2>
+    <p>Eine Weitergabe erfolgt ausschließlich dann, wenn:</p>
 
-  <ul>
-    <li>du ausdrücklich eingewilligt hast</li>
-    <li>wir gesetzlich dazu verpflichtet sind (z. B. Ermittlungsbehörden)</li>
-    <li>dies zur Erfüllung vertraglicher Pflichten erforderlich ist</li>
-  </ul>
+    <ul>
+      <li>du ausdrücklich eingewilligt hast</li>
+      <li>wir gesetzlich dazu verpflichtet sind (z. B. Ermittlungsbehörden)</li>
+      <li>dies zur Erfüllung vertraglicher Pflichten erforderlich ist</li>
+    </ul>
 
-  <p>
-    Ein Beispiel: Bei strafbaren Handlungen wie Drohungen, Belästigungen, Beleidigungen
-    oder anderen rechtswidrigen Nachrichten behalten wir uns vor, die gespeicherten
-    Daten (inkl. IP) an die Polizei weiterzugeben.
-  </p>
+    <p>
+      Bei strafbaren Handlungen wie Drohungen, Belästigungen, Beleidigungen oder anderen rechtswidrigen Nachrichten
+      behalten wir uns vor, die gespeicherten Daten (inkl. IP) an die Polizei weiterzugeben.
+    </p>
 
-  <h2>9. Speicherdauer</h2>
-  <p>
-    Wir speichern personenbezogene Daten nur solange, wie dies für den jeweiligen Zweck
-    notwendig ist oder gesetzliche Aufbewahrungsfristen bestehen.
-  </p>
+    <h2>9. Speicherdauer</h2>
+    <p>
+      Wir speichern personenbezogene Daten nur solange, wie dies für den jeweiligen Zweck
+      notwendig ist oder gesetzliche Aufbewahrungsfristen bestehen.
+    </p>
 
-  <h2>10. Deine Rechte nach DSGVO</h2>
-  <p>Du hast jederzeit folgende Rechte:</p>
+    <h2>10. Deine Rechte nach DSGVO</h2>
+    <p>Du hast jederzeit folgende Rechte:</p>
 
-  <ul>
-    <li><strong>Auskunft</strong> über deine gespeicherten Daten</li>
-    <li><strong>Berichtigung</strong> falscher Daten</li>
-    <li><strong>Löschung</strong>, sofern keine Pflichten dagegensprechen</li>
-    <li><strong>Einschränkung</strong> der Verarbeitung</li>
-    <li><strong>Datenübertragbarkeit</strong></li>
-    <li><strong>Widerspruch</strong> gegen bestimmte Verarbeitungen</li>
-    <li><strong>Beschwerde</strong> bei einer Datenschutzbehörde</li>
-  </ul>
+    <ul>
+      <li><strong>Auskunft</strong> über deine gespeicherten Daten</li>
+      <li><strong>Berichtigung</strong> falscher Daten</li>
+      <li><strong>Löschung</strong>, sofern keine Pflichten dagegensprechen</li>
+      <li><strong>Einschränkung</strong> der Verarbeitung</li>
+      <li><strong>Datenübertragbarkeit</strong></li>
+      <li><strong>Widerspruch</strong> gegen bestimmte Verarbeitungen</li>
+      <li><strong>Beschwerde</strong> bei einer Datenschutzbehörde</li>
+    </ul>
 
-  <h2>11. Änderungen dieser Datenschutzerklärung</h2>
-  <p>
-    Wir behalten uns vor, diese Erklärung anzupassen, sobald neue Funktionen eingeführt
-    werden oder sich gesetzliche Bestimmungen ändern. Es gilt stets die hier veröffentlichte
-    aktuelle Version.
-  </p>
+    <h2>11. Änderungen dieser Datenschutzerklärung</h2>
+    <p>
+      Wir behalten uns vor, diese Erklärung anzupassen, sobald neue Funktionen eingeführt
+      werden oder sich gesetzliche Bestimmungen ändern. Es gilt stets die hier veröffentlichte
+      aktuelle Version.
+    </p>
 
-  <p style="margin-top:10px;font-size:0.8rem;color:var(--muted);">
-    Stand: Dezember 2025“
-  </p>
-</main>
+    <p style="margin-top:10px;font-size:0.8rem;color:var(--muted);">
+      Stand: Dezember 2025
+    </p>
+  </main>
 
+  <!-- Footer (FIXED) -->
+  <footer>
+    <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
+    <div class="footer-links">
+      <a href="/main/impressum/">Impressum</a>
+      <a href="/main/datenschutz/">Datenschutz</a>
+      <a href="/main/kontakt/">Kontakt</a>
+    </div>
+  </footer>
+</div>
+
+<script>
+  // Jahr setzen
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Active-Link automatisch
+  (function () {
+    const path = location.pathname.replace(/\/+$/, "");
+    document.querySelectorAll("nav a.nav-link").forEach(a => {
+      const href = new URL(a.getAttribute("href"), location.origin).pathname.replace(/\/+$/, "");
+      if (href === path) a.classList.add("active");
+    });
+  })();
+</script>
+</body>
+</html>
