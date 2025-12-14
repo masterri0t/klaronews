@@ -4,18 +4,21 @@
   <meta charset="UTF-8" />
   <title>Impressum – KlaroNews</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Impressum von KlaroNews." />
+
+  <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="icon" type="image/png" href="/https://klaronews.com/favicon-96x96.png" sizes="96x96" />
-<link rel="icon" type="image/svg+xml" href="/https://klaronews.com/favicon.svg" />
-<link rel="shortcut icon" href="/https://klaronews.com/favicon.ico" />
-<link rel="apple-touch-icon" sizes="180x180" href="/https://klaronews.com/apple-touch-icon.png" />
-<meta name="apple-mobile-web-app-title" content="KlaroNews" />
-<link rel="manifest" href="/https://klaronews.com/site.webmanifest" />
-<link rel="icon" type="image/x-icon" href="favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/favicon.svg">
-  <link rel="icon" type="image/x-icon" href="/https://klaronews.com/favicon.ico">
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicons (FIXED) -->
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png">
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="shortcut icon" href="/favicon.ico">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <meta name="apple-mobile-web-app-title" content="KlaroNews">
+  <link rel="manifest" href="/site.webmanifest">
+
   <style>
     :root {
       --bg: #050505;
@@ -58,6 +61,7 @@
     .nav-link{padding:6px 10px;border-radius:999px;color:var(--muted);transition:.18s ease}
     .nav-link:hover{color:var(--text);background:rgba(249,255,0,0.06)}
     .nav-link.active{color:#000;background:var(--accent);font-weight:600}
+
     main{
       background:var(--bg-card-soft);
       border-radius:var(--radius-lg);
@@ -72,6 +76,7 @@
     h2{font-size:1rem;margin-top:18px;margin-bottom:6px}
     p,li{font-size:0.9rem;color:var(--muted)}
     ul{margin-left:18px;list-style:disc}
+
     footer{
       margin-top:32px;padding-top:18px;border-top:1px solid #181818;
       font-size:0.76rem;color:var(--muted);
@@ -80,6 +85,7 @@
     .footer-links{display:flex;gap:12px;flex-wrap:wrap}
     .footer-links a{color:var(--muted)}
     .footer-links a:hover{color:var(--text)}
+
     @media(max-width:700px){
       header{flex-direction:column;align-items:flex-start}
       nav{flex-wrap:wrap;gap:8px}
@@ -87,6 +93,7 @@
     }
   </style>
 </head>
+
 <body>
 <div class="page">
   <header>
@@ -97,17 +104,18 @@
       </div>
       <div class="logo-tagline">News, kurz & klar</div>
     </div>
+
+    <!-- Nav (FIXED for /main/ structure) -->
     <nav>
-      <a class="nav-link" href="index.html">Startseite</a>
-      <a class="nav-link active" href="impressum.html">Impressum</a>
-      <a class="nav-link" href="datenschutz.html">Datenschutz</a>
-      <a class="nav-link" href="kontakt.html">Kontakt</a>
+      <a class="nav-link" href="/main/">Startseite</a>
+      <a class="nav-link" href="/main/impressum/">Impressum</a>
+      <a class="nav-link" href="/main/datenschutz/">Datenschutz</a>
+      <a class="nav-link" href="/main/kontakt/">Kontakt</a>
     </nav>
   </header>
 
   <main>
     <h1>Impressum</h1>
-
 
     <h2>Angaben gemäß § 5 TMG</h2>
     <p>
@@ -117,9 +125,7 @@
     </p>
 
     <h2>Kontakt</h2>
-    <p>
-      E-Mail: KlaroNews@gmail.com
-    </p>
+    <p>E-Mail: KlaroNews@gmail.com</p>
 
     <h2>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV</h2>
     <p>
@@ -150,21 +156,29 @@
     </p>
   </main>
 
+  <!-- Footer (FIXED) -->
   <footer>
     <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
     <div class="footer-links">
-      <a href="impressum.html">Impressum</a>
-      <a href="datenschutz.html">Datenschutz</a>
-      <a href="kontakt.html">Kontakt</a>
+      <a href="/main/impressum/">Impressum</a>
+      <a href="/main/datenschutz/">Datenschutz</a>
+      <a href="/main/kontakt/">Kontakt</a>
     </div>
   </footer>
 </div>
 
 <script>
+  // Jahr setzen
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Active-Link automatisch
+  (function () {
+    const path = location.pathname.replace(/\/+$/, "");
+    document.querySelectorAll("nav a.nav-link").forEach(a => {
+      const href = new URL(a.getAttribute("href"), location.origin).pathname.replace(/\/+$/, "");
+      if (href === path) a.classList.add("active");
+    });
+  })();
 </script>
 </body>
 </html>
-
-
-
