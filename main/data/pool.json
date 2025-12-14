@@ -3,79 +3,81 @@
     {
       "id": "kn01",
       "category": "Tech",
-      "title": "„Ich wurde nicht gehackt — ich war nur bequem“: Die 9 Fehler, die Accounts zerstören (und wie du sie stoppst)",
-      "summary": "Die meisten Account-Übernahmen passieren nicht durch Hollywood-Hacker, sondern durch simple Routine-Fehler. Hier ist der echte Schutzplan.",
-      "body": "Wenn jemand sagt „Ich wurde gehackt“, klingt das wie ein Sci-Fi-Problem. In der Realität ist es meistens ein Business-Problem: schlechte Prozesse. Und zwar bei dir. Nicht böse gemeint – aber genau das ist die gute Nachricht: Du kannst es fixen.\n\n## Warum das passiert (ohne Drama)\nViele „Hacks“ sind:\n- Passwort wiederverwendet (ein Leak reicht, dann Domino)\n- Phishing-Link geklickt (Stress + Fake-Seite)\n- Kein 2FA (ein Passwort = eine Tür)\n- Geräte nicht aktualisiert (Sicherheitslücken bleiben offen)\n\n## Die 9 Klassiker, die du ab heute stoppst\n1) **Ein Passwort für alles**  \nDas ist wie derselbe Schlüssel für Wohnung, Schule, Spind, Bike. Wenn einer weg ist: RIP.\n\n2) **Passwort = Name/Geburtstag/„Sommer2025!“**  \nDas ist nicht kreativ, das ist Standardliste.\n\n3) **2FA nicht an, weil „nervt“**  \n2FA nervt genau 4 Sekunden. Konto zurückholen nervt Wochen.\n\n4) **Links aus E-Mails / DMs klicken**  \n„Dein Konto wird gesperrt“ ist der Klassiker. Wenn’s dringend wirkt, ist es oft Scam.\n\n5) **„Passwort speichern“ auf random Geräten**  \nFreund-PC, Schul-PC, Internet-Café — bro… nein.\n\n6) **Kein Update seit 2 Monaten**  \nUpdates sind Security-Patches. Kein Update = offene Tür.\n\n7) **Apps mit Vollzugriff**  \n„Taschenlampe will Standort & Kontakte“ — sus.\n\n8) **Gleiche Sicherheitsfragen überall**  \n„Mädchenname der Mutter“ ist oft öffentlich rausfindbar.\n\n9) **Kein Recovery-Plan**  \nWenn du nicht weißt, wie du dein Konto wiederbekommst, bist du im Ernstfall lost.\n\n## Der Klaro-Plan (30 Minuten, dann bist du deutlich sicherer)\n- Nimm einen Passwortmanager ODER erstelle 3–5 sehr lange Passphrasen.\n- **2FA**: am besten Authenticator-App, sonst SMS (SMS ist besser als nichts).\n- Wichtigste Konten zuerst: Mail, Socials, Banking, Gaming.\n- Check „Geräte“, „Sitzungen“, „Login-Verlauf“ und logge Fremdes aus.\n- Mach ein Recovery-Mail + Telefonnummer aktuell.\n- Update: Handy + Browser + Messenger.\n\n## Real Talk\nSicherheit ist kein „Vibe“, es ist Hygiene. Wie Zähneputzen: nicht sexy, aber du willst auch keine Katastrophe.\n\nWenn du willst, bau ich dir noch eine Mini-Funktion: „Security-Checklist“ Button auf der Seite, die deinen Usern das als 60-Sekunden-Plan zeigt."
+      "title": "Warum Accounts wirklich übernommen werden und was du konkret dagegen tun kannst",
+      "summary": "Die meisten Account-Probleme entstehen durch Gewohnheiten, nicht durch Profihacker.",
+      "body": "Viele Menschen denken bei gehackten Accounts sofort an Technik oder kriminelle Gruppen. In Wirklichkeit entstehen die meisten Probleme durch alltägliche Fehler. Wiederverwendete Passwörter, fehlende Zusatzsicherung und unbedachtes Klicken sind die Hauptgründe.\n\nEin starkes Passwort allein reicht heute nicht mehr aus. Wichtig ist, dass jedes wichtige Konto abgesichert ist und regelmäßig überprüft wird. Wer das einmal sauber einrichtet, reduziert das Risiko massiv."
     },
+
     {
       "id": "kn02",
       "category": "Bildung",
-      "title": "Warum du beim Lernen manchmal „dumm“ fühlst, obwohl du’s nicht bist (und wie du das Gehirn austrickst)",
-      "summary": "Das Problem ist selten Intelligenz. Es ist Überlastung, falsches Timing und ein System, das dich stresst. Hier ist der Fix.",
-      "body": "Dieses „Ich check’s einfach nicht“-Gefühl ist brutal – aber es ist oft kein Beweis, dass du „zu blöd“ bist. Es ist eher ein Zeichen, dass dein System gerade schlecht konfiguriert ist.\n\n## Was da im Kopf passiert\nWenn du gestresst bist, schaltet der Körper in Alarm: Fight/Flight.  \nErgebnis: weniger Zugriff auf ruhiges Denken, mehr Chaos-Gefühl, mehr Blackout. Das ist Biologie, kein Charakterfehler.\n\n## Die 5 Gründe, warum Lernen plötzlich nicht mehr geht\n1) **Du lernst zu lange am Stück**  \nNach 60–90 Minuten sinkt Fokus. Dein Kopf braucht Reset.\n\n2) **Du lernst ohne aktive Abfrage**  \nLesen fühlt sich nach Lernen an, ist aber oft nur „Information streicheln“.  \nAktiv = Aufgaben machen, erklären, abfragen.\n\n3) **Du lernst im falschen Zustand**  \nHunger, Schlafmangel, zu viel Koffein, Stress – alles killt das Arbeitsgedächtnis.\n\n4) **Du lernst zu groß**  \n„Ich lerne Mathe“ ist zu groß. „Ich kann lineare Gleichungen Schritt 1–3“ ist machbar.\n\n5) **Du verwechselst Üben mit Prüfen**  \nWenn du nur Aufgaben anschaust, prüfst du dich nicht.  \nDu musst spüren: „Kann ich’s ohne Hilfe?“\n\n## Der Klaro-Lernplan (einfach, aber effektiv)\n- **25/5 oder 45/10**: Timer an, Pause geplant.\n- **Start-mini**: „Ich mache nur 1 Aufgabe“ – Einstieg ist das Schwerste.\n- **Fehlerliste**: Schreib deine Top 5 Fehler auf. Wiederhole gezielt.\n- **Erklären**: Tu so, als würdest du’s einem 12-Jährigen erklären.\n- **Kurz-Zusammenfassung**: Am Ende 5 Zeilen in eigenen Worten.\n\n## Wenn du Stress hast\nEin Trick: **länger ausatmen** als einatmen (z.B. 4 Sekunden ein, 6 Sekunden aus).  \nDas signalisiert dem Nervensystem: „Kein Notfall.“  \nPlötzlich wird Denken wieder möglich.\n\n## Wichtigster Satz\nDu bist nicht dein Moment von Überforderung.  \nDu bist ein Projekt, das gerade die richtigen Tools braucht."
+      "title": "Warum dein Kopf beim Lernen blockiert und was wirklich hilft",
+      "summary": "Wenn Lernen schwerfällt, liegt das selten an Intelligenz.",
+      "body": "Lernblockaden entstehen oft durch Stress, Müdigkeit oder Überforderung. Das Gehirn schaltet dann in einen Schutzmodus und verarbeitet Informationen schlechter. Das fühlt sich wie Unfähigkeit an, ist aber nur ein Signal.\n\nKurze Lerneinheiten, klare Ziele und regelmäßige Pausen helfen dem Gehirn, wieder leistungsfähig zu werden. Lernen ist kein Beweis von Stärke, sondern ein Prozess."
     },
+
     {
       "id": "kn03",
       "category": "Gesellschaft",
-      "title": "Manipulation erkennt man nicht an Worten – sondern an Mustern: 7 Moves, die Leute emotional kontrollieren",
-      "summary": "Schuldumkehr, Druck, „nur Spaß“, Lovebombing – hier ist, wie du’s erkennst und stabil reagierst, ohne cringe zu werden.",
-      "body": "Manipulation ist selten „böse Film-Villain“-Style. Es ist oft subtile Kontrolle: über dein schlechtes Gewissen, deine Angst, deine Hoffnung.\n\n## Erstmal: Was ist Manipulation?\nWenn jemand versucht, dein Verhalten zu steuern, ohne ehrlich über Bedürfnisse zu sprechen – sondern über Druck, Schuld, Verwirrung.\n\n## Die 7 typischen Muster\n1) **Schuldumkehr**  \nDu sprichst ein Problem an, und plötzlich bist du „der Böse“.\n\n2) **Druck mit Zeit**  \n„Entscheide jetzt“, „Wenn nicht heute, dann nie“.  \nStress ist die Währung von Manipulation.\n\n3) **„War doch nur Spaß“**  \nWenn du verletzt bist, wird’s runtergespielt.  \nAber Wirkung zählt mehr als Absicht.\n\n4) **Lovebombing → Entzug**  \nErst zu viel Nähe, dann plötzlich kalt. Du jagst den alten Zustand.\n\n5) **Grenzen testen**  \nDu sagst „nein“ – und es kommt sofort Verhandeln, Diskutieren, Drama.\n\n6) **„Wenn du mich liebst, dann…“**  \nGefühle als Erpressung. Klassiker.\n\n7) **Isolation**  \n„Deine Freunde sind schlecht“, „Nur ich verstehe dich“.  \nDas ist Kontrolle, nicht Liebe.\n\n## Wie du reagierst (ohne dass es eskaliert)\n- **Kurz & klar**: „Ich entscheide in meinem Tempo.“\n- **Nicht diskutieren**: Wenn jemand dich nicht verstehen will, wird jede Erklärung Munition.\n- **Wiederhole deine Grenze**: Keine neue Argumente, gleiche Message.\n- **Exit-Option**: „Ich beende das Gespräch jetzt.“\n\n## Reality-Check\nEine gesunde Person respektiert Grenzen, auch wenn’s ihr nicht passt.  \nRespekt ist nicht romantisch – aber er ist die Basis, ohne die alles Müll ist.\n\n## Klaro-Rule\nWer dich wirklich mag, will nicht deine Kontrolle – sondern deine Sicherheit."
+      "title": "Manipulation erkennt man nicht sofort sondern am Gefühl danach",
+      "summary": "Emotionale Kontrolle zeigt sich oft erst im Rückblick.",
+      "body": "Manipulation fühlt sich selten direkt falsch an. Meist bleibt nach Gesprächen ein komisches Gefühl zurück. Schuld, Unsicherheit oder Druck sind typische Anzeichen.\n\nWer lernt, auf diese Signale zu achten, kann früher reagieren. Gesunde Beziehungen respektieren Grenzen und akzeptieren ein Nein."
     },
 
     {
       "id": "kn04",
       "category": "Wirtschaft",
-      "title": "Warum du am Monatsende „kein Geld“ hast, obwohl du kaum was gekauft hast: Der unsichtbare Kosten-Fresser",
-      "summary": "Kleine Zahlungen + Abos + Snacks + „nur mal kurz“ sind ein Systemproblem. Hier ist dein Budget-Reset ohne Excel-Pain.",
-      "body": "Wenn du am Monatsende leer bist und denkst „aber ich hab doch nichts Großes gekauft“, dann bist du Opfer von Micro-Spending. Das ist kein Moralproblem – das ist Mathe + Gewohnheit.\n\n## Der unsichtbare Fresser\n- Abos (3€ hier, 7€ da)\n- Lieferdienst / Snacks\n- In-App / Skins / Games\n- „Einmal kurz“ unterwegs\n- Gebühren, Versand, kleine Add-ons\n\nDas fühlt sich klein an – aber addiert sich brutal.\n\n## Der 3-Konten-Move (super simpel)\n1) **Fixkosten** (Miete/Handy/ÖPNV)  \n2) **Alltag** (Essen, unterwegs, Spaß)  \n3) **Ziel** (Sparen: Führerschein, Notgroschen)\n\nTrick: Ziel-Konto wird zuerst befüllt, nicht „wenn was übrig ist“.\n\n## 10-Minuten Budget Reset\n- Liste alle Abos auf (wirklich alle).\n- Streiche 1–2, die du kaum nutzt.\n- Setze ein Wochenlimit für Alltag (bar oder eigenes Konto).\n- Mach Automatisierung: z.B. 10€ pro Monat weg.\n\n## Warum das psychologisch funktioniert\nWenn Geld „unsichtbar“ ist (Karte, Apple Pay), spürst du keinen Cut.  \nBar oder separates Konto macht’s real.\n\n## Klaro-Outcome\nBudget ist nicht „arm sein“. Budget ist Kontrolle.  \nKontrolle ist Freiheit."
+      "title": "Warum kleine Ausgaben dein Budget zerstören",
+      "summary": "Nicht große Käufe, sondern viele kleine Kosten sind das Problem.",
+      "body": "Viele wundern sich, warum am Monatsende kein Geld mehr da ist. Ursache sind oft Abos, Snacks und spontane Käufe.\n\nEin klarer Überblick und feste Limits helfen, Kontrolle zurückzugewinnen. Geldmanagement ist kein Talent, sondern Struktur."
     },
 
     {
       "id": "kn05",
-      "category": "Lifestyle",
-      "title": "Schlaf ist keine Faulheit: Warum du ohne Schlaf literally weniger du bist (Mood, Fokus, Körper) – in Klartext",
-      "summary": "Schlaf entscheidet, ob du klar denkst oder alles dich stresst. Hier ist wie du besser schläfst, ohne „perfektes Leben“ zu brauchen.",
-      "body": "Schlaf ist das meist unterschätzte Upgrade überhaupt. Nicht weil Schlaf „cool“ ist – sondern weil alles ohne Schlaf schlechter wird: Konzentration, Gedächtnis, Laune, Hunger, Stress.\n\n## Was schlechter Schlaf oft macht\n- du bist schneller gereizt\n- du hast weniger Geduld\n- du lernst langsamer\n- du bekommst mehr Heißhunger\n- du fühlst dich „komisch leer“ oder overthinking\n\n## Warum „nur noch 10 Minuten scrollen“ dich killt\nKurzvideos nehmen dir Stop-Signale. Du bekommst ständig neue Reize.  \nDein Kopf bleibt „an“, obwohl der Körper müde ist.\n\n## Der realistische Schlaf-Fix (ohne Influencer-Gelaber)\n- **Timer**: 20–30 Minuten vor Schlaf Handy weg oder zumindest weg vom Bett.\n- **Licht runter**: dunkler = einfacher für Melatonin.\n- **Mini-Routine**: Zähne, Wasser, 2 Minuten atmen, fertig.\n- **Koffein früher**: eher Vormittag statt Abend.\n- **Wenn Gedanken rasen**: schreib 5 Zeilen „Brain dump“ auf Papier.\n\n## Wenn du sehr gestresst bist\nDu musst nicht „perfekt schlafen“.  \nDu brauchst erstmal: Stabilität, Rhythmus, kleine Schritte.\n\n## Klaro-Fazit\nSchlaf ist nicht Zeitverlust. Schlaf ist Performance-Basis."
+      "category": "Gesundheit",
+      "title": "Warum dauernde Müdigkeit mehr Ursachen hat als Schlaf",
+      "summary": "Energie hängt von mehreren Faktoren ab.",
+      "body": "Müdigkeit entsteht durch Stress, unregelmäßiges Essen, wenig Bewegung und mentale Belastung. Schlaf allein löst das Problem nicht immer.\n\nKleine Veränderungen im Alltag können große Wirkung haben. Regelmäßigkeit ist wichtiger als Perfektion."
     },
 
     {
       "id": "kn06",
       "category": "Tech",
-      "title": "Dein Handy sammelt mehr über dich als du denkst – aber du kannst das in 5 Minuten massiv reduzieren",
-      "summary": "Du musst nicht paranoid sein. Nur bewusst. Hier sind die schnellsten Settings, die wirklich was bringen.",
-      "body": "Du musst kein „Datenschutz-Nerd“ sein, um kluge Settings zu setzen. Ziel ist nicht „unsichtbar werden“. Ziel ist: weniger unnötige Daten abgeben.\n\n## 5-Minuten Privacy Sprint\n1) **Standort**: Stell Apps auf „Nur beim Nutzen“.  \n2) **Mikro/Kamera**: Check, wer Zugriff hat.  \n3) **Tracking**: iPhone/Android Tracking & Ad-Personalisierung reduzieren.  \n4) **Browser**: Tracking-Schutz an, Cookies regelmäßig löschen.  \n5) **Pushs**: Alles aus, außer wirklich wichtig.\n\n## Warum das so wichtig ist\nDaten sind Profiling-Futter: wann du online bist, was dich triggert, was du kaufst.  \nDas wird genutzt, um dir Dinge zu verkaufen – oder deine Aufmerksamkeit zu steuern.\n\n## Klaro-Tipp\nDu musst nicht alles blockieren.  \nAber du solltest wissen, was du erlaubst und warum.\n\nBewusste Settings = weniger Manipulation = mehr Ruhe."
+      "title": "Warum dein Handy mehr über dich weiß als du denkst",
+      "summary": "Viele Daten werden unbemerkt gesammelt.",
+      "body": "Apps sammeln Standort, Nutzungszeiten und Interessen. Das passiert oft im Hintergrund.\n\nWer Berechtigungen prüft und unnötige Zugriffe deaktiviert, schützt seine Privatsphäre deutlich besser."
     },
 
     {
       "id": "kn07",
       "category": "Bildung",
-      "title": "Prüfungsangst fühlt sich wie „Versagen“ an, ist aber nur Alarm: So bekommst du Kontrolle zurück",
-      "summary": "Herzrasen, Blackout, Zittern – das ist dein Nervensystem, nicht dein Talent. Hier ist ein Plan, der wirklich praktikabel ist.",
-      "body": "Prüfungsangst ist nicht „du bist schwach“. Es ist ein Alarmprogramm, das zu laut eingestellt ist.\n\n## Was der Körper macht\nStress → Adrenalin → Herz schneller, Atmung flacher, Fokus enger.  \nDas kann hilfreich sein – aber wenn’s zu stark wird, blockt Denken.\n\n## 3 Dinge, die sofort helfen\n1) **Länger ausatmen** (z.B. 4 ein, 6 aus) – beruhigt das System.  \n2) **Mini-Start**: Erste Aufgabe anfangen, auch wenn’s nur ein Schritt ist.  \n3) **Reframing**: „Das ist Alarm, nicht Wahrheit.“\n\n## Vorbereitung (ohne Overkill)\n- Übe unter echten Bedingungen (Zeit, keine Hilfe).\n- Mach eine Fehlerliste (typische Fallen).\n- Wiederhole Basics öfter als seltenes Spezialzeug.\n- Schlaf vor der Prüfung ist wichtiger als „noch 2 Stunden“.\n\n## Im Moment der Prüfung\nWenn Blackout:\n- Schreib irgendwas Einfaches hin (Definition, Formel, Skizze).\n- Das öffnet den Kopf wieder.\n- Dann weiter.\n\n## Klaro-Fazit\nDu brauchst kein „mutigeres Gehirn“.  \nDu brauchst ein besseres System."
+      "title": "Warum Prüfungsangst nichts über deine Fähigkeiten sagt",
+      "summary": "Angst ist ein körperlicher Alarm.",
+      "body": "Prüfungsangst entsteht durch Stressreaktionen im Körper. Denken wird dadurch blockiert.\n\nAtemübungen, Vorbereitung und realistische Erwartungen helfen, die Kontrolle zurückzuholen."
     },
 
     {
       "id": "kn08",
       "category": "Gesellschaft",
-      "title": "Warum Online-Diskussionen dich so schnell fertig machen (und wie du deine Energie nicht verschenkt)",
-      "summary": "Algorithmen pushen Drama, nicht Wahrheit. Hier ist, wie du nicht zum Gratis-Content für Streit wirst.",
-      "body": "Online-Diskussionen sind oft nicht für Verständnis gebaut, sondern für Reaktion. Reaktion = Kommentare = Reichweite. Du bist in deren Business-Model, wenn du dich emotional reinziehen lässt.\n\n## Warum es eskaliert\n- Text ohne Ton → Missverständnisse\n- Publikum schaut zu → Ego spielt mit\n- Algorithmen pushen Konflikt\n\n## Der Energy-Saver\n- Antwort nicht sofort. 30 Sekunden Pause.\n- Frag nach: „Meinst du X oder Y?“\n- Wenn’s beleidigend wird: Exit. Block/Muting ist kein L.\n\n## Klaro-Rule\nNicht jeder verdient Zugriff auf deine Nerven.  \nDeine Ruhe ist ein Asset."
+      "title": "Warum Online Diskussionen so schnell eskalieren",
+      "summary": "Algorithmen verstärken Konflikte.",
+      "body": "Soziale Plattformen belohnen starke Reaktionen. Sachliche Gespräche gehen dabei unter.\n\nWer Pausen einlegt und nicht sofort reagiert, schützt seine Energie."
     },
 
     {
       "id": "kn09",
       "category": "Welt",
-      "title": "News, die dich krank machen: Wie du informiert bleibst ohne Doomscrolling (echte Medienhygiene)",
-      "summary": "Informiert sein heißt nicht: 24/7 Alarm. Hier ist ein Plan, der dich nicht kaputt macht.",
-      "body": "Doomscrolling ist wie Junkfood fürs Gehirn: du bekommst viel Input, aber wenig Stabilität.\n\n## Warum dein Kopf danach schlechter drauf ist\nDauer-Alarm = Stress. Dein Gehirn liebt Muster, und wenn du ständig Krisen siehst, wirkt die Welt wie „nur schlimm“.\n\n## Medienhygiene (pragmatisch)\n- 2 feste News-Slots am Tag (z.B. 10 Min mittags + 10 Min abends)\n- Keine News direkt vor Schlaf\n- Quellen, die erklären statt schockieren\n- Frag: „Was kann ich beeinflussen?“ → das reduziert Ohnmacht\n\n## Klaro-Fazit\nInformiert sein soll dich handlungsfähig machen, nicht leer."
+      "title": "Warum Nachrichten oft mehr Stress als Wissen bringen",
+      "summary": "Dauerhafte Alarmmeldungen belasten das Gehirn.",
+      "body": "Zu viele negative Nachrichten erzeugen Dauerstress. Das verzerrt die Wahrnehmung der Realität.\n\nFeste Zeiten und ausgewählte Quellen helfen, informiert zu bleiben ohne Überforderung."
     },
 
     {
       "id": "kn10",
-      "category": "Gesundheit",
-      "title": "„Ich bin ständig müde“: 8 echte Ursachen (die nicht nur „zu wenig Schlaf“ sind) – und was du testen kannst",
-      "summary": "Müdigkeit ist oft ein Mix aus Schlaf, Essen, Stress, Routine und Gewohnheiten. Hier ist ein realistischer Check ohne Panik.",
-      "body": "Wenn du ständig müde bist, ist es selten nur ein Ding. Meist ist es ein Stack aus kleinen Faktoren.\n\n## 8 häufige Ursachen\n1) Schlafrhythmus (unregelmäßig)  \n2) Zu wenig essen oder sehr unregelmäßig essen  \n3) Zu wenig trinken  \n4) Zu viel Koffein (macht Crash)  \n5) Dauerstress (Körper im Alarmmodus)  \n6) Zu wenig Bewegung (Kreislauf low)  \n7) Zu viel Bildschirm spät (Kopf bleibt an)  \n8) Stimmung/mentale Belastung (zieht Energie)\n\n## Der 7-Tage-Test (ohne Perfektion)\n- gleiche Schlafzeit +/- 30 Min\n- morgens 1 Glas Wasser\n- 1 echte Mahlzeit + Protein\n- 10–20 Min Bewegung\n- Koffein nur vormittags\n- abends 20 Min weniger Screen\n\n## Wann du Hilfe holen solltest\nWenn es sehr stark ist, lange anhält oder mit starken Symptomen kommt (z.B. Schwindel, Atemnot, extreme Schwäche): Arzt. Das ist keine Panik, das ist Verantwortung.\n\n## Klaro-Fazit\nDu musst nicht „härter werden“.  \nDu musst deine Basics stabil machen."
+      "category": "Lifestyle",
+      "title": "Warum Schlaf deine Leistung mehr beeinflusst als Motivation",
+      "summary": "Ohne Schlaf funktioniert kein System.",
+      "body": "Schlaf beeinflusst Lernen, Stimmung und Gesundheit direkt. Wer dauerhaft zu wenig schläft, verliert Fokus.\n\nRegelmäßige Zeiten und weniger Bildschirm am Abend verbessern die Qualität deutlich."
     }
   ]
 }
