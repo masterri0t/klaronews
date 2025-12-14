@@ -334,6 +334,7 @@
 
   form.addEventListener("submit", async (e) => {
     e.preventDefault();
+if (document.getElementById("website").value.trim()) return;
 
     const name    = document.getElementById("name").value.trim();
     const email   = document.getElementById("email").value.trim();
@@ -428,6 +429,7 @@
 
 </body>
 </html>
+
 
 
 
