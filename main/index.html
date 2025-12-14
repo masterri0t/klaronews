@@ -721,7 +721,8 @@
       </div>
 
       <nav>
-        <a class="nav-link active" href="#top">Heute</a>
+        <a class="nav-link active" href="/main/">Heute</a>
+
         <a class="nav-link" href="#politik">Politik</a>
         <a class="nav-link" href="#welt">Welt</a>
         <a class="nav-link" href="#gesellschaft">Gesellschaft</a>
@@ -793,9 +794,10 @@
     <footer>
       <span>© <span id="year"></span> KlaroNews. Alle Rechte vorbehalten.</span>
       <div class="footer-links">
-        <a class="nav-link active" href="impressum.html">Impressum</a>
-        <a class="nav-link" href="datenschutz.html">Datenschutz</a>
-        <a class="nav-link" href="kontakt.html">Kontakt</a>
+        <a href="/main/impressum/">Impressum</a>
+<a href="/main/datenschutz/">Datenschutz</a>
+<a href="/main/kontakt/">Kontakt</a>
+
       </div>
     </footer>
   </div>
@@ -2885,7 +2887,8 @@ if (!localStorage.getItem("dsAccepted")) {
   if (overlay && content && acceptBtn && skipBtn) {
     overlay.style.display = "flex";
 
-    fetch("datenschutz.html")
+   fetch("/main/datenschutz/")
+
       .then(res => res.text())
       .then(html => { content.innerHTML = html; })
       .catch(() => { content.innerHTML = "<p>Datenschutz konnte nicht geladen werden.</p>"; });
@@ -2920,6 +2923,7 @@ if (!localStorage.getItem("dsAccepted")) {
     crossorigin="anonymous"></script>
 </body>
 </html>
+
 
 
 
